@@ -1,0 +1,125 @@
+import React from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+
+SwiperCore.use([Navigation, Pagination, Autoplay])
+
+const Testimonials = () => {
+  const { portfolios } = useStaticQuery(graphql`
+    {
+      portfolios: allWpPortfolio(limit: 100) {
+        nodes {
+          id
+          title
+          uri
+          Portfolio_Details {
+            testimonial {
+              fieldGroupName
+              name
+              position
+              testimonial
+            }
+            website
+            companyLogo {
+              id
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 200
+                    height: 124
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  let filteredTestimonials = portfolios.nodes.filter(
+    portfolio => portfolio.Portfolio_Details.testimonial !== null
+  )
+
+  const testimonialsCount = filteredTestimonials.length
+
+  if (testimonialsCount <= 0) {
+    return
+  }
+
+  return (
+    <section id="Testimonials" className="bg-white py-10">
+      <div className="container">
+        <h2 className="pb-5 text-center">
+          <Link
+            key="testi-link"
+            to="#"
+            className="font-BebasNeue text-themeBlue-text text-5xl lg:text-7xl"
+          >
+            Testimonials
+            <span
+              key="testi-span"
+              className="font-Lato text-themeOrange text-base lg:text-2xl pl-5 py-0"
+            >
+              read more...
+            </span>
+          </Link>
+        </h2>
+      </div>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={testimonialsCount > 3 ? 3 : testimonialsCount}
+        autoplay
+        loop={testimonialsCount > 3}
+        navigation={testimonialsCount > 3 ? true : false}
+        pagination={
+          testimonialsCount > 3 ? { clickable: true } : { clickable: false }
+        }
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={swiper => console.log(swiper)}
+        className="p-5"
+      >
+        {filteredTestimonials.map((portfolio, index) => {
+          return (
+            <SwiperSlide className="relative" key={portfolio.id + index}>
+              <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+                <div
+                  style={{
+                    border: "solid 5px #a63f00",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                  }}
+                  className="mb-12 shadow-themeShadow"
+                >
+                  <GatsbyImage
+                    alt={portfolio.Portfolio_Details.companyLogo.altText}
+                    image={
+                      portfolio.Portfolio_Details.companyLogo.localFile
+                        .childImageSharp.gatsbyImageData
+                    }
+                  />
+                </div>
+                <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-2">
+                  {portfolio.Portfolio_Details.testimonial[0].testimonial}
+                </div>
+                <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
+                  {portfolio.Portfolio_Details.testimonial[0].name}
+                </div>
+                <div className="font-Montserrat text-xl text-themeOrange">
+                  {portfolio.Portfolio_Details.testimonial[0].position}
+                </div>
+              </div>
+            </SwiperSlide>
+          )
+        })}
+      </Swiper>
+    </section>
+  )
+}
+
+export default Testimonials
