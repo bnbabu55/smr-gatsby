@@ -43,11 +43,11 @@ const AboutPage = () => {
               alt="About slider 1"
             />
           </figure>
-          <div className="title absolute top-5 left-40 lg:top-1/4 md:left-1/3 text-themeBlue-100 text-2xl lg:text-7xl font-LatoBold text-center">
+          <div className="title absolute top-5 left-40 lg:top-1/4 lg:left-1/3 text-themeBlue-100 text-2xl lg:text-7xl font-LatoBold text-center">
             Industry Recognized <br />
             Team Leadership
           </div>
-          <div className="subtitle absolute top-2/3 left-1/3 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-2/3 right-5 lg:right-20 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
             Experienced & Professional Project Leaders, <br />
             Website Developers & SEO Managers
           </div>
