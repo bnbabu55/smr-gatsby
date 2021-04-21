@@ -269,7 +269,7 @@ const Testimonials = () => {
               className="mb-12 shadow-themeShadow"
             >
               <GatsbyImage
-                alt="Adhesa Plates logo"
+                alt="Auto Awards logo"
                 image={logoImages.nodes[6].childImageSharp.gatsbyImageData}
               />
             </div>
