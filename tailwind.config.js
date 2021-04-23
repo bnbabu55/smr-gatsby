@@ -4,7 +4,12 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: {
+    content: ["**/*.{js,jsx,ts,tsx,html,md,mdx}"],
+    safelist: {
+      greedy: [/swiper/],
+    },
+  },
   theme: {
     extend: {
       fontFamily: {
@@ -52,6 +57,7 @@ module.exports = {
           300: "#7F7F83",
           400: "#a3a3a3",
           500: "#7489a2",
+          600: "#efeeec",
         },
         themeSilver: "#C0C0C0",
         facebookBlue: "#4267B2",
