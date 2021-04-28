@@ -9,7 +9,10 @@ module.exports = {
     preserveHtmlElements: true,
     mode: "layers",
     layers: [],
-    content: ["**/*.{js,jsx,ts,tsx,html,md,mdx}"],
+    content: [
+      "./src/**/*.{js,jsx,ts,tsx}",
+      "./content/**/*.{js,jsx,ts,tsx,html,md,mdx}",
+    ],
     options: {
       safelist: {
         greedy: [/swiper/],
