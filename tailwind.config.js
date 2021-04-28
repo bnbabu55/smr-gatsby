@@ -5,7 +5,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: false,
+    enabled: true,
     preserveHtmlElements: true,
     mode: "layers",
     layers: [],
