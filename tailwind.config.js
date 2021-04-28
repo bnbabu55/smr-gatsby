@@ -5,9 +5,15 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
+    enabled: false,
+    preserveHtmlElements: true,
+    mode: "layers",
+    layers: [],
     content: ["**/*.{js,jsx,ts,tsx,html,md,mdx}"],
-    safelist: {
-      greedy: [/swiper/],
+    options: {
+      safelist: {
+        greedy: [/swiper/],
+      },
     },
   },
   theme: {

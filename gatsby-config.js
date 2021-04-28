@@ -5,7 +5,8 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
-const tailwindConfig = require("./tailwind.config.js")
+ const path = require(`path`)
+ const tailwindConfig = require("./tailwind.config.js")
 
 module.exports = {
   /**
@@ -40,7 +41,7 @@ module.exports = {
           perPage: 20, // currently set to 100
           requestConcurrency: 5, // currently set to 15
           previewRequestConcurrency: 2, // currently set to 5
-        }        
+        },
       },
     },
     /**
@@ -87,17 +88,12 @@ module.exports = {
       options: {
         postCssPlugins: [require(`tailwindcss`)(tailwindConfig)],
       },
-    }, // `gatsby-plugin-offline`,
+    }, 
+    
+    // `gatsby-plugin-offline`,
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline
-     */ {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: false,
-        develop: false,
-        tailwind: true,
-      },
-    },
+     */ 
   ],
 }

@@ -1,7 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { useKeenSlider } from "keen-slider/react"
+import SwiperCore, { Autoplay } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+
+SwiperCore.use([Autoplay])
 
 const HeroBanner = () => {
   const { bgImages } = useStaticQuery(graphql`
@@ -28,15 +31,20 @@ const HeroBanner = () => {
     }
   `)
 
-  const [sliderRef, slider] = useKeenSlider({ loop: true })
-
   return (
     <section
       id="hero-banner"
       className="bg-white border-b-4 border-themeGray-100 shadow-themeShadow"
     >
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide relative">
+      <Swiper
+        spaceBetween={30}
+        slidesPerView={1}
+        loop
+        autoplay
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={swiper => console.log(swiper)}
+      >
+        <SwiperSlide className="relative">
           <figure className="overflow-hidden w-full">
             <GatsbyImage
               image={bgImages.nodes[0].childImageSharp.gatsbyImageData}
@@ -51,8 +59,8 @@ const HeroBanner = () => {
             Increase Your Online Visibility <br />
             Create New Business Leads 24/7
           </div>
-        </div>
-        <div className="keen-slider__slide relative">
+        </SwiperSlide>
+        <SwiperSlide className="relative">
           <figure className="overflow-hidden w-full">
             <GatsbyImage
               image={bgImages.nodes[1].childImageSharp.gatsbyImageData}
@@ -68,8 +76,8 @@ const HeroBanner = () => {
             Industry Recognized Designers <br />
             Engage Your Customers
           </div>
-        </div>
-        <div className="keen-slider__slide relative">
+        </SwiperSlide>
+        <SwiperSlide className="relative">
           <figure className="overflow-hidden w-full">
             <GatsbyImage
               image={bgImages.nodes[2].childImageSharp.gatsbyImageData}
@@ -85,8 +93,8 @@ const HeroBanner = () => {
             Web Design • SEO • Social Media <br />
             Hands-On Project Managers
           </div>
-        </div>
-        <div className="keen-slider__slide relative">
+        </SwiperSlide>
+        <SwiperSlide className="relative">
           <figure className="overflow-hidden w-full">
             <GatsbyImage
               image={bgImages.nodes[3].childImageSharp.gatsbyImageData}
@@ -101,8 +109,8 @@ const HeroBanner = () => {
             Industry Leading Client Retention <br />
             Competitive Pricing – Professional <br /> Results
           </div>
-        </div>
-      </div>
+        </SwiperSlide>
+      </Swiper>
     </section>
   )
 }
