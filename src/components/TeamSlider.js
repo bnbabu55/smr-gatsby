@@ -50,49 +50,55 @@ const TeamSlider = () => {
         breakpoints={{
           // when window width is >= 640px
           240: {
-            width: 240,
             slidesPerView: 2,
             spaceBetween: 10,
           },
           1024: {
-            width: 1024,
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 10,
           },
+        }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         }}
 
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={swiper => console.log(swiper)}
       >
-        {teamMembers.nodes.map(teamMember => {
-          return (
-            <SwiperSlide className="w-full text-center" key={teamMember.id}>
-              <div
-                key={teamMember.id + "slide-wrapper"}
-                className="w-full flex flex-col p-5"
-              >
-                <div className="font-Raleway text-2xl text-themeOrange pb-1">
-                  {teamMember.title}
-                </div>
-                <div className="font-Raleway text-base pb-5">
-                  {teamMember.memberRole}
-                </div>
+        <div className="swiper-button-prev"></div>
+        <div className="w-3/4">
+          {teamMembers.nodes.map(teamMember => {
+            return (
+              <SwiperSlide className="w-full text-center" key={teamMember.id}>
                 <div
-                  key={teamMember.id + "content"}
-                  className="mb-5 text-base italic line-clamp-3"
+                  key={teamMember.id + "slide-wrapper"}
+                  className="w-full flex flex-col p-5"
                 >
-                  {parse(teamMember.content)}
+                  <div className="font-Raleway text-2xl text-themeOrange pb-1">
+                    {teamMember.title}
+                  </div>
+                  <div className="font-Raleway text-base pb-5">
+                    {teamMember.memberRole}
+                  </div>
+                  <div
+                    key={teamMember.id + "content"}
+                    className="mb-5 text-base italic line-clamp-3"
+                  >
+                    {parse(teamMember.content)}
+                  </div>
+                  <Link
+                    to={`/about`}
+                    className="text-themeOrange py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
+                  >
+                    Read
+                  </Link>
                 </div>
-                <Link
-                  to={`/about`}
-                  className="text-themeOrange py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
-                >
-                  Read
-                </Link>
-              </div>
-            </SwiperSlide>
-          )
-        })}
+              </SwiperSlide>
+            )
+          })}
+        </div>
+        <div className="swiper-button-next"></div>
       </Swiper>
     </section>
   )

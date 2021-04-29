@@ -45,12 +45,10 @@ const SolutionSlider = () => {
         breakpoints={{
           // when window width is >= 640px
           240: {
-            width: 240,
             slidesPerView: 1,
             spaceBetween: 10,
           },
           1024: {
-            width: 1024,
             slidesPerView: 2,
             spaceBetween: 20,
           },
@@ -68,7 +66,7 @@ const SolutionSlider = () => {
               >
                 <div
                   key={solutionSlide.id + "image-wrapper"}
-                  className="w-full"
+                  className="w-2/5"
                 >
                   <GatsbyImage
                     alt={solutionSlide.frontmatter.altTxt}
@@ -78,11 +76,14 @@ const SolutionSlider = () => {
                     }
                   />
                 </div>
-                <div className="w-full lg:pl-3">
+                <div className="w-3/5">
                   <div className="font-Montserrat text-xl text-left uppercase text-themeBlue-text pb-5">
                     {solutionSlide.frontmatter.title}
                   </div>
-                  <div key={solutionSlide.id + "content"} className="mb-5 text-lg">
+                  <div
+                    key={solutionSlide.id + "content"}
+                    className="mb-5 text-xl"
+                  >
                     {parse(solutionSlide.html)}
                   </div>
                   <Link
