@@ -48,11 +48,12 @@ const TeamSlider = () => {
         autoplay
         loop
         breakpoints={{
-          // when window width is >= 640px
+          // when window width is >= 240px
           240: {
             slidesPerView: 2,
             spaceBetween: 10,
           },
+          // when window width is >= 1024px
           1024: {
             slidesPerView: 4,
             spaceBetween: 10,
