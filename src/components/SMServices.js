@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { BgImage, convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
 
 const SMServices = () => {
   const { smIcons, smSlides } = useStaticQuery(graphql`
@@ -17,7 +19,7 @@ const SMServices = () => {
           childImageSharp {
             gatsbyImageData(
               width: 152
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
               quality: 90
               formats: [AUTO, WEBP, AVIF]
             )
@@ -35,8 +37,8 @@ const SMServices = () => {
           name
           childImageSharp {
             gatsbyImageData(
-              width: 640
-              placeholder: TRACED_SVG
+              height: 380
+              placeholder: BLURRED
               quality: 90
               formats: [AUTO, WEBP, AVIF]
             )
@@ -45,6 +47,33 @@ const SMServices = () => {
       }
     }
   `)
+
+  const pluginImage = getImage(
+    smSlides.nodes[0].childImageSharp.gatsbyImageData
+  )
+  const bgImage = convertToBgImage(pluginImage)
+  // console.log("bgImage: " + JSON.stringify(bgImage, null, 2))
+
+  function changeImage(e) {
+    const newImageSrc = e.target.getAttribute("data-imagesrc")
+    const imageCaption = e.target.getAttribute("alt")
+    const imagetitle = e.target.getAttribute("title")
+
+    const targetWrapper = document.querySelector("#myimg")
+    const targetImg = document.querySelector("#myimg img")
+
+    if (window.innerWidth > 767) {
+      targetWrapper.setAttribute(
+        "style",
+        "background: url(" + newImageSrc + ") no-repeat left center"
+      )
+    } else {
+      targetImg.setAttribute("src", newImageSrc)
+    }
+    targetImg.setAttribute("alt", imageCaption)
+    targetImg.setAttribute("title", imagetitle)
+  }
+
   return (
     <section id="sm-services" className="pt-5 pb-10 border-b border-gray-300">
       <div className="wrapper grid gap-3 grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto">
@@ -64,21 +93,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-2 row-end-3 flex gap-x-2">
-          <div className="img_pnl">
+          <div className="w-1/4">
             <figure className="overflow-hidden">
               <GatsbyImage
                 image={smIcons.nodes[0].childImageSharp.gatsbyImageData}
                 alt="Best Practice Search Marketing Programs"
-                data-image={smSlides.nodes[0].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[0].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               />
             </figure>
           </div>
-          <div className="">
+          <div className="w-3/4">
             <h3>
               <a
                 className="text-themeOrange text-xl font-Raleway"
                 href="search-marketing-programs.php"
-                data-image={smSlides.nodes[0].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[0].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               >
                 Search Marketing Program
               </a>
@@ -91,21 +130,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 lg:col-start-2 lg:col-end-3 row-start-3 row-end-4 lg:row-start-2 lg:row-end-3 flex gap-x-2">
-          <div className="img_pnl">
+          <div className="w-1/4">
             <figure className="overflow-hidden">
               <GatsbyImage
                 alt="Search Marketing Press Release Writing Icon"
                 image={smIcons.nodes[1].childImageSharp.gatsbyImageData}
-                data-image={smSlides.nodes[1].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[1].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               />
             </figure>
           </div>
-          <div className="">
+          <div className="w-3/4">
             <h3>
               <a
                 href="press-release-writing-services.php"
-                data-image={smSlides.nodes[1].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[1].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
                 className="text-themeOrange text-xl font-Raleway"
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               >
                 Optimized Press Release
               </a>
@@ -118,21 +167,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4 flex gap-x-2">
-          <div className="img_pnl">
+          <div className="w-1/4">
             <figure className="overflow-hidden">
               <GatsbyImage
                 alt="SEO Program Success Icon"
                 image={smIcons.nodes[2].childImageSharp.gatsbyImageData}
-                data-image={smSlides.nodes[2].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[2].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               />
             </figure>
           </div>
-          <div className="">
+          <div className="w-3/4">
             <h3>
               <a
                 href="search-marketing-success.php"
-                data-image={smSlides.nodes[2].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[2].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
                 className="text-themeOrange text-xl font-Raleway"
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               >
                 SEO Program Analytics
               </a>
@@ -145,21 +204,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-5 row-end-6 lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4 flex gap-x-2">
-          <div className="img_pnl">
+          <div className="w-1/4">
             <figure className="overflow-hidden">
               <GatsbyImage
                 alt="Social Media Management Icon"
                 image={smIcons.nodes[3].childImageSharp.gatsbyImageData}
-                data-image={smSlides.nodes[3].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[3].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               />
             </figure>
           </div>
-          <div className="">
+          <div className="w-3/4">
             <h3>
               <a
                 href="social-media-management.php"
-                data-image={smSlides.nodes[3].childImageSharp.gatsbyImageData}
+                data-imagesrc={
+                  smSlides.nodes[3].childImageSharp.gatsbyImageData.images
+                    .fallback.src
+                }
                 className="text-themeOrange text-xl font-Raleway"
+                onMouseOver={changeImage}
+                onFocus={changeImage}
               >
                 Social Media Management
               </a>
@@ -171,12 +240,46 @@ const SMServices = () => {
             </p>
           </div>
         </div>
-        <div className="col-start-1 col-end-2 row-start-6 row-end-7 lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4 self-center">
-          <GatsbyImage
-            className="mobile_img"
+        <div
+          id="myimg"
+          className="service_img w-full min-h-full col-start-1 col-end-2 row-start-6 row-end-7 lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-4 self-center lg:-right-40"
+          style={{
+            background: `url(${smSlides.nodes[0].childImageSharp.gatsbyImageData.images.fallback.src}) no-repeat left center`,
+          }}
+        >
+          <img
+            className="mobile_img min-h-full hidden"
+            alt="Website SEO Services Company for Optimization"
+            src={
+              smSlides.nodes[0].childImageSharp.gatsbyImageData.images.fallback
+                .src
+            }
+          />
+
+          {/* <BgImage
+            className="w-full min-h-full text-white"
+            image={pluginImage}
+            // alt="test"
+          >
+          </BgImage> */}
+          {/* <GatsbyImage
+            id="smservice-large-image"
             alt="Best Practice Search Marketing Programs"
             image={smSlides.nodes[0].childImageSharp.gatsbyImageData}
-          />
+          />  */}
+          {/* <BackgroundImage
+            Tag="div"
+            // Spread bgImage into BackgroundImage:
+            {...bgImage}
+            preserveStackingContext
+          >
+            <div>
+              <GatsbyImage
+                image={pluginImage}
+                alt={"Best Practice Search Marketing Programs"}
+              />
+            </div>
+          </BackgroundImage> */}
         </div>
       </div>
     </section>

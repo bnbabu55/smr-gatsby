@@ -5,18 +5,20 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
     preserveHtmlElements: true,
     mode: "layers",
-    layers: [],
     content: [
       "./src/**/*.{js,jsx,ts,tsx}",
       "./content/**/*.{js,jsx,ts,tsx,html,md,mdx}",
     ],
     options: {
-      safelist: {
-        greedy: [/swiper/],
-      },
+      // safelist: {
+      //   greedy: [/swiper/],
+      // },
+      keyframes: true,
+      // fontFace: true,
+      variables: true,
+      rejected: true,
     },
   },
   theme: {
