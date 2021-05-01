@@ -66,7 +66,7 @@ const SolutionSlider = () => {
               >
                 <div
                   key={solutionSlide.id + "image-wrapper"}
-                  className="w-2/5"
+                  className="w-full lg:w-2/5"
                 >
                   <GatsbyImage
                     alt={solutionSlide.frontmatter.altTxt}
@@ -76,7 +76,7 @@ const SolutionSlider = () => {
                     }
                   />
                 </div>
-                <div className="w-3/5">
+                <div className="w-full lg:w-3/5">
                   <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
                     {solutionSlide.frontmatter.title}
                   </div>
