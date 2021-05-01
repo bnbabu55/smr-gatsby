@@ -166,15 +166,9 @@ const HomeNews = () => {
                         to={`/news${post.uri}`}
                         itemProp="url"
                         key={post.id + "-body-link"}
-                        className="w-full"
+                        className="w-full font-Montserrat text-xl uppercase text-themeOrange"
                       >
-                        <span
-                          key={post.id + "-body-span-1"}
-                          itemProp="headline"
-                          className="font-Montserrat text-xl uppercase text-themeOrange"
-                        >
-                          {parse(post.title)}
-                        </span>
+                        {parse(post.title)}
                       </Link>
                       <section
                         key={post.id + "-body-section"}

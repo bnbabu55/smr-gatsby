@@ -66,7 +66,7 @@ const HomePortfolio = () => {
       <div className="w-11/12 mx-auto text-white">
         <div className="w-full">
           <div className="flex justify-center items-center text-center py-10">
-            <h3>
+            <h2>
               <Link
                 to={`/search-marketing-and-website-design-portfolio.php`}
                 className="font-Montserrat text-themeOrange text-2xl"
@@ -78,7 +78,7 @@ const HomePortfolio = () => {
                 <br className="lg:hidden" />
                 <span>Search Marketing Programs</span>
               </Link>
-            </h3>
+            </h2>
           </div>
           <p className="font-Lato text-lg text-center">
             The Search Marketing Resource team has provided website graphic

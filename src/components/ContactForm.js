@@ -147,7 +147,10 @@ const ContactForm = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaFacebookSquare className="text-facebookBlue text-5xl" />
+                      <FaFacebookSquare
+                        className="text-facebookBlue text-5xl"
+                        title="Facebook"
+                      />
                     </a>
                   </li>
                   <li className="pr-4">
@@ -156,7 +159,10 @@ const ContactForm = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaLinkedin className="text-linkedInBlue text-5xl" />
+                      <FaLinkedin
+                        className="text-linkedInBlue text-5xl"
+                        title="LinkedIn"
+                      />
                     </a>
                   </li>
                   <li className="mt-1">
@@ -171,6 +177,7 @@ const ContactForm = () => {
                           width="48"
                           height="42"
                         >
+                          <title>Google My Business</title>
                           <defs>
                             <clipPath clipPathUnits="userSpaceOnUse" id="a">
                               <path d="M0 1080h1920V0H0z" />
