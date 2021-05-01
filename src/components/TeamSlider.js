@@ -21,7 +21,7 @@ const TeamSlider = () => {
   `)
 
   return (
-    <section id="TeamSlider" className="bg-white py-10 w-11/12 mx-auto">
+    <section id="TeamSlider" className="bg-white text-themeGray-300 py-10 w-11/12 mx-auto">
       <div className="mx-auto text-center">
         <h2>
           <Link

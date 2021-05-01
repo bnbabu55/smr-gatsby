@@ -37,7 +37,7 @@ const SolutionSlider = () => {
   `)
 
   return (
-    <section id="SolutionSlider" className="bg-white py-10 w-full mx-auto">
+    <section id="SolutionSlider" className="bg-white text-themeGray-300 py-10 w-full mx-auto">
       <Swiper
         className="mx-auto w-full"
         autoplay
@@ -77,7 +77,7 @@ const SolutionSlider = () => {
                   />
                 </div>
                 <div className="w-3/5">
-                  <div className="font-Montserrat text-xl text-left uppercase text-themeBlue-text pb-5">
+                  <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
                     {solutionSlide.frontmatter.title}
                   </div>
                   <div
