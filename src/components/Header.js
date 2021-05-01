@@ -75,7 +75,7 @@ const Header = () => {
 
   return (
     <header className="z-10">
-      <div className="border-b-4 border-themeGray-100 shadow-themeShadow">
+      <div className="border-b-4 border-themeGray-50 shadow-themeShadow">
         <nav className="w-full z-100 mt-0 top-0 pt-0 bg-themeBlue-100 text-white font-MontserratSemiBold">
           <div className="mx-auto md:flex md:justify-evenly md:items-center md:px-4 md:py-3">
             <div className="flex px-4 py-3 items-center justify-between md:p-0">

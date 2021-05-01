@@ -76,7 +76,7 @@ const TeamSlider = () => {
                   key={teamMember.id + "slide-wrapper"}
                   className="w-full flex flex-col p-5"
                 >
-                  <div className="font-Raleway text-2xl text-themeOrange pb-1">
+                  <div className="font-Raleway text-2xl uppercase text-themeOrange pb-1">
                     {teamMember.title}
                   </div>
                   <div className="font-Raleway text-base pb-5">

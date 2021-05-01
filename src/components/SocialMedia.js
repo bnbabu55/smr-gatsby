@@ -57,7 +57,7 @@ export const SocialMedia = () => {
           return (
             <div
               className={`mb-5 py-5 ${
-                i % 2 === 0 ? "bg-themeGray-600" : "bg-white"
+                i % 2 === 0 ? "bg-gray-300" : "bg-white"
               }`}
               key={socialItem.id}
               id={socialItem.id}

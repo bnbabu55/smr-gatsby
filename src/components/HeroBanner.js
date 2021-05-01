@@ -43,7 +43,7 @@ const HeroBanner = () => {
   return (
     <section
       id="hero-banner"
-      className="bg-white border-b-4 border-themeGray-100 shadow-themeShadow"
+      className="bg-white border-b-4 border-themeGray-50 shadow-themeShadow"
     >
       <Swiper
         spaceBetween={30}

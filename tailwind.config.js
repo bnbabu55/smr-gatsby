@@ -63,6 +63,7 @@ module.exports = {
           text: "#00497a",
         },
         themeGray: {
+          50: "#cfcfcf",
           100: "#434343",
           200: "#2f2f2f",
           300: "#2a2a2a",

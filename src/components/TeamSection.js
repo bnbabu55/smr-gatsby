@@ -42,7 +42,7 @@ export const TeamSection = () => {
     <>
       <section
         id="hero-banner"
-        className="bg-white border-b-4 border-themeGray-100 shadow-themeShadow"
+        className="bg-white border-b-4 border-themeGray-50 shadow-themeShadow"
       >
         <div className="relative">
           <figure className="overflow-hidden w-full">

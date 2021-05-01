@@ -82,7 +82,7 @@ const Testimonials = () => {
         <div className="swiper-button-prev"></div>
         <div className="w-3/4">
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -111,7 +111,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -140,7 +140,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -169,7 +169,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -198,7 +198,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -227,7 +227,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -256,7 +256,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",
@@ -284,7 +284,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-500 border-4 p-5">
+            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
               <div
                 style={{
                   border: "solid 5px #a63f00",

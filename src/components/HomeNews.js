@@ -175,7 +175,10 @@ const HomeNews = () => {
                         itemProp="description"
                         className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
                       >
-                        {parse(post.excerpt)}
+                        {parse(post.excerpt, {
+                          replace: ({ attribs }) =>
+                            attribs && attribs.class === "read-more" && <></>,
+                        })}
                       </section>
                     </article>
                   </li>
