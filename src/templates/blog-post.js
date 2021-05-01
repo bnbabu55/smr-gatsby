@@ -6,7 +6,6 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
-import { FaFacebookSquare, FaHome, FaLinkedinIn } from "react-icons/fa"
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
   const featuredImage = {
@@ -44,7 +43,16 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       to="/news"
                       className="bg-themeBlue-text hover:bg-themeBlue-200"
                     >
-                      <FaHome className="text-white bg-themeBlue-text text-4xl rounded-lg p-1" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 460.298 460.297"
+                        width="2.25rem"
+                        className="text-white bg-themeBlue-text text-xl rounded-lg p-1 fill-current"
+                      >
+                        <title>News Home</title>
+                        <path d="M230.149 120.939L65.986 256.274c0 .191-.048.472-.144.855-.094.38-.144.656-.144.852v137.041c0 4.948 1.809 9.236 5.426 12.847 3.616 3.613 7.898 5.431 12.847 5.431h109.63V303.664h73.097v109.64h109.629c4.948 0 9.236-1.814 12.847-5.435 3.617-3.607 5.432-7.898 5.432-12.847V257.981c0-.76-.104-1.334-.288-1.707L230.149 120.939z" />
+                        <path d="M457.122 225.438L394.6 173.476V56.989c0-2.663-.856-4.853-2.574-6.567-1.704-1.712-3.894-2.568-6.563-2.568h-54.816c-2.666 0-4.855.856-6.57 2.568-1.711 1.714-2.566 3.905-2.566 6.567v55.673l-69.662-58.245c-6.084-4.949-13.318-7.423-21.694-7.423-8.375 0-15.608 2.474-21.698 7.423L3.172 225.438c-1.903 1.52-2.946 3.566-3.14 6.136-.193 2.568.472 4.811 1.997 6.713l17.701 21.128c1.525 1.712 3.521 2.759 5.996 3.142 2.285.192 4.57-.476 6.855-1.998L230.149 95.817l197.57 164.741c1.526 1.328 3.521 1.991 5.996 1.991h.858c2.471-.376 4.463-1.43 5.996-3.138l17.703-21.125c1.522-1.906 2.189-4.145 1.991-6.716-.195-2.563-1.242-4.609-3.141-6.132z" />
+                      </svg>
                     </Link>
                   </li>
                   <li className="w-11/12">
@@ -138,7 +146,19 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaFacebookSquare className="mr-2" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1rem"
+                        height="1rem"
+                        viewBox="0 0 408.788 408.788"
+                        className="fill-current text-white text-lg mr-2"
+                      >
+                        <title>Facebook</title>
+                        <path
+                          d="M353.701 0H55.087C24.665 0 .002 24.662.002 55.085v298.616c0 30.423 24.662 55.085 55.085 55.085h147.275l.251-146.078h-37.951a8.954 8.954 0 01-8.954-8.92l-.182-47.087a8.955 8.955 0 018.955-8.989h37.882v-45.498c0-52.8 32.247-81.55 79.348-81.55h38.65a8.955 8.955 0 018.955 8.955v39.704a8.955 8.955 0 01-8.95 8.955l-23.719.011c-25.615 0-30.575 12.172-30.575 30.035v39.389h56.285c5.363 0 9.524 4.683 8.892 10.009l-5.581 47.087a8.955 8.955 0 01-8.892 7.901h-50.453l-.251 146.078h87.631c30.422 0 55.084-24.662 55.084-55.084V55.085C408.786 24.662 384.124 0 353.701 0z"
+                          fill="white"
+                        />
+                      </svg>
                       <span className="text-base"> Share</span>
                     </a>
                   </li>
@@ -149,7 +169,19 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaLinkedinIn className="mr-2" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1rem"
+                        height="1rem"
+                        viewBox="0 0 382 382"
+                        className="fill-current text-white text-lg mr-2"
+                      >
+                        <title>LinkedIn</title>
+                        <path
+                          d="M347.445 0H34.555C15.471 0 0 15.471 0 34.555v312.889C0 366.529 15.471 382 34.555 382h312.889C366.529 382 382 366.529 382 347.444V34.555C382 15.471 366.529 0 347.445 0zM118.207 329.844c0 5.554-4.502 10.056-10.056 10.056H65.345c-5.554 0-10.056-4.502-10.056-10.056V150.403c0-5.554 4.502-10.056 10.056-10.056h42.806c5.554 0 10.056 4.502 10.056 10.056v179.441zM86.748 123.432c-22.459 0-40.666-18.207-40.666-40.666S64.289 42.1 86.748 42.1s40.666 18.207 40.666 40.666-18.206 40.666-40.666 40.666zM341.91 330.654a9.247 9.247 0 01-9.246 9.246H286.73a9.247 9.247 0 01-9.246-9.246v-84.168c0-12.556 3.683-55.021-32.813-55.021-28.309 0-34.051 29.066-35.204 42.11v97.079a9.246 9.246 0 01-9.246 9.246h-44.426a9.247 9.247 0 01-9.246-9.246V149.593a9.247 9.247 0 019.246-9.246h44.426a9.247 9.247 0 019.246 9.246v15.655c10.497-15.753 26.097-27.912 59.312-27.912 73.552 0 73.131 68.716 73.131 106.472v86.846z"
+                          fill="white"
+                        />
+                      </svg>
                       <span className="text-base"> Share</span>
                     </a>
                   </li>
