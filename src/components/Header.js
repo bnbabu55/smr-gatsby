@@ -89,6 +89,7 @@ const Header = () => {
                 <button
                   onClick={() => setMenuVisibility(!isMenuVisible)}
                   className="text-gray-500 hover:text-white focus:text-white focus:outline-none"
+                  aria-label="main menu"
                 >
                   <svg
                     className="fill-current h-6 w-6"

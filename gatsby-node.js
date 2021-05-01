@@ -89,7 +89,7 @@ const createIndividualPages = async ({ pages, gatsbyUtilities }) =>
       let tempFile = fs.existsSync(`./src/templates/pages/${page.slug}.js`)
         ? `./src/templates/pages/${page.slug}.js`
         : `./src/templates/page.js`
-      console.log("tempFile: " + tempFile)
+      console.log(`${page.title} page - template file: ${tempFile}`)
       page.slug !== "news" &&
         // createPage is an action passed to createPages
         // See https://www.gatsbyjs.com/docs/actions#createPage for more info
@@ -348,6 +348,7 @@ async function getPages({ graphql, reporter }) {
             id
             uri
             slug
+            title
           }
         }
       }

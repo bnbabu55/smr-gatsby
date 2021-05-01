@@ -1,49 +1,14 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
-import parse from "html-react-parser"
+import Seo from "../../components/Seo"
+import SocialMedia from "../../components/SocialMedia"
 
-const SocialMediaPage = () => {
-  const { bgImages, socialItems } = useStaticQuery(graphql`
-    query {
-      bgImages: allFile(
-        filter: {
-          name: { regex: "/social-media-management-info/" }
-          relativeDirectory: { eq: "social-media" }
-        }
-        sort: { fields: name, order: ASC }
-      ) {
-        nodes {
-          name
-          childImageSharp {
-            gatsbyImageData(
-              width: 1400
-              placeholder: TRACED_SVG
-              quality: 90
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-      socialItems: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/social-media/" } }
-        sort: { fields: fileAbsolutePath, order: ASC }
-      ) {
-        nodes {
-          id
-          html
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  `)
-
+const SocialMediaPage = ({ data: { page } }) => {
   return (
     <Layout>
+      <Seo title={page.title} />
       <section className="w-11/12 mx-auto py-10">
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
@@ -83,42 +48,7 @@ const SocialMediaPage = () => {
             </div>
           </div>
         </div>
-        <div>
-          <figure className="overflow-hidden w-full">
-            <GatsbyImage
-              image={bgImages.nodes[0].childImageSharp.gatsbyImageData}
-              alt="Social Media Info"
-            />
-          </figure>
-        </div>
-        <div className="about">
-          {socialItems.nodes.map((socialItem, i) => {
-            return (
-              <div
-                className={`mb-5 py-5 ${
-                  i % 2 === 0 ? "bg-themeGray-600" : "bg-white"
-                }`}
-                key={socialItem.id}
-                id={socialItem.id}
-              >
-                <div className="">
-                  <div
-                    className={`font-Lato text-left ${
-                      i % 2 === 0 ? "text-themeBlue-text" : "text-themeOrange"
-                    }`}
-                  >
-                    <h2 className=" text-3xl font-bold">
-                      {socialItem.frontmatter.title}
-                    </h2>
-                    <div className="text-lg py-5">
-                      {parse(socialItem.html)}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
+        <SocialMedia />
       </section>
       <FreeQuoteForm />
     </Layout>
@@ -126,3 +56,18 @@ const SocialMediaPage = () => {
 }
 
 export default SocialMediaPage
+
+export const pageQuery = graphql`
+  query SocMedPageById(
+    # these variables are passed in via createPage.pageContext in gatsby-node.js
+    $id: String!
+  ) {
+    # selecting the current post by id
+    page: wpPage(id: { eq: $id }) {
+      id
+      content
+      title
+      slug
+    }
+  }
+`

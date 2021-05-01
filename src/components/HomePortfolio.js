@@ -1,9 +1,11 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
 
 const HomePortfolio = () => {
-  const { portfolioImages } = useStaticQuery(graphql`
+  const { portfolioImages, csbgImage } = useStaticQuery(graphql`
     query {
       portfolioImages: allFile(
         filter: {
@@ -24,11 +26,43 @@ const HomePortfolio = () => {
           }
         }
       }
+      csbgImage: allFile(
+        filter: {
+          name: { regex: "/case-bg/" }
+          relativeDirectory: { eq: "home-portfolios" }
+        }
+        sort: { fields: name, order: ASC }
+      ) {
+        nodes {
+          name
+          childImageSharp {
+            gatsbyImageData(
+              width: 1920
+              placeholder: BLURRED
+              quality: 90
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
     }
   `)
 
+  const pluginImage = getImage(
+    csbgImage.nodes[0].childImageSharp.gatsbyImageData
+  )
+
+  const image = convertToBgImage(pluginImage)
+
   return (
-    <section id="HomePortfolio" className="bg-case-bg py-10 mx-auto">
+    <BackgroundImage
+      Tag="section"
+      // Spread bgImage into BackgroundImage:
+      {...image}
+      preserveStackingContext
+      id="HomePortfolio"
+      className="py-10 mx-auto"
+    >
       <div className="w-11/12 mx-auto text-white">
         <div className="w-full">
           <div className="flex justify-center items-center text-center py-10">
@@ -37,10 +71,11 @@ const HomePortfolio = () => {
                 to={`/search-marketing-and-website-design-portfolio.php`}
                 className="font-Montserrat text-themeOrange text-2xl"
               >
-                Website Design Services <br className="lg:hidden"/>
+                Website Design Services <br className="lg:hidden" />
                 <span className="font-BebasNeue text-white text-5xl px-8 hover:underline">
                   Portfolio
-                </span><br className="lg:hidden"/>
+                </span>
+                <br className="lg:hidden" />
                 <span>Search Marketing Programs</span>
               </Link>
             </h3>
@@ -137,7 +172,7 @@ const HomePortfolio = () => {
           </div>
         </div>
       </div>
-    </section>
+    </BackgroundImage>
   )
 }
 

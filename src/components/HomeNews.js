@@ -1,10 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
 
 const HomeNews = () => {
-  const { homeNews } = useStaticQuery(graphql`
+  const { homeNews, bgImage } = useStaticQuery(graphql`
     query HomeRecentNews {
       homeNews: allWpPost(sort: { fields: [date], order: DESC }, limit: 4) {
         nodes {
@@ -32,13 +34,43 @@ const HomeNews = () => {
           }
         }
       }
+      bgImage: allFile(
+        filter: {
+          name: { regex: "/news-bg/" }
+          relativeDirectory: { eq: "background" }
+        }
+        sort: { fields: name, order: ASC }
+      ) {
+        nodes {
+          name
+          childImageSharp {
+            gatsbyImageData(
+              width: 1400
+              placeholder: BLURRED
+              quality: 90
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
     }
   `)
 
   if (!homeNews?.nodes || homeNews.nodes === 0) return null
 
+  const pluginImage = getImage(bgImage.nodes[0].childImageSharp.gatsbyImageData)
+
+  const image = convertToBgImage(pluginImage)
+
   return (
-    <section className="home-news bg-news-bg" key="recent-post-wrapper">
+    <BackgroundImage
+      Tag="section"
+      // Spread bgImage into BackgroundImage:
+      {...image}
+      preserveStackingContext
+      id="HomePortfolio"
+      className="py-10 mx-auto home-news"
+    >
       <div className="w-11/12 text-center mx-auto py-10">
         <div className="text-center mx-auto my-5">
           <h2>
@@ -159,7 +191,7 @@ const HomeNews = () => {
           })}
         </ul>
       </div>
-    </section>
+    </BackgroundImage>
   )
 }
 

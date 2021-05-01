@@ -99,8 +99,8 @@ module.exports = {
         },
       },
       backgroundImage: theme => ({
-        "case-bg": "url('/images/case-bg.jpg')",
-        "news-bg": "url('/images/news-bg.jpg')",
+        // "case-bg": "url('/images/case-bg.jpg')",
+        // "news-bg": "url('/images/news-bg.jpg')",
       }),
     },
   },

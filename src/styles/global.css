@@ -6,6 +6,7 @@
     url(/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "MontserratSemiBold";
@@ -13,6 +14,7 @@
     url(/fonts/Montserrat/Montserrat-SemiBold.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "MontserratBold";
@@ -20,12 +22,14 @@
     url(/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoThin";
   src: local("LatoThin"), url(/fonts/Lato/Lato-Thin.ttf) format("truetype");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoThinItalic";
@@ -33,12 +37,14 @@
     url(/fonts/Lato/Lato-ThinItalic.ttf) format("truetype");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoLight";
   src: local("LatoLight"), url(/fonts/Lato/Lato-Light.ttf) format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoLightItalic";
@@ -46,24 +52,28 @@
     url(/fonts/Lato/Lato-LightItalic.ttf) format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Lato";
   src: local("Lato"), url(/fonts/Lato/Lato-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoItalic";
   src: local("LatoItalic"), url(/fonts/Lato/Lato-Italic.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoBold";
   src: local("LatoBold"), url(/fonts/Lato/Lato-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoBoldItalic";
@@ -71,12 +81,14 @@
     url(/fonts/Lato/Lato-BoldItalic.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoBlack";
   src: local("LatoBlack"), url(/fonts/Lato/Lato-Black.ttf) format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LatoBlackItalic";
@@ -84,6 +96,7 @@
     url(/fonts/Lato/Lato-BlackItalic.ttf) format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayThin";
@@ -91,6 +104,7 @@
     url(/fonts/Raleway/Raleway-Thin.ttf) format("truetype");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayExtraLight";
@@ -98,6 +112,7 @@
     url(/fonts/Raleway/Raleway-ExtraLight.ttf) format("truetype");
   font-weight: 200;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayLight";
@@ -105,6 +120,7 @@
     url(/fonts/Raleway/Raleway-Light.ttf) format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Raleway";
@@ -112,6 +128,7 @@
     url(/fonts/Raleway/Raleway-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayMedium";
@@ -119,6 +136,7 @@
     url(/fonts/Raleway/Raleway-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewaySemiBold";
@@ -126,6 +144,7 @@
     url(/fonts/Raleway/Raleway-SemiBold.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayBold";
@@ -133,6 +152,7 @@
     url(/fonts/Raleway/Raleway-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayExtraBold";
@@ -140,6 +160,7 @@
     url(/fonts/Raleway/Raleway-ExtraBold.ttf) format("truetype");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RalewayBlack";
@@ -147,6 +168,7 @@
     url(/fonts/Raleway/Raleway-Black.ttf) format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "BebasNeue";
@@ -157,6 +179,7 @@
     url(/fonts/BebasNeue-webfont.svg#BebasNeueRegular) format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: ScriptMTBold;
@@ -166,6 +189,7 @@
     url(/fonts/ScriptMTBold.svg#ScriptMTBold) format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: MonotypeCorsiva;
@@ -175,12 +199,14 @@
     url(/fonts/MonotypeCorsiva.svg#MonotypeCorsiva) format("svg");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: NothingYouCouldDo;
   src: url(/fonts/NothingYouCouldDo-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @tailwind base;
