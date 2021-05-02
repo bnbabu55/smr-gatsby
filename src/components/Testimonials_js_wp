@@ -10,10 +10,13 @@ SwiperCore.use([Navigation, Pagination, Autoplay])
 const Testimonials = () => {
   const { portfolios } = useStaticQuery(graphql`
     query {
-      portfolios: allWpPortfolio(limit: 100) {
+      portfolios: allWpPortfolio(
+        limit: 100
+        filter: {portfolioDetails: {testimonial: {elemMatch: {testimonial: {ne: "null"}}}}}
+      ) {
         nodes {
           id
-          Portfolio_Details {
+          portfolioDetails {
             testimonial {
               name
               position

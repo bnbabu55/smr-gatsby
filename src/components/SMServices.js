@@ -1,8 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import { BgImage, convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const SMServices = () => {
   const { smIcons, smSlides } = useStaticQuery(graphql`
@@ -47,12 +45,6 @@ const SMServices = () => {
       }
     }
   `)
-
-  const pluginImage = getImage(
-    smSlides.nodes[0].childImageSharp.gatsbyImageData
-  )
-  const bgImage = convertToBgImage(pluginImage)
-  // console.log("bgImage: " + JSON.stringify(bgImage, null, 2))
 
   function changeImage(e) {
     const newImageSrc = e.target.getAttribute("data-imagesrc")
@@ -255,31 +247,6 @@ const SMServices = () => {
                 .src
             }
           />
-
-          {/* <BgImage
-            className="w-full min-h-full text-white"
-            image={pluginImage}
-            // alt="test"
-          >
-          </BgImage> */}
-          {/* <GatsbyImage
-            id="smservice-large-image"
-            alt="Best Practice Search Marketing Programs"
-            image={smSlides.nodes[0].childImageSharp.gatsbyImageData}
-          />  */}
-          {/* <BackgroundImage
-            Tag="div"
-            // Spread bgImage into BackgroundImage:
-            {...bgImage}
-            preserveStackingContext
-          >
-            <div>
-              <GatsbyImage
-                image={pluginImage}
-                alt={"Best Practice Search Marketing Programs"}
-              />
-            </div>
-          </BackgroundImage> */}
         </div>
       </div>
     </section>

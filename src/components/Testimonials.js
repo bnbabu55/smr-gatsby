@@ -3,28 +3,38 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import parse from "html-react-parser"
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 const Testimonials = () => {
-  const { logoImages } = useStaticQuery(graphql`
+  const { testimonialSlides } = useStaticQuery(graphql`
     query {
-      logoImages: allFile(
+      testimonialSlides: allMarkdownRemark(
         filter: {
-          name: { regex: "/logo/" }
-          relativeDirectory: { eq: "testimonials" }
+          frontmatter: {
+            featuredImage: { relativeDirectory: { eq: "testimonials" } }
+          }
         }
-        sort: { fields: name, order: ASC }
+        sort: { fields: frontmatter___featuredImage___name, order: ASC }
       ) {
         nodes {
-          name
-          childImageSharp {
-            gatsbyImageData(
-              width: 200
-              placeholder: BLURRED
-              quality: 90
-              formats: [AUTO, WEBP, AVIF]
-            )
+          id
+          html
+          frontmatter {
+            title
+            memberRole
+            altTxt
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 200
+                  placeholder: BLURRED
+                  quality: 90
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
           }
         }
       }
@@ -81,237 +91,39 @@ const Testimonials = () => {
       >
         <div className="swiper-button-prev"></div>
         <div className="w-3/4">
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="northmill logo"
-                  image={logoImages.nodes[0].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “I’m no easy customer to please but Search Marketing Resource
-                knocked the ball out of the park. They created a site that
-                exceeded my expectations and is without a doubt, the finest in
-                our space. I couldn’t be happier.”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Donald S. Cosenza
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                Sr. Vice President
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="relative">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="SBEMP logo"
-                  image={logoImages.nodes[1].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                "Search Marketing Resource has been a tremendous help to our
-                inbound marketing and branding efforts. Its staff is
-                professional and very responsive to our SEO requests and design
-                needs"
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Shaun Murphy
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                Managing Partner
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="MFAS logo"
-                  image={logoImages.nodes[2].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “Our experience with Search Marketing Resource has been
-                exceptional. Their pricing is very competitive and their work is
-                first rate. The staff listened to us and met our needs, and
-                continues to be helpful”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Rena Fruchter
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                Artistic Director
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="CBS logo"
-                  image={logoImages.nodes[3].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “We needed to make a lot of hard decisions but the easy one was
-                contracting with Search Marketing Resource. Response time to our
-                needs was unmatched and we are thrilled with the finished
-                product”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Angela Storms
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                IT Manager
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="Tekwell logo"
-                  image={logoImages.nodes[4].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “Creating a web strategy in today's marketplace is unbelievably
-                complex. The experts at Search Marketing Resource was the best
-                decision we made. They helped us focus on the right goals and
-                delivered in record time”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Jamey Steffner
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                CEO
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="Adhesa Plates logo"
-                  image={logoImages.nodes[5].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “We have been very happy with the SEO work Search Marketing
-                Resource has done. Our organic rankings improved tremendously.
-                What’s most exciting is the large increase in quoting. And not
-                just local, but national!”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Craig Mitchell
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                President
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="Auto Awards logo"
-                  image={logoImages.nodes[6].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “Everyone! – I am on a plane heading to the big show. Thank you
-                so much for the great team effort this week. It is refreshing to
-                work with a group that reacts so quickly and efficiently”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Christopher Blum
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                President
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="w-full">
-            <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
-              <div
-                style={{
-                  border: "solid 5px #a63f00",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                }}
-                className="mb-12 shadow-themeShadow"
-              >
-                <GatsbyImage
-                  alt="Converged Communications logo"
-                  image={logoImages.nodes[7].childImageSharp.gatsbyImageData}
-                />
-              </div>
-              <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                “I wanted to provide your team with some positive feedback. We
-                have already noticed more people reaching out to us via our web
-                form and customers compliment the website as being very
-                informative”
-              </div>
-              <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                Steve Stephens
-              </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
-                General Manager
-              </div>
-            </div>
-          </SwiperSlide>
+          {testimonialSlides?.nodes?.map(testimonialSlide => {
+            return (
+              <SwiperSlide className="w-full" key={testimonialSlide.id}>
+                <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
+                  <div
+                    style={{
+                      border: "solid 5px #a63f00",
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                    }}
+                    className="mb-12 shadow-themeShadow"
+                  >
+                    <GatsbyImage
+                      alt={testimonialSlide?.frontmatter?.altTxt}
+                      image={
+                        testimonialSlide?.frontmatter?.featuredImage
+                          ?.childImageSharp?.gatsbyImageData
+                      }
+                    />
+                  </div>
+                  <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
+                    {parse(testimonialSlide?.html)}
+                  </div>
+                  <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
+                    {testimonialSlide?.frontmatter?.title}
+                  </div>
+                  <div className="font-Montserrat text-xl text-themeOrange">
+                    {testimonialSlide?.frontmatter?.memberRole}
+                  </div>
+                </div>
+              </SwiperSlide>
+            )
+          })}
         </div>
         <div className="swiper-button-next"></div>
       </Swiper>
