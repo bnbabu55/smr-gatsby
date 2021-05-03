@@ -923,6 +923,7 @@ export const FaqSection = () => {
                   page load times ahead of sites that resolve slowly. You can
                   test your site here{" "}
                   <a
+                    style={{ overflowWrap: "break-word" }}
                     className="text-themeBlue-text"
                     href="https://developers.google.com/speed/pagespeed/insights/"
                     target="_blank"
