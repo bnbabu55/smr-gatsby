@@ -50,7 +50,7 @@ const Header = () => {
         to={subMenuItem?.path}
         className="block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs"
         activeClassName="bg-themeBlue-200 text-themeOrange"
-        >
+      >
         {subMenuItem?.label}
       </Link>
     )
@@ -118,7 +118,7 @@ const Header = () => {
           </div>
         </div>
         {wpMenu.menuItems.nodes?.length > 0 ? (
-          <div
+          <ul
             className={`px-2 pb-4 pt-2 ${
               isMenuVisible ? "block" : "hidden"
             } md:flex md:p-0 md:leading-4`}
@@ -135,7 +135,7 @@ const Header = () => {
               }
 
               return (
-                <div key={menuItem?.id}>
+                <li key={menuItem?.id}>
                   <Link
                     to={pageAnchor}
                     className={`block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs
@@ -151,10 +151,10 @@ const Header = () => {
                   {menuItem.childItems.nodes.length > 0
                     ? renderNavDropdown(menuItem?.childItems?.nodes)
                     : null}
-                </div>
+                </li>
               )
             })}
-          </div>
+          </ul>
         ) : null}
       </div>
       <figure className="overflow-hidden z-10 absolute top-18 right-12 hidden lg:block">
