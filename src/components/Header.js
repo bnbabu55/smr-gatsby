@@ -48,8 +48,9 @@ const Header = () => {
       <Link
         key={subMenuItem?.id}
         to={subMenuItem?.path}
-        className="block px-2 py-1 text-white hover:bg-themeBlue-200 hover:text-themeOrange uppercase focus:bg-themeBlue-200 focus:text-themeOrange active:bg-themeBlue-200 active:text-themeOrange rounded font-MontserratSemiBold text-xs"
-      >
+        className="block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs"
+        activeClassName="bg-themeBlue-200 text-themeOrange"
+        >
         {subMenuItem?.label}
       </Link>
     )
@@ -136,12 +137,13 @@ const Header = () => {
                 <div key={menuItem?.id}>
                   <Link
                     to={pageAnchor}
-                    className={`block px-2 py-1 text-white hover:bg-themeBlue-200 hover:text-themeOrange uppercase focus:bg-themeBlue-200 focus:text-themeOrange active:bg-themeBlue-200 active:text-themeOrange rounded font-MontserratSemiBold text-xs
+                    className={`block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs
                         ${
                           menuItem.childItems.nodes.length > 0
                             ? "relative group"
                             : null
                         }`}
+                    activeClassName="bg-themeBlue-200 text-themeOrange"
                   >
                     {menuItem?.label}
                   </Link>
