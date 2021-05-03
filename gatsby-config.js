@@ -5,16 +5,20 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
- const path = require(`path`)
- const tailwindConfig = require("./tailwind.config.js")
+const path = require(`path`)
+const tailwindConfig = require("./tailwind.config.js")
 
 module.exports = {
+  siteMetadata: {
+    title: "SMR Gatsby Wordpress Project",
+    projUrl: process.env.PROJ_URL || `http://localhost:8000`,
+  }
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
-   */
+   */,
   plugins: [
     {
       /**
@@ -88,12 +92,12 @@ module.exports = {
       options: {
         postCssPlugins: [require(`tailwindcss`)(tailwindConfig)],
       },
-    }, 
-    
+    },
+
     // `gatsby-plugin-offline`,
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline
-     */ 
+     */
   ],
 }

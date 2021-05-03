@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export const FaqSection = () => {
-  const { faqImage } = useStaticQuery(graphql`
+  const { faqImage, mySiteUrl } = useStaticQuery(graphql`
     query FaqQuery {
       faqImage: allFile(
         filter: { relativeDirectory: { eq: "faq" } }
@@ -21,6 +21,11 @@ export const FaqSection = () => {
               formats: [AUTO, WEBP, AVIF]
             )
           }
+        }
+      }
+      mySiteUrl: site {
+        siteMetadata {
+          projUrl
         }
       }
     }
@@ -946,7 +951,7 @@ export const FaqSection = () => {
                   <Link
                     to="/#inline2"
                     className="text-themeBlue-text"
-                  >{` ${window.location.href}/#inline2`}</Link>
+                  >{` ${mySiteUrl?.siteMetadata?.projUrl}/#inline2`}</Link>
                   .
                 </p>
               </Disclosure.Panel>
