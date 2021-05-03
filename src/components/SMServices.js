@@ -102,7 +102,7 @@ const SMServices = () => {
           <div className="w-3/4">
             <h3>
               <a
-                className="text-themeOrange text-xl font-Raleway"
+                className="text-themeOrange text-xl font-RalewayBold"
                 href="search-marketing-programs.php"
                 data-imagesrc={
                   smSlides.nodes[0].childImageSharp.gatsbyImageData.images
@@ -144,7 +144,7 @@ const SMServices = () => {
                   smSlides.nodes[1].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-Raleway"
+                className="text-themeOrange text-xl font-RalewayBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -181,7 +181,7 @@ const SMServices = () => {
                   smSlides.nodes[2].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-Raleway"
+                className="text-themeOrange text-xl font-RalewayBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -218,7 +218,7 @@ const SMServices = () => {
                   smSlides.nodes[3].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-Raleway"
+                className="text-themeOrange text-xl font-RalewayBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
