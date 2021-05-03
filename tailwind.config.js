@@ -103,6 +103,10 @@ module.exports = {
         // "case-bg": "url('/images/case-bg.jpg')",
         // "news-bg": "url('/images/news-bg.jpg')",
       }),
+      listStyleType: {
+        square: "square",
+        roman: "upper-roman",
+      },
     },
   },
   variants: {
