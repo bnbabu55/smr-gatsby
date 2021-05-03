@@ -49,7 +49,7 @@ const RecentPosts = () => {
           renderHeader = false
         }
         return (
-          <>
+          <div key={post.id + "-title"}>
             {renderHeader && (
               <h3
                 key={post.id + "-title"}
@@ -116,7 +116,7 @@ const RecentPosts = () => {
                 </article>
               </li>
             </ul>
-          </>
+          </div>
         )
       })}
     </div>

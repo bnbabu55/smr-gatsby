@@ -8,7 +8,7 @@ const Layout = ({ isHomePage, children }) => {
     <div data-is-root-path={isHomePage} className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1 relative">
         {children}
 
         <ContactForm />
