@@ -34,7 +34,7 @@ const Footer = () => {
       <nav className="w-full bg-themeBlue-200 text-white font-Montserrat text-2xl py-4">
         <div className="w-11/12 mx-auto md:flex md:justify-evenly md:items-center md:px-4 md:py-3">
           {wpMenu?.menuItems?.nodes?.length > 0 ? (
-            <ul className="px-2 pb-4 pt-2 md:flex md:p-0 md:divide-x md:divide-white md:leading-4">
+            <div className="px-2 pb-4 pt-2 md:flex md:p-0 md:leading-4">
               {wpMenu?.menuItems?.nodes.map(menu => {
                 const pathVar = menu?.path
                 const anchorPosition = pathVar.indexOf("#")
@@ -47,17 +47,17 @@ const Footer = () => {
                 }
 
                 return (
-                  <li key={menu?.id}>
-                    <Link
-                      to={pageAnchor}
-                      className="block px-5 py-1 text-white hover:bg-themeGreen hover:text-themeOrange active:text-themeOrange focus:text-themeOrange rounded font-Montserrat text-lg"
-                    >
-                      {menu?.label}
-                    </Link>
-                  </li>
+                  <Link
+                    key={menu?.id}
+                    to={pageAnchor}
+                    className="block px-5 py-1 text-white rounded font-Montserrat text-lg"
+                    activeClassName="text-themeOrange"
+                  >
+                    {menu?.label}
+                  </Link>
                 )
               })}
-            </ul>
+            </div>
           ) : null}
         </div>
       </nav>
