@@ -4,7 +4,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  mode: "jit",
+  // mode: "jit",
   purge: {
     preserveHtmlElements: true,
     mode: "layers",
@@ -57,7 +57,8 @@ module.exports = {
       },
       colors: {
         themeYellow: "#fdde03",
-        themeOrange: "#ffa800",
+        themeOrangeLt: "#ffa800",
+        themeOrange: "hsl(27.5, 100%, 50%)",
         themeBlue: {
           100: "#00497a",
           200: "#0476ac",

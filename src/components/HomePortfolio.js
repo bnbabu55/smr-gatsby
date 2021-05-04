@@ -69,7 +69,7 @@ const HomePortfolio = () => {
             <h2>
               <Link
                 to={`/search-marketing-and-website-design-portfolio.php`}
-                className="font-Montserrat text-themeOrange text-2xl"
+                className="font-MontserratSemiBold text-themeOrangeLt text-2xl"
               >
                 Website Design Services <br className="lg:hidden" />
                 <span className="font-BebasNeue text-white text-5xl px-8 hover:underline">
