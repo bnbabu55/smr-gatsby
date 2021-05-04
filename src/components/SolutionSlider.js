@@ -87,7 +87,7 @@ const SolutionSlider = () => {
                     {parse(solutionSlide.html)}
                   </div>
                   <Link
-                    to={`/${solutionSlide.linkedPage}`}
+                    to={`/${solutionSlide.frontmatter.linkedPage}`}
                     className="bg-themeOrange text-white py-2 px-3 lg:px-8 font-Lato text-sm lg:text-xl"
                   >
                     Learn More
