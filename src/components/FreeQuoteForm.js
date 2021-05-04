@@ -73,9 +73,9 @@ const FreeQuoteForm = () => {
                 </p>
                 <div className="flex justify-around text-left">
                   <ul className="font-Lato text-lg list-disc">
-                    <li>Assigned ProjecDesigner</li>
-                    <li>Development Teat Manager</li>
-                    <li>Senior Graphic m Lead</li>
+                    <li>Assigned Project Designer</li>
+                    <li>Development Test Manager</li>
+                    <li>Senior Graphics Lead</li>
                     <li>Site Navigation Approval</li>
                     <li>Mobile Friendly Design</li>
                     <li>News & Events (Blog)</li>
