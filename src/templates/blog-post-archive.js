@@ -157,18 +157,20 @@ const BlogIndex = ({
           }}
         >
           {!isFirst && (
-            <Link
-              to={previousPagePath}
-              rel="prev"
-              className="text-themeBlue-200 hover:text-themeBlue-100"
-              style={{
-                marginTop: "0.1rem",
-                marginBottom: "0.1rem",
-                padding: "0.5rem",
-              }}
-            >
-              {"<< Prev"}
-            </Link>
+            <li>
+              <Link
+                to={previousPagePath}
+                rel="prev"
+                className="text-themeBlue-200 hover:text-themeBlue-100"
+                style={{
+                  marginTop: "0.1rem",
+                  marginBottom: "0.1rem",
+                  padding: "0.5rem",
+                }}
+              >
+                {"<< Prev"}
+              </Link>{" "}
+            </li>
           )}
           {Array.from({ length: totalPages }, (_, i) => (
             <li
@@ -178,9 +180,7 @@ const BlogIndex = ({
               }}
             >
               <Link
-                to={`${
-                  i === 0 ? currentPageBase : currentPageBase + (i + 1)
-                }`}
+                to={`${i === 0 ? currentPageBase : currentPageBase + (i + 1)}`}
                 className={`${
                   i + 1 === currentPage
                     ? "text-white bg-themeBlue-200 hover:bg-themeBlue-100"
@@ -199,18 +199,20 @@ const BlogIndex = ({
             </li>
           ))}
           {!isLast && (
-            <Link
-              to={nextPagePath}
-              rel="next"
-              className="text-themeBlue-200 hover:text-themeBlue-100"
-              style={{
-                marginTop: "0.1rem",
-                marginBottom: "0.1rem",
-                padding: "0.5rem",
-              }}
-            >
-              {"Next >>"}
-            </Link>
+            <li>
+              <Link
+                to={nextPagePath}
+                rel="next"
+                className="text-themeBlue-200 hover:text-themeBlue-100"
+                style={{
+                  marginTop: "0.1rem",
+                  marginBottom: "0.1rem",
+                  padding: "0.5rem",
+                }}
+              >
+                {"Next >>"}
+              </Link>
+            </li>
           )}
         </ul>
       </div>
