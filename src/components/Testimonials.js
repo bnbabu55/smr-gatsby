@@ -53,7 +53,7 @@ const Testimonials = () => {
             Testimonials
             <span
               key="testi-span"
-              className="font-Lato text-themeOrange text-base lg:text-xl pl-5 py-0 capitalize"
+              className="font-Lato text-themeOrange text-base lg:text-xl pl-5 py-0 lowercase"
             >
               read more...
             </span>

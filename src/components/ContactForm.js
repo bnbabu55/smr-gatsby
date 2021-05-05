@@ -20,7 +20,7 @@ const ContactForm = () => {
           </p>
         </div>
         <div className="contact-content w-full flex flex-col lg:flex-row lg:gap-x-16 mx-auto bg-white my-5">
-          <div className="w-full contact-wrapper mx-auto border border-black">
+          <div className="w-full contact-wrapper mx-auto border border-black rounded-lg">
             <form className="text-black contact-form flex flex-col justify-center align-center m-10 font-Lato text-base">
               <div className="font-Montserrat text-xs text-themeOrange">
                 Required *
@@ -28,7 +28,7 @@ const ContactForm = () => {
               <ul className="grid gap-3 grid-cols-2">
                 <li className="col-start-1 col-end-3 lg:col-start-1 lg:col-end-2">
                   <input
-                    className="w-full border border-black p-3"
+                    className="w-full border border-black p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                     type="tel"
                     placeholder="Company"
                     name="company"
@@ -37,7 +37,7 @@ const ContactForm = () => {
                 </li>
                 <li className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-3">
                   <input
-                    className="w-full border border-black p-3"
+                    className="w-full border border-black p-3  rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                     type="email"
                     placeholder="Email"
                     name="email"
@@ -46,7 +46,7 @@ const ContactForm = () => {
                 </li>
                 <li className="col-start-1 col-end-3 lg:col-start-1 lg:col-end-2">
                   <input
-                    className="w-full border border-black p-3"
+                    className="w-full border border-black p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                     type="text"
                     placeholder="First"
                     name="firstname"
@@ -55,7 +55,7 @@ const ContactForm = () => {
                 </li>
                 <li className="col-start-1 col-end-3 lg:col-start-2 lg:col-end-3">
                   <input
-                    className="w-full border border-black p-3"
+                    className="w-full border border-black p-3  rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                     type="text"
                     placeholder="Last"
                     name="lastname"
@@ -64,7 +64,7 @@ const ContactForm = () => {
                 </li>
                 <li className="col-span-2">
                   <textarea
-                    className="w-full border border-black p-3"
+                    className="w-full border border-black p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                     type="textarea"
                     placeholder="Message"
                     rows="6"
@@ -73,7 +73,7 @@ const ContactForm = () => {
                   />
                 </li>
                 <li className="col-span-2">
-                  <button className="w-full text-white uppercase bg-themeBlue-200 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5">
+                  <button className="w-full text-white uppercase bg-themeOrange rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5">
                     Submit
                   </button>
                 </li>

@@ -87,6 +87,7 @@ module.exports = {
       boxShadow: {
         themeShadow: "0 0px 20px rgba(0, 0, 0, 0.72)",
       },
+      ringColor: ["hover", "active", "focus"],
       typography: {
         DEFAULT: {
           css: {

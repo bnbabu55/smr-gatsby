@@ -71,14 +71,14 @@ const HomeNews = () => {
       id="HomePortfolio"
       className="py-10 mx-auto home-news"
     >
-      <div className="w-11/12 text-center mx-auto py-10">
-        <div className="text-center mx-auto my-5">
+      <div className="w-11/12 text-center mx-auto py-5">
+        <div className="text-center mx-auto mb-5">
           <h2>
             <Link
               to="/news"
               className="text-white font-BebasNeue text-5xl hover:underline"
             >
-              News <span className="text-lg lowercase">read more...</span>
+              News <span className="text-lg lowercase"> read more...</span>
             </Link>
           </h2>
 
