@@ -4,9 +4,9 @@ const FreeAuditForm = () => {
   return (
     <section id="freeauditform" className="pt-5 pb-10 border-b border-gray-300">
       <div className="top_content flex flex-col justify-center items-center">
-        <h2 className="pt-8 text-themeBlue-text text-2xl text-center font-MontserratBold pb-5">
+        <h3 className="pt-8 text-themeBlue-text text-2xl text-center font-MontserratBold pb-5">
           Is Your Website Search Engine Optimized? Get a Free Website SEO Audit!
-        </h2>
+        </h3>
         <div className="w-11/12 bg-themeBlue-200 mx-auto">
           <form className="contact-form m-10 font-Lato text-base">
             <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">

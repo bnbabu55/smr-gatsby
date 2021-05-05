@@ -128,12 +128,12 @@ const BlogIndex = ({
                     name="subemail"
                     placeholder="Your Email Address:"
                     required
-                    className="w-full text-sm border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="w-full text-sm border-gray-300 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-indigo-600 hover:bg-indigo-800 rounded py-2 mt-3 shadow-md"
+                  className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-themeBlue-200 hover:bg-themeBlue-100 rounded py-2 mt-3 shadow-md"
                   aria-label="submit"
                 >
                   Subscribe

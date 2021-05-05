@@ -48,12 +48,12 @@ const Testimonials = () => {
           <Link
             key="testi-link"
             to="#"
-            className="font-BebasNeue text-themeBlue-text text-5xl lg:text-7xl"
+            className="font-BebasNeue text-themeBlue-text text-5xl"
           >
             Testimonials
             <span
               key="testi-span"
-              className="font-Lato text-themeOrange text-base lg:text-2xl pl-5 py-0"
+              className="font-Lato text-themeOrange text-base lg:text-xl pl-5 py-0 capitalize"
             >
               read more...
             </span>

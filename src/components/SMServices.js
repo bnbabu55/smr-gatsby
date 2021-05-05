@@ -70,14 +70,14 @@ const SMServices = () => {
     <section id="sm-services" className="pt-5 pb-10 border-b border-gray-300">
       <div className="wrapper grid gap-3 grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto">
         <div className="text-center col-start-1 col-end-2 lg:col-end-4 row-start-1 row-end-2">
-          <h1 className="pt-8">
+          <h2 className="pt-8">
             <a
               href="search-marketing-services.php"
               className="text-themeOrange text-5xl font-BebasNeue"
             >
               Search Marketing SERVICES
             </a>
-          </h1>
+          </h2>
           <div className="service_top_text py-5">
             <h2 className="text-themeBlue-text text-2xl font-Montserrat uppercase text-center">
               Industry Leading Digital Marketing Services
@@ -102,7 +102,7 @@ const SMServices = () => {
           <div className="w-3/4">
             <h3>
               <a
-                className="text-themeOrange text-xl font-RalewayBold"
+                className="text-themeOrange text-xl font-RalewaySemiBold"
                 href="search-marketing-programs.php"
                 data-imagesrc={
                   smSlides.nodes[0].childImageSharp.gatsbyImageData.images
@@ -144,7 +144,7 @@ const SMServices = () => {
                   smSlides.nodes[1].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewayBold"
+                className="text-themeOrange text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -181,7 +181,7 @@ const SMServices = () => {
                   smSlides.nodes[2].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewayBold"
+                className="text-themeOrange text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -218,7 +218,7 @@ const SMServices = () => {
                   smSlides.nodes[3].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewayBold"
+                className="text-themeOrange text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >

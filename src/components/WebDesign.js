@@ -65,14 +65,14 @@ const WebDesign = () => {
       </div>
       <div className="wrapper w-full mx-auto lg:w-6/12">
         <div className="top_content flex flex-col justify-center items-center text-center">
-          <h1 className="py-5">
+          <h3 className="py-5">
             <a
               href="search-marketing-services.php"
               className="text-themeBlue-text text-3xl font-Montserrat uppercase"
             >
               Web Design Services
             </a>
-          </h1>
+          </h3>
           <p className="text-themeGray-200 text-lg font-Lato pb-10 text-center">
             Award winning search optimized website development services,
             professionally designed with industry leading graphics and
