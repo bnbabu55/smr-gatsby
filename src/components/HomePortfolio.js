@@ -65,7 +65,7 @@ const HomePortfolio = () => {
     >
       <div className="w-11/12 mx-auto text-white">
         <div className="w-full">
-          <div className="flex justify-center items-center text-center py-10">
+          <div className="flex justify-center items-center text-center pb-5">
             <h2>
               <Link
                 to={`/search-marketing-and-website-design-portfolio.php`}
