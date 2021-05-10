@@ -21,7 +21,10 @@ const TeamSlider = () => {
   `)
 
   return (
-    <section id="TeamSlider" className="bg-white text-themeGray-300 py-10 w-11/12 mx-auto">
+    <section
+      id="TeamSlider"
+      className="bg-white text-themeGray-300 py-10 w-11/12 mx-auto"
+    >
       <div className="mx-auto text-center">
         <h2>
           <Link
@@ -71,30 +74,28 @@ const TeamSlider = () => {
         <div className="w-3/4">
           {teamMembers.nodes.map(teamMember => {
             return (
-              <SwiperSlide className="w-full text-center" key={teamMember.id}>
-                <div
-                  key={teamMember.id + "slide-wrapper"}
-                  className="w-full flex flex-col p-5"
-                >
-                  <div className="font-Raleway text-2xl uppercase text-themeOrange pb-1">
-                    {teamMember.title}
-                  </div>
-                  <div className="font-Raleway text-base pb-5">
-                    {teamMember.memberRole}
-                  </div>
-                  <div
-                    key={teamMember.id + "content"}
-                    className="mb-5 text-base italic line-clamp-3"
-                  >
-                    {parse(teamMember.content)}
-                  </div>
-                  <Link
-                    to={`/about`}
-                    className="text-themeOrange py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
-                  >
-                    Read
-                  </Link>
+              <SwiperSlide
+                className="w-full text-center flex flex-col p-5"
+                key={teamMember.id}
+              >
+                <div className="font-Raleway text-2xl uppercase text-themeOrange pb-1">
+                  {teamMember.title}
                 </div>
+                <div className="font-Raleway text-base pb-5">
+                  {teamMember.memberRole}
+                </div>
+                <div
+                  key={teamMember.id + "content"}
+                  className="mb-5 text-base italic line-clamp-3"
+                >
+                  {parse(teamMember.content)}
+                </div>
+                <Link
+                  to={`/about`}
+                  className="text-themeOrange py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
+                >
+                  Read
+                </Link>
               </SwiperSlide>
             )
           })}

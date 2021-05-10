@@ -93,8 +93,7 @@ const Testimonials = () => {
         <div className="w-3/4">
           {testimonialSlides?.nodes?.map(testimonialSlide => {
             return (
-              <SwiperSlide className="w-full" key={testimonialSlide.id}>
-                <div className="flex flex-col justify-center items-center border-themeGray-50 border-4 p-5">
+              <SwiperSlide className="w-full flex flex-col justify-center items-center border-themeGray-50 border-4 p-5" key={testimonialSlide.id}>
                   <div
                     style={{
                       border: "solid 5px #a63f00",
@@ -120,7 +119,6 @@ const Testimonials = () => {
                   <div className="font-Montserrat text-xl text-themeOrange">
                     {testimonialSlide?.frontmatter?.memberRole}
                   </div>
-                </div>
               </SwiperSlide>
             )
           })}

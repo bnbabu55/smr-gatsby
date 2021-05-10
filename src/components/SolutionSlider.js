@@ -37,7 +37,10 @@ const SolutionSlider = () => {
   `)
 
   return (
-    <section id="SolutionSlider" className="bg-white text-themeGray-300 py-10 w-full mx-auto">
+    <section
+      id="SolutionSlider"
+      className="bg-white text-themeGray-300 py-10 w-full mx-auto"
+    >
       <Swiper
         className="mx-auto w-full"
         autoplay
@@ -59,40 +62,38 @@ const SolutionSlider = () => {
       >
         {solutionSlides.nodes.map(solutionSlide => {
           return (
-            <SwiperSlide className="w-full" key={solutionSlide.id}>
+            <SwiperSlide
+              className="w-full flex flex-col lg:flex-row p-5 lg:border-l lg:border-gray-400"
+              key={solutionSlide.id}
+            >
               <div
-                key={solutionSlide.id + "slide-wrapper"}
-                className="w-full flex flex-col lg:flex-row p-5 lg:border-l lg:border-gray-400"
+                key={solutionSlide.id + "image-wrapper"}
+                className="w-full lg:w-2/5"
               >
+                <GatsbyImage
+                  alt={solutionSlide.frontmatter.altTxt}
+                  image={
+                    solutionSlide.frontmatter.featuredImage.childImageSharp
+                      .gatsbyImageData
+                  }
+                />
+              </div>
+              <div className="w-full lg:w-3/5">
+                <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
+                  {solutionSlide.frontmatter.title}
+                </div>
                 <div
-                  key={solutionSlide.id + "image-wrapper"}
-                  className="w-full lg:w-2/5"
+                  key={solutionSlide.id + "content"}
+                  className="mb-5 text-xl"
                 >
-                  <GatsbyImage
-                    alt={solutionSlide.frontmatter.altTxt}
-                    image={
-                      solutionSlide.frontmatter.featuredImage.childImageSharp
-                        .gatsbyImageData
-                    }
-                  />
+                  {parse(solutionSlide.html)}
                 </div>
-                <div className="w-full lg:w-3/5">
-                  <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
-                    {solutionSlide.frontmatter.title}
-                  </div>
-                  <div
-                    key={solutionSlide.id + "content"}
-                    className="mb-5 text-xl"
-                  >
-                    {parse(solutionSlide.html)}
-                  </div>
-                  <Link
-                    to={`/${solutionSlide.frontmatter.linkedPage}`}
-                    className="bg-themeOrange text-white py-2 px-3 lg:px-8 font-Lato text-sm lg:text-xl"
-                  >
-                    Learn More
-                  </Link>
-                </div>
+                <Link
+                  to={`/${solutionSlide.frontmatter.linkedPage}`}
+                  className="bg-themeOrange text-white py-2 px-3 lg:px-8 font-Lato text-sm lg:text-xl"
+                >
+                  Learn More
+                </Link>
               </div>
             </SwiperSlide>
           )
