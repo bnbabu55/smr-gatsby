@@ -12,14 +12,14 @@ module.exports = {
   siteMetadata: {
     title: "SMR Gatsby Wordpress Project",
     projUrl: process.env.PROJ_URL || `http://localhost:8000`,
-  }
+  },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
-   */,
-  plugins: [
+   */ plugins: [
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby

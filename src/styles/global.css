@@ -2,208 +2,188 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: local("Montserrat"),
-    url(/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
+  src: url(/fonts/Montserrat/montserrat-v15-latin-ext_latin-regular.eot);
+  src: local(""),
+    url("/fonts/montserrat-v15-latin-ext_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/montserrat-v15-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/montserrat-v15-latin-ext_latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/montserrat-v15-latin-ext_latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/montserrat-v15-latin-ext_latin-regular.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MontserratSemiBold";
-  src: local("MontserratSemiBold"),
-    url(/fonts/Montserrat/Montserrat-SemiBold.ttf) format("truetype");
+  src: url("/fonts/montserrat-v15-latin-ext_latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/montserrat-v15-latin-ext_latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/montserrat-v15-latin-ext_latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/montserrat-v15-latin-ext_latin-600.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/montserrat-v15-latin-ext_latin-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/montserrat-v15-latin-ext_latin-600.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MontserratBold";
-  src: local("MontserratBold"),
-    url(/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+  src: url("/fonts/montserrat-v15-latin-ext_latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/montserrat-v15-latin-ext_latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/montserrat-v15-latin-ext_latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/montserrat-v15-latin-ext_latin-700.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/montserrat-v15-latin-ext_latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/montserrat-v15-latin-ext_latin-700.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "LatoThin";
-  src: local("LatoThin"), url(/fonts/Lato/Lato-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoThinItalic";
-  src: local("LatoThinItalic"),
-    url(/fonts/Lato/Lato-ThinItalic.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "LatoLight";
-  src: local("LatoLight"), url(/fonts/Lato/Lato-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoLightItalic";
-  src: local("LatoLightItalic"),
-    url(/fonts/Lato/Lato-LightItalic.ttf) format("truetype");
+  src: url("/fonts/lato-v17-latin-ext_latin-300.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/lato-v17-latin-ext_latin-300.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/lato-v17-latin-ext_latin-300.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/lato-v17-latin-ext_latin-300.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/lato-v17-latin-ext_latin-300.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/lato-v17-latin-ext_latin-300.svg#Lato") format("svg"); /* Legacy iOS */
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), url(/fonts/Lato/Lato-Regular.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoItalic";
-  src: local("LatoItalic"), url(/fonts/Lato/Lato-Italic.ttf) format("truetype");
+  src: url("/fonts/lato-v17-latin-ext_latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/lato-v17-latin-ext_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/lato-v17-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/lato-v17-latin-ext_latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/lato-v17-latin-ext_latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/lato-v17-latin-ext_latin-regular.svg#Lato") format("svg"); /* Legacy iOS */
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "LatoBold";
-  src: local("LatoBold"), url(/fonts/Lato/Lato-Bold.ttf) format("truetype");
+  src: url("/fonts/lato-v17-latin-ext_latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/lato-v17-latin-ext_latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/lato-v17-latin-ext_latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("/fonts/lato-v17-latin-ext_latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/fonts/lato-v17-latin-ext_latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/lato-v17-latin-ext_latin-700.svg#Lato") format("svg"); /* Legacy iOS */
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoBoldItalic";
-  src: local("LatoBoldItalic"),
-    url(/fonts/Lato/Lato-BoldItalic.ttf) format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoBlack";
-  src: local("LatoBlack"), url(/fonts/Lato/Lato-Black.ttf) format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "LatoBlackItalic";
-  src: local("LatoBlackItalic"),
-    url(/fonts/Lato/Lato-BlackItalic.ttf) format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewayThin";
-  src: local("RalewayThin"),
-    url(/fonts/Raleway/Raleway-Thin.ttf) format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewayExtraLight";
-  src: local("RalewayExtraLight"),
-    url(/fonts/Raleway/Raleway-ExtraLight.ttf) format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewayLight";
-  src: local("RalewayLight"),
-    url(/fonts/Raleway/Raleway-Light.ttf) format("truetype");
-  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Raleway";
-  src: local("Raleway"),
-    url(/fonts/Raleway/Raleway-Regular.ttf) format("truetype");
+  src: url("/fonts/raleway-v19-latin-ext_latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/raleway-v19-latin-ext_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/raleway-v19-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/raleway-v19-latin-ext_latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/raleway-v19-latin-ext_latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/raleway-v19-latin-ext_latin-regular.svg#Raleway")
+      format("svg"); /* Legacy iOS */
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewayMedium";
-  src: local("RalewayMedium"),
-    url(/fonts/Raleway/Raleway-Medium.ttf) format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewaySemiBold";
-  src: local("RalewaySemiBold"),
-    url(/fonts/Raleway/Raleway-SemiBold.ttf) format("truetype");
-  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "RalewayBold";
-  src: local("RalewayBold"),
-    url(/fonts/Raleway/Raleway-Bold.ttf) format("truetype");
+  src: url("/fonts/raleway-v19-latin-ext_latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/raleway-v19-latin-ext_latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/raleway-v19-latin-ext_latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/raleway-v19-latin-ext_latin-700.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/raleway-v19-latin-ext_latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/raleway-v19-latin-ext_latin-700.svg#Raleway") format("svg"); /* Legacy iOS */
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "RalewayExtraBold";
-  src: local("RalewayExtraBold"),
-    url(/fonts/Raleway/Raleway-ExtraBold.ttf) format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "RalewayBlack";
-  src: local("RalewayBlack"),
-    url(/fonts/Raleway/Raleway-Black.ttf) format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "BebasNeue";
-  src: url(/fonts/BebasNeue-webfont.eot);
-  src: url(/fonts/BebasNeue-webfont.eot?#iefix) format("embedded-opentype"),
-    url(/fonts/BebasNeue-webfont.woff) format("woff"),
-    url(/fonts/BebasNeue-webfont.ttf) format("truetype"),
-    url(/fonts/BebasNeue-webfont.svg#BebasNeueRegular) format("svg");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: ScriptMTBold;
-  src: url(/fonts/ScriptMTBold.eot?#iefix) format("embedded-opentype"),
-    url(/fonts/ScriptMTBold.woff) format("woff"),
-    url(/fonts/ScriptMTBold.ttf) format("truetype"),
-    url(/fonts/ScriptMTBold.svg#ScriptMTBold) format("svg");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: MonotypeCorsiva;
-  src: url(/fonts/MonotypeCorsiva.eot?#iefix) format("embedded-opentype"),
-    url(/fonts/MonotypeCorsiva.woff) format("woff"),
-    url(/fonts/MonotypeCorsiva.ttf) format("truetype"),
-    url(/fonts/MonotypeCorsiva.svg#MonotypeCorsiva) format("svg");
+  src: url("/fonts/bebas-neue-v2-latin-ext_latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/bebas-neue-v2-latin-ext_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/bebas-neue-v2-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/bebas-neue-v2-latin-ext_latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/bebas-neue-v2-latin-ext_latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/bebas-neue-v2-latin-ext_latin-regular.svg#BebasNeue")
+      format("svg"); /* Legacy iOS */
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: NothingYouCouldDo;
-  src: url(/fonts/NothingYouCouldDo-Regular.ttf) format("truetype");
+  src: url("/fonts/nothing-you-could-do-v10-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("/fonts/nothing-you-could-do-v10-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/nothing-you-could-do-v10-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/nothing-you-could-do-v10-latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/nothing-you-could-do-v10-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/nothing-you-could-do-v10-latin-regular.svg#NothingYouCouldDo")
+      format("svg"); /* Legacy iOS */
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -215,14 +195,14 @@
 
 a,
 body {
-  color: #555555;
+  color: #333333;
   font: 400 22px/30px Lato, Arial, Helvetica, sans-serif;
   -webkit-text-size-adjust: none;
 }
 
 .main-content,
 .sidebar {
-  padding: .95em;
+  padding: 0.95em;
 }
 
 .all-blogs,
