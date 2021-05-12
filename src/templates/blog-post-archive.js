@@ -20,11 +20,12 @@ const BlogIndex = ({
   const posts = data.allWpPost.nodes
   const isFirst = currentPage === 1
   const isLast = currentPage === totalPages
+  const seoData = data.archiveSeo.seo
 
   if (!posts.length) {
     return (
       <Layout>
-        <Seo title="Blog Archive" />
+        <Seo seoData={seoData} />
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
           appear here!
@@ -35,7 +36,7 @@ const BlogIndex = ({
 
   return (
     <Layout>
-      <Seo title="All posts" />
+      <Seo seoData={seoData} />
 
       <section className="text-gray-600 my-16">
         <div>
@@ -256,6 +257,12 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    archiveSeo: wpPage(slug: { eq: "news" }) {
+      seo {
+        fullHead
+        schemaDetails
       }
     }
   }

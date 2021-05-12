@@ -155,32 +155,27 @@ const HomeNews = () => {
                   <li
                     key={post.id + "-body-li"}
                     className="justify-center items-center lg:justify-start lg:items-start text-left ml-1 mb-2"
+                    itemScope
+                    itemType="http://schema.org/Article"
                   >
-                    <article
-                      key={post.id + "-body-article"}
-                      className="post-list-item"
-                      itemScope
-                      itemType="http://schema.org/Article"
+                    <Link
+                      to={`/news${post.uri}`}
+                      itemProp="url"
+                      key={post.id + "-body-link"}
+                      className="w-full font-Montserrat text-xl uppercase text-themeOrange"
                     >
-                      <Link
-                        to={`/news${post.uri}`}
-                        itemProp="url"
-                        key={post.id + "-body-link"}
-                        className="w-full font-Montserrat text-xl uppercase text-themeOrange"
-                      >
-                        {parse(post.title)}
-                      </Link>
-                      <section
-                        key={post.id + "-body-section"}
-                        itemProp="description"
-                        className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
-                      >
-                        {parse(post.excerpt, {
-                          replace: ({ attribs }) =>
-                            attribs && attribs.class === "read-more" && <></>,
-                        })}
-                      </section>
-                    </article>
+                      {parse(post.title)}
+                    </Link>
+                    <section
+                      key={post.id + "-body-section"}
+                      itemProp="description"
+                      className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
+                    >
+                      {parse(post.excerpt, {
+                        replace: ({ attribs }) =>
+                          attribs && attribs.class === "read-more" && <></>,
+                      })}
+                    </section>
                   </li>
                 </ul>
               </li>

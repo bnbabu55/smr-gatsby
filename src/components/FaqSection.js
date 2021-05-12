@@ -25,7 +25,7 @@ export const FaqSection = () => {
       }
       mySiteUrl: site {
         siteMetadata {
-          projUrl
+          siteUrl
         }
       }
     }
@@ -1191,7 +1191,7 @@ export const FaqSection = () => {
                     <Link
                       to="/#inline2"
                       className="text-themeBlue-text"
-                    >{` ${mySiteUrl?.siteMetadata?.projUrl}/#inline2`}</Link>
+                    >{` ${mySiteUrl?.siteMetadata?.siteUrl}/#inline2`}</Link>
                     .
                   </p>
                 </Disclosure.Panel>

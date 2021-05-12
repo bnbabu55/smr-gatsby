@@ -62,7 +62,7 @@ const HeroBanner = () => {
                     bannerSlide?.frontmatter?.featuredImage?.childImageSharp
                       ?.gatsbyImageData
                   }
-                  alt={bannerSlide?.frontmatter?.altTxt}
+                  alt="Home slider 1"
                 />
               </figure>
               <div className={`${bannerSlide?.frontmatter?.titleStyles}`}>

@@ -6,7 +6,7 @@ import Seo from "../components/Seo"
 const PageTemplate = ({ data: { page } }) => {
   return (
     <Layout>
-      <Seo title={page.title} />
+      <Seo seoData={page?.seo} />
       {page.title}
     </Layout>
   )
@@ -25,6 +25,10 @@ export const pageQuery = graphql`
       content
       title
       slug
+      seo {
+        fullHead
+        schemaDetails
+      }
     }
   }
 `

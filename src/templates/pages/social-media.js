@@ -8,7 +8,7 @@ import SocialMedia from "../../components/SocialMedia"
 const SocialMediaPage = ({ data: { page } }) => {
   return (
     <Layout>
-      <Seo title={page.title} />
+      <Seo seoData={page?.seo} />
       <section className="w-11/12 mx-auto py-10">
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
@@ -68,6 +68,10 @@ export const pageQuery = graphql`
       content
       title
       slug
+      seo {
+        fullHead
+        schemaDetails
+      }
     }
   }
 `

@@ -6,12 +6,12 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import parse, { domToReact } from "html-react-parser"
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { wp, wpUser } = useStaticQuery(
+const Seo = seoData => {
+  const { wp, site } = useStaticQuery(
     graphql`
       query {
         wp {
@@ -20,74 +20,71 @@ const Seo = ({ description, lang, meta, title }) => {
             description
           }
         }
-
-        # if there's more than one user this would need to be filtered to the main user
-        wpUser {
-          twitter: name
+        site {
+          siteMetadata {
+            siteUrl
+            description
+          }
         }
       }
     `
   )
 
-  const metaDescription = description || wp.generalSettings?.description
-  const defaultTitle = wp.generalSettings?.title
+  const baseUrl = site?.siteMetadata?.siteUrl
+
+  const options = {
+    replace: domNode => {
+      if (!domNode.attribs) {
+        return
+      }
+
+      if (domNode.name === "title") {
+        return (
+          <title itemProp="name" lang="en">
+            {domToReact(domNode.children, options)}
+          </title>
+        )
+      }
+
+      if (domNode.name === "link" && domNode.attribs.rel === "canonical") {
+        return <link rel="canonical" href={baseUrl + domNode.attribs.href} />
+      }
+
+      if (domNode.name === "meta" && domNode.attribs.property === "og:url") {
+        return (
+          <meta property="og:url" content={baseUrl + domNode.attribs.content} />
+        )
+      }
+    },
+  }
+
+  const yoastSeo = seoData?.seoData?.fullHead
+    ? parse(seoData?.seoData?.fullHead, options)
+    : { title: wp.title, description: wp.description }
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: `en`,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: wpUser?.twitter || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+      defaultTitle="Website SEO, Design and Development Company | Search Marketing Resource LLC"
+    >
+      {yoastSeo}
+      <base target="_blank" href={baseUrl} />
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+      <script type="application/ld+json" class="yoast-schema-graph">
+        {seoData?.seoData?.schemaDetails}
+      </script>
+      <meta
+        name="google-site-verification"
+        content="jHCzuZ3kfOlADsKx9UCN0RJtdRjkrb9RGzyBVIBHl9A"
+      />
+      <link rel="profile" href="http://gmpg.org/xfn/11" />
+    </Helmet>
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Seo

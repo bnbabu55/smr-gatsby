@@ -15,7 +15,7 @@ import WebDesign from "../../components/WebDesign"
 
 const HomePage = ({ data: { page } }) => (
   <Layout>
-    <Seo title={page.title} />
+    <Seo seoData={page?.seo} />
     <HeroBanner />
     <SMServices />
     <WebDesign />
@@ -42,6 +42,10 @@ export const pageQuery = graphql`
       content
       title
       slug
+      seo {
+        fullHead
+        schemaDetails
+      }
     }
   }
 `

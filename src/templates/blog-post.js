@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
 
   return (
     <Layout>
-      <Seo title={post.title} description={post.excerpt} />
+      <Seo seoData={post?.seo} />
 
       <section className="text-gray-600 mt-12 mb-5">
         <div>
@@ -268,6 +268,10 @@ export const pageQuery = graphql`
           name
           uri
         }
+      }
+      seo {
+        fullHead
+        schemaDetails
       }
     }
 

@@ -9,7 +9,7 @@ import TeamSection from "../../components/TeamSection"
 const AboutPage = ({ data: { page } }) => {
   return (
     <Layout>
-      <Seo title={page.title} />
+      <Seo seoData={page?.seo} />
       <TeamSection />
       <div className="flex">
         <hr className="border-4 border-themeBlue-100 w-1/2" />
@@ -34,6 +34,10 @@ export const pageQuery = graphql`
       content
       title
       slug
+      seo {
+        fullHead
+        schemaDetails
+      }
     }
   }
 `
