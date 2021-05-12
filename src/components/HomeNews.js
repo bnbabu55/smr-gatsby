@@ -189,14 +189,7 @@ const HomeNews = () => {
                     >
                       {parse(post.title)}
                     </Link>
-                    {/* <section
-                      key={post.id + "-body-section"}
-                      itemProp="description"
-                      className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
-                    > */}
-                    {console.log("postExcerpt: " + post.excerpt)}
                     {parse(post.excerpt, options)}
-                    {/* </section> */}
                   </li>
                 </ul>
               </li>
