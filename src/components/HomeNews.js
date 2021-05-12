@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import parse, { domToReact } from "html-react-parser"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 
@@ -61,6 +61,29 @@ const HomeNews = () => {
   const pluginImage = getImage(bgImage.nodes[0].childImageSharp.gatsbyImageData)
 
   const image = convertToBgImage(pluginImage)
+
+  const options = {
+    replace: domNode => {
+      if (!domNode.attribs) {
+        return
+      }
+
+      if (domNode.name === "p" && domNode.attribs.class !== "read-more") {
+        return (
+          <p
+            itemProp="description"
+            className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
+          >
+            {domToReact(domNode.children, options)}
+          </p>
+        )
+      }
+
+      if (domNode.attribs.class === "read-more") {
+        return <></>
+      }
+    },
+  }
 
   return (
     <BackgroundImage
@@ -166,16 +189,14 @@ const HomeNews = () => {
                     >
                       {parse(post.title)}
                     </Link>
-                    <section
+                    {/* <section
                       key={post.id + "-body-section"}
                       itemProp="description"
                       className="font-Lato text-lg text-white line-clamp-2 mt-2 text-justify"
-                    >
-                      {parse(post.excerpt, {
-                        replace: ({ attribs }) =>
-                          attribs && attribs.class === "read-more" && <></>,
-                      })}
-                    </section>
+                    > */}
+                    {console.log("postExcerpt: " + post.excerpt)}
+                    {parse(post.excerpt, options)}
+                    {/* </section> */}
                   </li>
                 </ul>
               </li>

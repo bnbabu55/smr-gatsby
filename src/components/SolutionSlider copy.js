@@ -79,18 +79,21 @@ const SolutionSlider = () => {
                 />
               </div>
               <div className="w-full lg:w-3/5">
-                <Link
-                  to={`/${solutionSlide.frontmatter.linkedPage}`}
-                  className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5"
-                >
+                <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
                   {solutionSlide.frontmatter.title}
-                </Link>
+                </div>
                 <div
                   key={solutionSlide.id + "content"}
                   className="mb-5 text-xl"
                 >
                   {parse(solutionSlide.html)}
                 </div>
+                <Link
+                  to={`/${solutionSlide.frontmatter.linkedPage}`}
+                  className="bg-themeOrange text-white py-2 px-3 lg:px-8 font-Lato text-sm lg:text-xl"
+                >
+                  Learn More
+                </Link>
               </div>
             </SwiperSlide>
           )
