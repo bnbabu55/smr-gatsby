@@ -1,6 +1,8 @@
 ---
 title: Jamey Steffner
 memberRole: CEO
+companyName: TEKWELL SERVICES
+websiteUrl: http://tekwellservices.com/
 featuredImage: 5-tekwell-logo.jpg
 altTxt: Tekwell Logo
 ---

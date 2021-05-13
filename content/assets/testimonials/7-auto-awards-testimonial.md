@@ -1,6 +1,8 @@
 ---
 title: Christopher Blum
 memberRole: President
+companyName: AUTOAWARDS
+websiteUrl: http://autoawards.com/
 featuredImage: 7-auto-awards-logo.jpg
 altTxt: Auto Awards logo
 ---

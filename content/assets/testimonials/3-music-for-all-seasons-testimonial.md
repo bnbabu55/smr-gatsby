@@ -1,6 +1,8 @@
 ---
 title: Rena Fruchter
 memberRole: Artistic Director
+companyName: MUSIC FOR ALL SEASONS
+websiteUrl: http://musicforallseasons.org/
 featuredImage: 3-music-for-all-seasons-logo.jpg
 altTxt: music for all seasons Logo
 ---

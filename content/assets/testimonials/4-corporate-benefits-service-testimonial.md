@@ -1,6 +1,8 @@
 ---
 title: Angela Storms
 memberRole: IT Manager
+companyName: CORPORATE BENEFITS SERVICE
+websiteUrl: http://corbenser.com/
 featuredImage: 4-corporate-benefits-service-logo.jpg
 altTxt: corporate benefits service Logo
 ---

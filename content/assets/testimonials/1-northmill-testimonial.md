@@ -1,6 +1,8 @@
 ---
 title: Donald S. Cosenza
 memberRole: Sr. Vice President
+companyName: NORTH MILL EQUIPMENT FINANCE
+websiteUrl: http://northmillef.com/
 featuredImage: 1-northmill-logo.jpg
 altTxt: Northmill Logo
 ---

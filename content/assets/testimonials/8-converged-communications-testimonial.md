@@ -1,6 +1,8 @@
 ---
 title: Steve Stephens
 memberRole: General Manager
+companyName: Converged Communications
+websiteUrl: https://convergedcommunications.com/
 featuredImage: 8-converged-communications-logo.jpg
 altTxt: Converged Communications logo
 ---

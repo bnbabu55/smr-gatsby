@@ -1,6 +1,8 @@
 ---
 title: Shaun Murphy
 memberRole: Managing Partner
+companyName: SBEMP
+websiteUrl: http://sbemp.com/
 featuredImage: 2-sbemp-logo.jpg
 altTxt: SBEMP Logo
 ---
