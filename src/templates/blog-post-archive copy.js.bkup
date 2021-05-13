@@ -32,7 +32,7 @@ const BlogIndex = ({
     let catGroups = groupBy(catRowSize, categories.nodes)
     groupCount = catGroups.length
     return (
-      <ul className="w-100 flex gap-x-3 font-Lato text-sm text-themeOrange">
+      <ul className="w-100 flex gap-x-3 font-Lato text-sm text-themeOrange-100">
         {catGroups.map(renderRow)}
       </ul>
     )
@@ -52,7 +52,7 @@ const BlogIndex = ({
   function renderColumn(cat, index) {
     return (
       <li key={cat.id + index} className="pb-3">
-        <Link to={cat.uri} className="font-Lato text-sm text-themeOrange">
+        <Link to={cat.uri} className="font-Lato text-sm text-themeOrange-100">
           {cat.name}
         </Link>
       </li>
@@ -91,7 +91,7 @@ const BlogIndex = ({
           <h2 className="font-BebasNeue text-5xl text-themeBlue-text text-center">
             SEARCH MARKETING NEWS
           </h2>
-          <p className="font-Montserrat text-2xl text-themeOrange text-center uppercase my-6">
+          <p className="font-Montserrat text-2xl text-themeOrange-100 text-center uppercase my-6">
             SEO and SEM Marketing & Website Design News
           </p>
           <p className="font-Lato text-lg text-themeGray-200 text-center my-6">
@@ -132,7 +132,7 @@ const BlogIndex = ({
                               <Link to={`/news${post.uri}`} itemProp="url">
                                 <span
                                   itemProp="headline"
-                                  className="font-Montserrat text-base uppercase text-themeOrange leading-none"
+                                  className="font-Montserrat text-base uppercase text-themeOrange-100 leading-none"
                                 >
                                   {parse(title)}
                                 </span>

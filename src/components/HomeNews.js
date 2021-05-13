@@ -105,7 +105,7 @@ const HomeNews = () => {
             </Link>
           </h2>
 
-          <h2 className="text-themeOrange font-Montserrat text-2xl uppercase my-5">
+          <h2 className="text-themeOrange-100 font-Montserrat text-2xl uppercase my-5">
             Digital Marketing &amp; Website Design News
           </h2>
 
@@ -185,7 +185,7 @@ const HomeNews = () => {
                       to={`/news${post.uri}`}
                       itemProp="url"
                       key={post.id + "-body-link"}
-                      className="w-full font-Montserrat text-xl uppercase text-themeOrange"
+                      className="w-full font-Montserrat text-xl uppercase text-themeOrange-100"
                     >
                       {parse(post.title)}
                     </Link>

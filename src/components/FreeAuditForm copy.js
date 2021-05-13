@@ -69,7 +69,7 @@ const FreeAuditForm = () => {
                 <li className="flex-1 p-2 mr-2">
                   <button
                     id="freeaudit-submit"
-                    className="text-white uppercase bg-themeOrange font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl "
+                    className="text-white uppercase bg-themeOrange-100 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl "
                   >
                     Submit
                   </button>

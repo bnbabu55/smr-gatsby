@@ -130,7 +130,7 @@ const Header = () => {
                     >
                       <Link
                         to={pageAnchor}
-                        className="block px-2 py-1 text-white hover:bg-themeGreen hover:text-themeOrange uppercase active:text-themeOrange focus:text-themeOrange rounded font-MontserratSemiBold text-xs"
+                        className="block px-2 py-1 text-white hover:bg-themeGreen hover:text-themeOrange-100 uppercase active:text-themeOrange-100 focus:text-themeOrange-100 rounded font-MontserratSemiBold text-xs"
                       >
                         {menuItem?.label}
                       </Link>

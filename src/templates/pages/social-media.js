@@ -13,7 +13,7 @@ const SocialMediaPage = ({ data: { page } }) => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-100 text-5xl font-BebasNeue text-center">
                 Social Media Management
               </h1>
             </div>

@@ -13,7 +13,7 @@ const FaqPage = ({ data: { page } }) => {
       <FaqSection />
       <div className="flex">
         <hr className="border-4 border-themeBlue-100 w-1/2" />
-        <hr className="border-4 border-themeOrange w-1/2" />
+        <hr className="border-4 border-themeOrange-100 w-1/2" />
       </div>
       <FreeAuditForm />
       <FreeQuoteForm />

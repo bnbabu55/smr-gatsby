@@ -55,7 +55,7 @@ const HeroBanner = () => {
             Effective Search <br />
             Marketing Strategies
           </div>
-          <div className="subtitle absolute top-16 left-28 lg:top-72 lg:left-2/4 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-16 left-28 lg:top-72 lg:left-2/4 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
             Increase Your Online Visibility <br />
             Create New Business Leads 24/7
           </div>
@@ -72,7 +72,7 @@ const HeroBanner = () => {
             Award Winning <br />
             Website Design
           </div>
-          <div className="subtitle absolute top-20 left-5 lg:top-80 lg:left-40 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-20 left-5 lg:top-80 lg:left-40 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
             Industry Recognized Designers <br />
             Engage Your Customers
           </div>
@@ -89,7 +89,7 @@ const HeroBanner = () => {
             <br />
             Marketing Solutions
           </div>
-          <div className="subtitle absolute top-16 left-24 lg:top-2/3 lg:left-2/4 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-16 left-24 lg:top-2/3 lg:left-2/4 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
             Web Design • SEO • Social Media <br />
             Hands-On Project Managers
           </div>
@@ -105,7 +105,7 @@ const HeroBanner = () => {
           <div className="title absolute top-3 left-5 lg:top-1/4 lg:left-40 text-themeBlue-100 text-base lg:text-7xl font-LatoBold text-center">
             Best Reviews <br />& Testimonials
           </div>
-          <div className="subtitle absolute top-14 left-3 lg:top-80 lg:left-40 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-14 left-3 lg:top-80 lg:left-40 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
             Industry Leading Client Retention <br />
             Competitive Pricing – Professional <br /> Results
           </div>

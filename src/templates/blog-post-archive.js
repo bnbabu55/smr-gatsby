@@ -43,7 +43,7 @@ const BlogIndex = ({
           <h2 className="font-BebasNeue text-5xl text-themeBlue-text text-center">
             SEARCH MARKETING NEWS
           </h2>
-          <p className="font-Montserrat font-semibold text-2xl text-themeOrange text-center uppercase my-6">
+          <p className="font-Montserrat font-semibold text-2xl text-themeOrange-100 text-center uppercase my-6">
             Seo and SEM Marketing & Website Design News
           </p>
           <p className="font-Lato text-lg text-themeGray-200 text-center my-6">
@@ -84,7 +84,7 @@ const BlogIndex = ({
                               <Link to={`/news${post.uri}`} itemProp="url">
                                 <span
                                   itemProp="headline"
-                                  className="font-MontserratBold tracking-wider text-base uppercase text-themeOrange leading-none"
+                                  className="font-MontserratBold tracking-wider text-base uppercase text-themeOrange-100 leading-none"
                                 >
                                   {parse(title)}
                                 </span>

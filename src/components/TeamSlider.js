@@ -29,7 +29,7 @@ const TeamSlider = () => {
         <h2>
           <Link
             to={`/about-search-marketing-resource.php`}
-            className="text-themeOrange font-BebasNeue text-5xl hover:underline"
+            className="text-themeOrange-100 font-BebasNeue text-5xl hover:underline"
           >
             The Team
           </Link>
@@ -78,7 +78,7 @@ const TeamSlider = () => {
                 className="w-full text-center flex flex-col p-5"
                 key={teamMember.id}
               >
-                <div className="font-Raleway text-2xl uppercase text-themeOrange pb-1">
+                <div className="font-Raleway text-2xl uppercase text-themeOrange-100 pb-1">
                   {teamMember.title}
                 </div>
                 <div className="font-Raleway text-base pb-5">
@@ -92,7 +92,7 @@ const TeamSlider = () => {
                 </div>
                 <Link
                   to={`/about`}
-                  className="text-themeOrange py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
+                  className="text-themeOrange-100 py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
                 >
                   Read
                 </Link>

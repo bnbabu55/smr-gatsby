@@ -43,7 +43,7 @@ const Testimonials = () => {
             Testimonials
             <span
               key="testi-span"
-              className="font-Lato text-themeOrange text-base lg:text-2xl pl-5 py-0"
+              className="font-Lato text-themeOrange-100 text-base lg:text-2xl pl-5 py-0"
             >
               read more...
             </span>
@@ -105,7 +105,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Donald S. Cosenza
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 Sr. Vice President
               </div>
             </div>
@@ -134,7 +134,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Shaun Murphy
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 Managing Partner
               </div>
             </div>
@@ -163,7 +163,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Rena Fruchter
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 Artistic Director
               </div>
             </div>
@@ -192,7 +192,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Angela Storms
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 IT Manager
               </div>
             </div>
@@ -221,7 +221,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Jamey Steffner
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 CEO
               </div>
             </div>
@@ -250,7 +250,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Craig Mitchell
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 President
               </div>
             </div>
@@ -278,7 +278,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Christopher Blum
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 President
               </div>
             </div>
@@ -307,7 +307,7 @@ const Testimonials = () => {
               <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                 Steve Stephens
               </div>
-              <div className="font-Montserrat text-xl text-themeOrange">
+              <div className="font-Montserrat text-xl text-themeOrange-100">
                 General Manager
               </div>
             </div>

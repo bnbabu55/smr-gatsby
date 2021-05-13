@@ -68,7 +68,7 @@ const HomePortfolio = () => {
           <div className="flex justify-center items-center text-center pb-5">
             <Link
               to={`/search-marketing-and-website-design-portfolio.php`}
-              className="font-MontserratSemiBold text-themeOrange text-2xl"
+              className="font-MontserratSemiBold text-themeOrange-100 text-2xl"
             >
               Website Design Services <br className="lg:hidden" />
               <span className="font-BebasNeue text-white text-5xl px-8 hover:underline">

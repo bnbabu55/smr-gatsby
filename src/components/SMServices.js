@@ -73,7 +73,7 @@ const SMServices = () => {
           <h2 className="pt-8">
             <a
               href="search-marketing-services.php"
-              className="text-themeOrange text-5xl font-BebasNeue"
+              className="text-themeOrange-100 text-5xl font-BebasNeue"
             >
               Search Marketing SERVICES
             </a>
@@ -102,7 +102,7 @@ const SMServices = () => {
           <div className="w-3/4">
             <h3>
               <a
-                className="text-themeOrange text-xl font-RalewaySemiBold"
+                className="text-themeOrange-100 text-xl font-RalewaySemiBold"
                 href="search-marketing-programs.php"
                 data-imagesrc={
                   smSlides.nodes[0].childImageSharp.gatsbyImageData.images
@@ -144,7 +144,7 @@ const SMServices = () => {
                   smSlides.nodes[1].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewaySemiBold"
+                className="text-themeOrange-100 text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -181,7 +181,7 @@ const SMServices = () => {
                   smSlides.nodes[2].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewaySemiBold"
+                className="text-themeOrange-100 text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >
@@ -218,7 +218,7 @@ const SMServices = () => {
                   smSlides.nodes[3].childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
-                className="text-themeOrange text-xl font-RalewaySemiBold"
+                className="text-themeOrange-100 text-xl font-RalewaySemiBold"
                 onMouseOver={changeImage}
                 onFocus={changeImage}
               >

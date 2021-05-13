@@ -34,7 +34,7 @@ export const FaqSection = () => {
   return (
     <>
       <section id="page-title" className="bg-white py-10">
-        <h1 className="text-themeOrange text-5xl font-BebasNeue text-center uppercase">
+        <h1 className="text-themeOrange-100 text-5xl font-BebasNeue text-center uppercase">
           SEO FREQUENTLY ASKED QUESTIONS
         </h1>
       </section>

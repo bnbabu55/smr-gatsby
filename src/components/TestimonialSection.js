@@ -66,7 +66,7 @@ export const TestimonialSection = () => {
             Hear What Our <br />
             Clients Say!
           </div>
-          <div className="subtitle absolute top-2/3 left-5 lg:left-32 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-2/3 left-5 lg:left-32 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
             Best Customer Service & Highest <br />
             Client Testimonials
           </div>
@@ -77,7 +77,7 @@ export const TestimonialSection = () => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-100 text-5xl font-BebasNeue text-center">
                 CUSTOMER TESTIMONIALS
               </h1>
             </div>
@@ -89,23 +89,49 @@ export const TestimonialSection = () => {
                 We have provided a compilation of remarks our customers have
                 submitted with regards to the various services the Search
                 Marketing Resource team has provided over the years. The
-                different requirements performed included Content Writing,
-                <Link to="/search-marketing-programs.php">SEO Programs</Link>
+                different requirements performed included Content Writing,{" "}
+                <Link
+                  to="/search-marketing-programs.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
+                  SEO Programs
+                </Link>
                 {", "}
                 optimized{" "}
-                <Link to="/press-release-writing-services.php">
-                  Press Releases{", "}
+                <Link
+                  to="/press-release-writing-services.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
+                  Press Releases
                 </Link>
-                <Link to="/email-marketing-services.php">
-                  Email Marketing campaigns{", "}
+                {", "}
+                <Link
+                  to="/email-marketing-services.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
+                  Email Marketing campaigns
                 </Link>
-                <Link to="/adwords-management.php">
-                  Google Adwords management{", "}
+                {", "}
+                <Link
+                  to="/adwords-management.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
+                  Google Adwords management
                 </Link>
-                <Link to="/social-media-management.php">
+                {", "}
+                <Link
+                  to="/social-media-management.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
                   Social Media posts
                 </Link>
-                <Link to="/web-design-services.php">Website Development</Link>
+                {", "}
+                <Link
+                  to="/web-design-services.php"
+                  className="text-themeGray-200 text-lg font-Lato underline"
+                >
+                  Website Development
+                </Link>
                 .... all marketing needs requested.
               </p>
             </div>
@@ -119,7 +145,7 @@ export const TestimonialSection = () => {
                 key={testimonial.id}
                 id={testimonial.id}
               >
-                <h3 className="text-themeOrange text-2xl font-Montserrat uppercase text-left">
+                <h3 className="text-themeOrange-100 text-2xl font-Montserrat uppercase text-left">
                   {testimonial.frontmatter.companyName} {" - "}
                   <a
                     href={testimonial.frontmatter.websiteUrl}

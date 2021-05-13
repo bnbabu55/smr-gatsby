@@ -29,7 +29,7 @@ const Categories = () => {
   function renderCategory() {
     let catGroups = groupBy(catRowSize, categories.nodes)
     return (
-      <ul className="w-100 flex gap-x-6 font-Lato text-sm text-themeOrange">
+      <ul className="w-100 flex gap-x-6 font-Lato text-sm text-themeOrange-100">
         {catGroups.map(renderRow)}
       </ul>
     )
@@ -50,7 +50,7 @@ const Categories = () => {
       <li key={cat.id + index} className="pb-3">
         <Link
           to={`/news${cat.uri}`}
-          className="font-Lato font-semibold text-sm text-themeOrange"
+          className="font-Lato font-semibold text-sm text-themeOrange-100"
         >
           {cat.name}
         </Link>

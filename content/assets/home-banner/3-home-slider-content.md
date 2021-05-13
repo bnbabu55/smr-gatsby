@@ -5,7 +5,7 @@ titleStyles: title absolute top-3 left-36 lg:top-1/4 lg:left-1/2 text-themeBlue-
 subTitle1: Web Design • SEO • Social Media
 subTitle2: Hands-On Project Managers
 subTitle3: 
-subTitleStyles: subtitle absolute top-16 left-24 lg:top-2/3 lg:left-2/4 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center
+subTitleStyles: subtitle absolute top-16 left-24 lg:top-2/3 lg:left-2/4 text-themeOrange-300 text-sm lg:text-4xl font-LatoLight text-center
 featuredImage: 3-home-slide.jpg
 altTxt: Home Page Banner Slide 3
 ---

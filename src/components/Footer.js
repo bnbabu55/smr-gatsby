@@ -50,8 +50,8 @@ const Footer = () => {
                   <Link
                     key={menu?.id}
                     to={pageAnchor}
-                    className="block px-5 py-1 text-white rounded font-Montserrat text-lg"
-                    activeClassName="text-themeOrange"
+                    className="block px-5 py-1 text-white rounded font-Montserrat text-lg hover:text-themeYellow"
+                    activeClassName="hover:text-themeYellow"
                   >
                     {menu?.label}
                   </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
           Copyright © {new Date().getFullYear()}{" "}
           <Link
             to="/"
-            className="font-Montserrat text-sm text-white hover:text-themeOrange"
+            className="font-Montserrat text-sm text-white hover:text-themeOrange-200"
           >
             Search Marketing Resource LLC -{" "}
           </Link>

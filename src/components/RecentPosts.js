@@ -89,7 +89,7 @@ const RecentPosts = () => {
                         <span
                           key={post.id + "-body-span-1"}
                           itemProp="headline"
-                          className="font-MontserratBold text-xs tracking-wider uppercase text-themeOrange"
+                          className="font-MontserratBold text-xs tracking-wider uppercase text-themeOrange-100"
                           style={{ lineHeight: "90%" }}
                         >
                           {parse(post.title)}

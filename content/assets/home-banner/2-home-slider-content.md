@@ -5,7 +5,7 @@ titleStyles: title absolute top-5 left-5 lg:top-1/4 lg:left-40 text-themeBlue-10
 subTitle1: Industry Recognized Designers
 subTitle2: Engage Your Customers
 subTitle3: 
-subTitleStyles: subtitle absolute top-20 left-5 lg:top-80 lg:left-40 text-themeOrange text-sm lg:text-4xl font-LatoLight text-center
+subTitleStyles: subtitle absolute top-20 left-5 lg:top-80 lg:left-40 text-themeOrange-300 text-sm lg:text-4xl font-LatoLight text-center
 featuredImage: 2-home-slide.jpg
 altTxt: Home Page Banner Slide 2
 ---
