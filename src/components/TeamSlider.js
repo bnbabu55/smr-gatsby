@@ -28,7 +28,7 @@ const TeamSlider = () => {
       <div className="mx-auto text-center">
         <h2>
           <Link
-            to={`/about-search-marketing-resource.php`}
+            to={`/about`}
             className="text-themeOrange-400 font-BebasNeue text-5xl hover:underline"
           >
             The Team
@@ -78,9 +78,12 @@ const TeamSlider = () => {
                 className="w-full text-center flex flex-col p-5"
                 key={teamMember.id}
               >
-                <div className="font-Raleway text-2xl uppercase text-themeOrange-400 pb-1">
+                <Link
+                  to={`/about`}
+                  className="font-Raleway text-2xl uppercase text-themeOrange-400 pb-1"
+                >
                   {teamMember.title}
-                </div>
+                </Link>
                 <div className="font-Raleway text-base pb-5">
                   {teamMember.memberRole}
                 </div>
@@ -90,12 +93,6 @@ const TeamSlider = () => {
                 >
                   {parse(teamMember.content)}
                 </div>
-                <Link
-                  to={`/about`}
-                  className="text-themeOrange-400 py-2 px-3 lg:px-8 font-Lato text-sm text-right lg:text-xl"
-                >
-                  Read More
-                </Link>
               </SwiperSlide>
             )
           })}

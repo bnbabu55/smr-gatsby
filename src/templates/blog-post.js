@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
 
       <section className="text-gray-600 mt-12 mb-5">
         <div>
-          <h2 className="font-BebasNeue text-5xl text-themeBlue-text text-center">
+          <h2 className="font-BebasNeue font-bold tracking-wide text-5xl text-themeBlue-text text-center">
             SEARCH MARKETING NEWS
           </h2>
           <p className="font-Montserrat font-semibold text-2xl text-themeOrange-400 text-center uppercase my-6">

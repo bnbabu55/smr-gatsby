@@ -66,12 +66,12 @@ export const TeamSection = () => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
                 ABOUT SEARCH MARKETING RESOURCE
               </h1>
             </div>
             <div className="py-5">
-              <h2 className="text-themeBlue-text text-2xl font-Montserrat uppercase pb-5">
+              <h2 className="text-themeBlue-text text-2xl font-MontserratSemiBold uppercase pb-5">
                 SEARCH MARKETING RESOURCE'S MISSION
               </h2>
               <p className="text-themeGray-200 text-lg font-Lato">
@@ -94,10 +94,10 @@ export const TeamSection = () => {
         <div className="team_design light_grey_bg extra-work">
           <div className="wrapper">
             <div className="top_content team_lead">
-              <h2 className="text-themeOrange-400 text-5xl font-BebasNeue text-left py-5">
+              <h2 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold text-left py-5">
                 TEAM LEADERSHIP
               </h2>
-              <h3 className="text-themeBlue-text text-2xl font-Montserrat uppercase text-left pb-5">
+              <h3 className="text-themeBlue-text text-2xl font-MontserratSemiBold uppercase text-left pb-5">
                 MEET OUR PROJECT MANAGERS
               </h3>
               <p className="text-themeGray-200 text-lg font-Lato pb-10">
@@ -121,7 +121,7 @@ export const TeamSection = () => {
               >
                 <div className="conts_wrapper">
                   <div className="content_pnl">
-                    <h2 className="text-themeBlue-text text-2xl font-Montserrat uppercase text-left">
+                    <h2 className="text-themeBlue-text text-2xl font-MontserratSemiBold uppercase text-left">
                       {teamMember.title}
                     </h2>
                     <span className="text-themeGray-200 text-lg font-Lato">

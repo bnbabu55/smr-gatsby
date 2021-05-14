@@ -77,12 +77,12 @@ export const TestimonialSection = () => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
                 CUSTOMER TESTIMONIALS
               </h1>
             </div>
             <div className="py-5">
-              <h2 className="text-themeBlue-text text-2xl font-Montserrat uppercase pb-5">
+              <h2 className="text-themeBlue-text text-2xl font-MontserratSemiBold uppercase pb-5">
                 DIGITAL MARKETING & WEBSITE DESIGN CLIENT TESTIMONIALS
               </h2>
               <p className="text-themeGray-200 text-lg font-Lato">
@@ -145,7 +145,7 @@ export const TestimonialSection = () => {
                 key={testimonial.id}
                 id={testimonial.id}
               >
-                <h3 className="text-themeOrange-400 text-2xl font-Montserrat uppercase text-left">
+                <h3 className="text-themeOrange-400 text-2xl font-MontserratSemiBold uppercase text-left">
                   {testimonial.frontmatter.companyName} {" - "}
                   <a
                     href={testimonial.frontmatter.websiteUrl}
