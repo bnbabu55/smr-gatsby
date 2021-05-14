@@ -55,7 +55,7 @@ export const TeamSection = () => {
             Industry Recognized <br />
             Team Leadership
           </div>
-          <div className="subtitle absolute top-2/3 right-5 lg:right-20 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-2/3 right-5 lg:right-20 text-themeOrange-400 text-sm lg:text-4xl font-LatoLight text-center">
             Experienced & Professional Project Leaders, <br />
             Website Developers & SEO Managers
           </div>
@@ -66,7 +66,7 @@ export const TeamSection = () => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange-100 text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue text-center">
                 ABOUT SEARCH MARKETING RESOURCE
               </h1>
             </div>
@@ -94,7 +94,7 @@ export const TeamSection = () => {
         <div className="team_design light_grey_bg extra-work">
           <div className="wrapper">
             <div className="top_content team_lead">
-              <h2 className="text-themeOrange-100 text-5xl font-BebasNeue text-left py-5">
+              <h2 className="text-themeOrange-400 text-5xl font-BebasNeue text-left py-5">
                 TEAM LEADERSHIP
               </h2>
               <h3 className="text-themeBlue-text text-2xl font-Montserrat uppercase text-left pb-5">

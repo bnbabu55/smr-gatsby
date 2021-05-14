@@ -5,7 +5,7 @@ const ContactForm = () => {
     <section id="contact" className="text-white py-10 mx-auto">
       <div className="w-11/12 mx-auto">
         <div className="mx-auto flex flex-col justify-evenly">
-          <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-300 text-5xl">
+          <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-400 text-5xl">
             CONTACT US
           </h2>
           <h3 className="mx-auto text-center font-Montserrat text-themeBlue-text text-2xl py-5">
@@ -62,7 +62,7 @@ const ContactForm = () => {
                   name="message"
                   id="message"
                 />
-                <button className="w-full text-white uppercase bg-themeOrange-300 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5 col-span-2">
+                <button className="w-full text-white uppercase bg-themeOrange-400 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5 col-span-2">
                   Submit
                 </button>
               </div>

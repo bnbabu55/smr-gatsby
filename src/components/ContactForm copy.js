@@ -5,7 +5,7 @@ const ContactForm = () => {
     <section id="contact" className="bg-themeGreen text-white py-10 mx-auto">
       <div className="w-11/12 mx-auto">
         <div className="mx-auto flex flex-col justify-evenly">
-          <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-100 text-5xl">
+          <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-400 text-5xl">
             CONTACT US
           </h2>
           <h3 className="mx-auto text-center font-Montserrat text-themeBlue-text text-2xl py-5">
@@ -22,7 +22,7 @@ const ContactForm = () => {
         <div className="contact-content w-full flex flex-col lg:flex-row lg:gap-x-16 mx-auto bg-white my-5">
           <div className="w-full contact-wrapper mx-auto border border-gray-700 rounded-lg">
             <form className="text-gray-700 contact-form flex flex-col justify-center align-center m-10 font-Lato text-base">
-              <div className="font-Montserrat text-xs text-themeOrange-100 pb-2">
+              <div className="font-Montserrat text-xs text-themeOrange-400 pb-2">
                 Required *
               </div>
               <ul className="grid gap-3 grid-cols-2">
@@ -73,7 +73,7 @@ const ContactForm = () => {
                   />
                 </li>
                 <li className="col-span-2">
-                  <button className="w-full text-white uppercase bg-themeOrange-100 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5">
+                  <button className="w-full text-white uppercase bg-themeOrange-400 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5">
                     Submit
                   </button>
                 </li>

@@ -24,7 +24,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
           <h2 className="font-BebasNeue text-5xl text-themeBlue-text text-center">
             SEARCH MARKETING NEWS
           </h2>
-          <p className="font-Montserrat font-semibold text-2xl text-themeOrange-100 text-center uppercase my-6">
+          <p className="font-Montserrat font-semibold text-2xl text-themeOrange-400 text-center uppercase my-6">
             Seo and SEM Marketing & Website Design News
           </p>
           <p className="font-Lato text-lg text-themeGray-200 text-center my-6">
@@ -99,7 +99,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                         <li key={cat.id + index} className="pb-3">
                           <Link
                             to={`/news${cat.uri}`}
-                            className="font-Lato text-lg text-themeOrange-100"
+                            className="font-Lato text-lg text-themeOrange-400"
                           >
                             {`${
                               arr.length !== index + 1

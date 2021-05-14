@@ -53,7 +53,7 @@ const Testimonials = () => {
             Testimonials
             <span
               key="testi-span"
-              className="font-Lato text-themeOrange-100 text-base lg:text-xl pl-5 py-0 lowercase"
+              className="font-Lato text-themeOrange-400 text-base lg:text-xl pl-5 py-0 lowercase"
             >
               read more...
             </span>
@@ -116,7 +116,7 @@ const Testimonials = () => {
                   <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                     {testimonialSlide?.frontmatter?.title}
                   </div>
-                  <div className="font-Montserrat text-xl text-themeOrange-100">
+                  <div className="font-Montserrat text-xl text-themeOrange-400">
                     {testimonialSlide?.frontmatter?.memberRole}
                   </div>
               </SwiperSlide>

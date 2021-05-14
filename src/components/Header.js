@@ -80,7 +80,7 @@ const Header = () => {
                 </feComponentTransfer>
                 <feGaussianBlur stdDeviation="1" />
                 <feOffset dx=".5" dy=".5" result="offsetblur" />
-                <feFlood flood-color="rgb(47, 47, 47)" result="color" />
+                <feFlood floodColor="rgb(47, 47, 47)" result="color" />
                 <feComposite in2="offsetblur" operator="in" />
                 <feComposite in2="SourceAlpha" operator="in" />
                 <feMerge>
@@ -171,7 +171,7 @@ const Header = () => {
                             ? "relative group"
                             : null
                         }`}
-                    activeClassName="bg-themeBlue-200 text-themeOrange-100"
+                    activeClassName="bg-themeBlue-200"
                   >
                     {menuItem?.label}
                   </Link>

@@ -15,7 +15,7 @@ const FreeAuditForm = () => {
               </li>
               <li className="order-1">
                 <input
-                  className="w-full border border-black p-3"
+                  className="w-full border border-black p-3 rounded"
                   type="text"
                   placeholder="First Name"
                   name="freeaudit-fname"
@@ -24,7 +24,7 @@ const FreeAuditForm = () => {
               </li>
               <li className="order-1">
                 <input
-                  className="w-full border border-black p-3"
+                  className="w-full border border-black p-3 rounded"
                   type="text"
                   placeholder="Last Name"
                   name="freeaudit-lname"
@@ -33,7 +33,7 @@ const FreeAuditForm = () => {
               </li>
               <li className="order-1">
                 <input
-                  className="w-full border border-black p-3"
+                  className="w-full border border-black p-3 rounded"
                   type="text"
                   placeholder="Website URL"
                   name="freeaudit-weburl"
@@ -43,7 +43,7 @@ const FreeAuditForm = () => {
               <li className="order-2 lg:order-1 ">Recaptcha</li>
               <li className="order-1">
                 <input
-                  className="w-full border border-black p-3"
+                  className="w-full border border-black p-3 rounded"
                   type="email"
                   placeholder="Email"
                   name="freeaudit-email"
@@ -52,7 +52,7 @@ const FreeAuditForm = () => {
               </li>
               <li className="order-1">
                 <input
-                  className="w-full border border-black p-3"
+                  className="w-full border border-black p-3 rounded"
                   type="tel"
                   placeholder="Phone"
                   name="freeaudit-phone"
@@ -62,7 +62,7 @@ const FreeAuditForm = () => {
               <li className="order-3">
                 <button
                   id="freeaudit-submit"
-                  className="w-full text-white uppercase bg-themeOrange-300 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl "
+                  className="w-full text-white uppercase bg-themeOrange-400 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl rounded"
                 >
                   Submit
                 </button>

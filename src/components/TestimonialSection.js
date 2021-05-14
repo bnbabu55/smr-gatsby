@@ -66,7 +66,7 @@ export const TestimonialSection = () => {
             Hear What Our <br />
             Clients Say!
           </div>
-          <div className="subtitle absolute top-2/3 left-5 lg:left-32 text-themeOrange-100 text-sm lg:text-4xl font-LatoLight text-center">
+          <div className="subtitle absolute top-2/3 left-5 lg:left-32 text-themeOrange-400 text-sm lg:text-4xl font-LatoLight text-center">
             Best Customer Service & Highest <br />
             Client Testimonials
           </div>
@@ -77,7 +77,7 @@ export const TestimonialSection = () => {
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
-              <h1 className="text-themeOrange-100 text-5xl font-BebasNeue text-center">
+              <h1 className="text-themeOrange-400 text-5xl font-BebasNeue text-center">
                 CUSTOMER TESTIMONIALS
               </h1>
             </div>
@@ -145,7 +145,7 @@ export const TestimonialSection = () => {
                 key={testimonial.id}
                 id={testimonial.id}
               >
-                <h3 className="text-themeOrange-100 text-2xl font-Montserrat uppercase text-left">
+                <h3 className="text-themeOrange-400 text-2xl font-Montserrat uppercase text-left">
                   {testimonial.frontmatter.companyName} {" - "}
                   <a
                     href={testimonial.frontmatter.websiteUrl}
