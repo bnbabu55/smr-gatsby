@@ -42,7 +42,7 @@ const BlogIndex = ({
   function renderRow(group, index) {
     return (
       <li key={`group-${index}`}>
-        <ul className="amenity-list list-disc text-themeBlue-100">
+        <ul className="amenity-list list-disc text-themeBlue-600">
           {group.map(renderColumn)}
         </ul>
       </li>
@@ -88,7 +88,7 @@ const BlogIndex = ({
 
       <section className="text-gray-600 my-16">
         <div>
-          <h2 className="font-BebasNeue text-5xl text-themeBlue-100 text-center">
+          <h2 className="font-BebasNeue text-5xl text-themeBlue-600 text-center">
             SEARCH MARKETING NEWS
           </h2>
           <p className="font-Montserrat text-2xl text-themeOrange-100 text-center uppercase my-6">
@@ -190,7 +190,7 @@ const BlogIndex = ({
               </div>
             </div>
             <div className="category">
-              <h3 className="font-Lato font-semibold text-lg text-themeBlue-100 py-5">
+              <h3 className="font-Lato font-semibold text-lg text-themeBlue-600 py-5">
                 Categories
               </h3>
               {catComponent}

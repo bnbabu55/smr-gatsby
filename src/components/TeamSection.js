@@ -51,7 +51,7 @@ export const TeamSection = () => {
               alt="About slider 1"
             />
           </figure>
-          <div className="title absolute top-5 left-40 lg:top-1/4 lg:left-1/3 text-themeBlue-100 text-2xl lg:text-7xl font-LatoBold text-center">
+          <div className="title absolute top-5 left-40 lg:top-1/4 lg:left-1/3 text-themeBlue-600 text-2xl lg:text-7xl font-LatoBold text-center">
             Industry Recognized <br />
             Team Leadership
           </div>
@@ -71,7 +71,7 @@ export const TeamSection = () => {
               </h1>
             </div>
             <div className="py-5">
-              <h2 className="text-themeBlue-100 text-2xl font-MontserratSemiBold uppercase pb-5">
+              <h2 className="text-themeBlue-600 text-2xl font-MontserratSemiBold uppercase pb-5">
                 SEARCH MARKETING RESOURCE'S MISSION
               </h2>
               <p className="text-themeGray-200 text-lg font-Lato">
@@ -97,7 +97,7 @@ export const TeamSection = () => {
               <h2 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold text-left py-5">
                 TEAM LEADERSHIP
               </h2>
-              <h3 className="text-themeBlue-100 text-2xl font-MontserratSemiBold uppercase text-left pb-5">
+              <h3 className="text-themeBlue-600 text-2xl font-MontserratSemiBold uppercase text-left pb-5">
                 MEET OUR PROJECT MANAGERS
               </h3>
               <p className="text-themeGray-200 text-lg font-Lato pb-10">
@@ -115,13 +115,13 @@ export const TeamSection = () => {
           {teamMembers.nodes.map(teamMember => {
             return (
               <div
-                className="mdl_cont_section bgnone ab-bg mb-5"
+                className="mdl_cont_section bgnone ab-bg py-5"
                 key={teamMember.id}
                 id={teamMember.id}
               >
                 <div className="conts_wrapper">
                   <div className="content_pnl">
-                    <h2 className="text-themeBlue-100 text-2xl font-MontserratSemiBold uppercase text-left">
+                    <h2 className="text-themeBlue-600 text-2xl font-MontserratSemiBold uppercase text-left">
                       {teamMember.title}
                     </h2>
                     <span className="text-themeGray-200 text-lg font-Lato">

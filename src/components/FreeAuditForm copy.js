@@ -4,7 +4,7 @@ const FreeAuditForm = () => {
   return (
     <section id="freeauditform" className="pt-5 pb-10 border-b border-gray-300">
       <div className="top_content flex flex-col justify-center items-center">
-        <h2 className="pt-8 text-themeBlue-100 text-2xl font-Montserrat pb-5">
+        <h2 className="pt-8 text-themeBlue-600 text-2xl font-Montserrat pb-5">
           Is Your Website Search Engine Optimized? Get a Free Website SEO Audit!
         </h2>
         <div className="w-11/12 flex flex-row items-center bg-themeBlue-200 mx-auto">

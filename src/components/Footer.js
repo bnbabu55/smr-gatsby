@@ -51,7 +51,7 @@ const Footer = () => {
                     key={menu?.id}
                     to={pageAnchor}
                     className="block px-5 py-1 text-white rounded font-Montserrat text-lg"
-                    activeClassName="bg-themeBlue-100"
+                    activeClassName="bg-themeBlue-600"
                   >
                     {menu?.label}
                   </Link>

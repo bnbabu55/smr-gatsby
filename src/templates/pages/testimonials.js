@@ -12,7 +12,7 @@ const TestimonialsPage = ({ data: { page } }) => {
       <Seo seoData={page?.seo} />
       <TestimonialSection />
       <div className="flex">
-        <hr className="border-4 border-themeBlue-100 w-1/2" />
+        <hr className="border-4 border-themeBlue-600 w-1/2" />
         <hr className="border-4 border-themeOrange-100 w-1/2" />
       </div>
       <FreeAuditForm />

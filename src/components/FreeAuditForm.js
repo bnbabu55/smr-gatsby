@@ -4,70 +4,58 @@ const FreeAuditForm = () => {
   return (
     <section id="freeauditform" className="pt-5 pb-10 border-b border-gray-300">
       <div className="top_content flex flex-col justify-center items-center">
-        <h3 className="pt-8 text-themeBlue-100 text-2xl text-center font-MontserratBold pb-5">
+        <div className="pt-8 text-themeBlue-600 text-2xl text-center font-MontserratBold pb-5">
           Is Your Website Search Engine Optimized? Get a Free Website SEO Audit!
-        </h3>
+        </div>
         <div className="w-11/12 bg-themeBlue-200 mx-auto">
           <form className="contact-form m-10 font-Lato text-base">
-            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-              <li className="order-1 font-MontserratBold text-2xl uppercase text-white md:col-span-2 lg:col-span-1">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+              <div className="order-1 font-MontserratBold text-2xl uppercase text-white md:col-span-2 lg:col-span-1">
                 Free Site Audit!
-              </li>
-              <li className="order-1">
-                <input
-                  className="w-full border border-black p-3 rounded"
-                  type="text"
-                  placeholder="First Name"
-                  name="freeaudit-fname"
-                  id="freeaudit-fname"
-                />
-              </li>
-              <li className="order-1">
-                <input
-                  className="w-full border border-black p-3 rounded"
-                  type="text"
-                  placeholder="Last Name"
-                  name="freeaudit-lname"
-                  id="freeaudit-lname"
-                />
-              </li>
-              <li className="order-1">
-                <input
-                  className="w-full border border-black p-3 rounded"
-                  type="text"
-                  placeholder="Website URL"
-                  name="freeaudit-weburl"
-                  id="freeaudit-weburl"
-                />
-              </li>
-              <li className="order-2 lg:order-1 ">Recaptcha</li>
-              <li className="order-1">
-                <input
-                  className="w-full border border-black p-3 rounded"
-                  type="email"
-                  placeholder="Email"
-                  name="freeaudit-email"
-                  id="freeaudit-email"
-                />
-              </li>
-              <li className="order-1">
-                <input
-                  className="w-full border border-black p-3 rounded"
-                  type="tel"
-                  placeholder="Phone"
-                  name="freeaudit-phone"
-                  id="freeaudit-phone"
-                />
-              </li>
-              <li className="order-3">
-                <button
-                  id="freeaudit-submit"
-                  className="w-full text-white uppercase bg-themeOrange-400 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl rounded"
-                >
-                  Submit
-                </button>
-              </li>
-            </ul>
+              </div>
+              <input
+                className="order-1 w-full border border-black p-3 rounded"
+                type="text"
+                placeholder="First Name"
+                name="freeaudit-fname"
+                id="freeaudit-fname"
+              />
+              <input
+                className="w-full order-1 border border-black p-3 rounded"
+                type="text"
+                placeholder="Last Name"
+                name="freeaudit-lname"
+                id="freeaudit-lname"
+              />
+              <input
+                className="w-full order-1 border border-black p-3 rounded"
+                type="text"
+                placeholder="Website URL"
+                name="freeaudit-weburl"
+                id="freeaudit-weburl"
+              />
+              <div className="order-2 lg:order-1 text-white">Recaptcha</div>
+              <input
+                className="w-full order-1 border border-black p-3 rounded"
+                type="email"
+                placeholder="Email"
+                name="freeaudit-email"
+                id="freeaudit-email"
+              />
+              <input
+                className="w-full order-1 border border-black p-3 rounded"
+                type="tel"
+                placeholder="Phone"
+                name="freeaudit-phone"
+                id="freeaudit-phone"
+              />
+              <button
+                id="freeaudit-submit"
+                className="w-full order-3 text-white uppercase bg-themeOrange-400 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl rounded"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
         <p className="text-themeGray-200 text-lg font-Lato text-center py-5 mx-5">

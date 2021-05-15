@@ -8,7 +8,7 @@ const ContactForm = () => {
           <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-400 text-5xl">
             CONTACT US
           </h2>
-          <h3 className="mx-auto text-center font-Montserrat text-themeBlue-100 text-2xl py-5">
+          <h3 className="mx-auto text-center font-Montserrat text-themeBlue-600 text-2xl py-5">
             WEBSITE SEO, DESIGN AND DEVELOPMENT COMPANY
           </h3>
 
@@ -84,7 +84,7 @@ const ContactForm = () => {
             <ul className="w-full font-Montserrat text-themeGray-300">
               <li className="flex items-center pb-3">
                 <span
-                  className="text-themeBlue-100 text-2xl lg:text-5xl"
+                  className="text-themeBlue-600 text-2xl lg:text-5xl"
                   role="img"
                   aria-label="home icon"
                 >
@@ -98,7 +98,7 @@ const ContactForm = () => {
               </li>
               <li className="flex items-center pb-3">
                 <span
-                  className="text-themeBlue-100 text-3xl lg:text-5xl"
+                  className="text-themeBlue-600 text-3xl lg:text-5xl"
                   role="img"
                   aria-label="phone icon"
                 >
@@ -111,7 +111,7 @@ const ContactForm = () => {
               </li>
               <li className="flex items-center pb-3">
                 <span
-                  className="text-themeBlue-100 text-3xl lg:text-5xl"
+                  className="text-themeBlue-600 text-3xl lg:text-5xl"
                   role="img"
                   aria-label="email icon"
                 >
@@ -123,7 +123,7 @@ const ContactForm = () => {
                 </span>
               </li>
             </ul>
-            <ul className="w-full mt-3 lg:mt-0 text-themeBlue-100 text-base lg:text-2xl pb-3">
+            <ul className="w-full mt-3 lg:mt-0 text-themeBlue-600 text-base lg:text-2xl pb-3">
               <li className="">
                 sales@searchmarketingresource.com <br />
                 <span className="text-themeGray-300">888-842-9033 x 11</span>

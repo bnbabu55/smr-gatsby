@@ -79,7 +79,7 @@ const SMServices = () => {
             </a>
           </h2>
           <div className="service_top_text py-5">
-            <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-center">
+            <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-center">
               Industry Leading Digital Marketing Services
             </h2>
           </div>

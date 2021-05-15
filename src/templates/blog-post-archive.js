@@ -40,7 +40,7 @@ const BlogIndex = ({
 
       <section className="text-gray-600 my-16">
         <div>
-          <h2 className="font-BebasNeue font-bold tracking-wide text-5xl text-themeBlue-100 text-center">
+          <h2 className="font-BebasNeue font-bold tracking-wide text-5xl text-themeBlue-600 text-center">
             SEARCH MARKETING NEWS
           </h2>
           <p className="font-Montserrat font-semibold text-2xl text-themeOrange-400 text-center uppercase my-6">
@@ -134,7 +134,7 @@ const BlogIndex = ({
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-themeBlue-200 hover:bg-themeBlue-100 rounded py-2 mt-3 shadow-md"
+                  className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-themeBlue-200 hover:bg-themeBlue-600 rounded py-2 mt-3 shadow-md"
                   aria-label="submit"
                 >
                   Subscribe
@@ -162,7 +162,7 @@ const BlogIndex = ({
               <Link
                 to={previousPagePath}
                 rel="prev"
-                className="text-themeBlue-200 hover:text-themeBlue-100"
+                className="text-themeBlue-200 hover:text-themeBlue-600"
                 style={{
                   marginTop: "0.1rem",
                   marginBottom: "0.1rem",
@@ -184,8 +184,8 @@ const BlogIndex = ({
                 to={`${i === 0 ? currentPageBase : currentPageBase + (i + 1)}`}
                 className={`${
                   i + 1 === currentPage
-                    ? "text-white bg-themeBlue-200 hover:bg-themeBlue-100"
-                    : "text-themeBlue-200 hover:text-themeBlue-100"
+                    ? "text-white bg-themeBlue-200 hover:bg-themeBlue-600"
+                    : "text-themeBlue-200 hover:text-themeBlue-600"
                 }
                 `}
                 style={{
@@ -204,7 +204,7 @@ const BlogIndex = ({
               <Link
                 to={nextPagePath}
                 rel="next"
-                className="text-themeBlue-200 hover:text-themeBlue-100"
+                className="text-themeBlue-200 hover:text-themeBlue-600"
                 style={{
                   marginTop: "0.1rem",
                   marginBottom: "0.1rem",

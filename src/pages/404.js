@@ -22,7 +22,7 @@ function Error404() {
               <div className="flex justify-center">
                 <Link
                   to="/"
-                  className="inline-flex text-white bg-themeBlue-100 border-0 py-2 px-6 focus:outline-none hover:bg-themeCyanDark rounded text-lg"
+                  className="inline-flex text-white bg-themeBlue-600 border-0 py-2 px-6 focus:outline-none hover:bg-themeCyanDark rounded text-lg"
                 >
                   Back to Home
                 </Link>

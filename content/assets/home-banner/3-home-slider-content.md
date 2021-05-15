@@ -1,7 +1,7 @@
 ---
 title1: Turn-key
 title2: Marketing Solutions
-titleStyles: title absolute top-3 left-36 lg:top-1/4 lg:left-1/2 text-themeBlue-100 text-base lg:text-7xl font-LatoBold text-center
+titleStyles: title absolute top-3 left-36 lg:top-1/4 lg:left-1/2 text-themeBlue-600 text-base lg:text-7xl font-LatoBold text-center
 subTitle1: Web Design • SEO • Social Media
 subTitle2: Hands-On Project Managers
 subTitle3: 

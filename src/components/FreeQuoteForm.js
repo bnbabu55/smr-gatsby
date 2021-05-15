@@ -7,7 +7,7 @@ const FreeQuoteForm = () => {
       className="py-10 mx-auto text-white font-Lato text-xl text-center"
     >
       <div className="flex flex-col lg:flex-row" id="form">
-        <div className="bg-themeBlue-100 flex-1 p-8">
+        <div className="bg-themeBlue-600 flex-1 p-8">
           <fieldset className="border-4 border-opacity-50 border-white p-5">
             <legend className="text-themeOrange-200 text-center font-MontserratBold text-xl uppercase px-8">
               Request SEO Proposal
@@ -53,7 +53,7 @@ const FreeQuoteForm = () => {
         </div>
         <div className="bg-themeOrange-400 flex-1 p-8">
           <fieldset className="border-4 border-opacity-50 border-white p-5 mx-auto">
-            <legend className="text-themeBlue-100 text-center font-MontserratBold text-xl uppercase px-8">
+            <legend className="text-themeBlue-600 text-center font-MontserratBold text-xl uppercase px-8">
               Website Design Quote
             </legend>
             <p>
@@ -88,7 +88,7 @@ const FreeQuoteForm = () => {
             </div>
             <div className="my-5">
               <a
-                className="w-full text-white uppercase bg-themeBlue-100 font-MontserratSemiBold px-8 py-2 tracking-wider text-lg shadow-2xl mt-5"
+                className="w-full text-white uppercase bg-themeBlue-600 font-MontserratSemiBold px-8 py-2 tracking-wider text-lg shadow-2xl mt-5"
                 href="website-design-search-marketing-quote-form.php"
               >
                 Free Quote

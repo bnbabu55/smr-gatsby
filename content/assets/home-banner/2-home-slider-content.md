@@ -1,7 +1,7 @@
 ---
 title1: Award Winning
 title2: Website Design
-titleStyles: title absolute top-5 left-5 lg:top-1/4 lg:left-40 text-themeBlue-100 text-base lg:text-7xl font-LatoBold text-center
+titleStyles: title absolute top-5 left-5 lg:top-1/4 lg:left-40 text-themeBlue-600 text-base lg:text-7xl font-LatoBold text-center
 subTitle1: Industry Recognized Designers
 subTitle2: Engage Your Customers
 subTitle3: 

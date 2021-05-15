@@ -38,7 +38,7 @@ const Categories = () => {
   function renderRow(group, index) {
     return (
       <li key={`group-${index}`}>
-        <ul className="list-disc text-themeBlue-100">
+        <ul className="list-disc text-themeBlue-600">
           {group.map(renderColumn)}
         </ul>
       </li>
@@ -71,7 +71,7 @@ const Categories = () => {
 
   return (
     <div className="category">
-      <h3 className="font-LatoBold text-lg text-themeBlue-100 py-5">
+      <h3 className="font-LatoBold text-lg text-themeBlue-600 py-5">
         Categories
       </h3>
       {catComponent}

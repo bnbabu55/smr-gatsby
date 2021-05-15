@@ -57,7 +57,7 @@ export const SocialMedia = () => {
           return (
             <div
               className={`mb-5 py-5 ${
-                i % 2 === 0 ? "bg-gray-300" : "bg-white"
+                i % 2 === 0 ? "bg-gray-100" : "bg-white"
               }`}
               key={socialItem.id}
               id={socialItem.id}
@@ -65,7 +65,7 @@ export const SocialMedia = () => {
               <div className="">
                 <div
                   className={`font-Lato text-left ${
-                    i % 2 === 0 ? "text-themeBlue-100" : "text-themeOrange-400"
+                    i % 2 === 0 ? "text-themeBlue-600" : "text-themeOrange-400"
                   }`}
                 >
                   <h2 className=" text-3xl font-bold">

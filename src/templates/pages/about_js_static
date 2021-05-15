@@ -51,7 +51,7 @@ const AboutPage = () => {
               alt="About slider 1"
             />
           </figure>
-          <div className="title absolute top-5 left-40 lg:top-1/4 lg:left-1/3 text-themeBlue-100 text-2xl lg:text-7xl font-LatoBold text-center">
+          <div className="title absolute top-5 left-40 lg:top-1/4 lg:left-1/3 text-themeBlue-600 text-2xl lg:text-7xl font-LatoBold text-center">
             Industry Recognized <br />
             Team Leadership
           </div>
@@ -71,7 +71,7 @@ const AboutPage = () => {
               </h1>
             </div>
             <div className="py-5">
-              <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase pb-5">
+              <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase pb-5">
                 SEARCH MARKETING RESOURCE'S MISSION
               </h2>
               <p className="text-themeGray-200 text-lg font-Lato">
@@ -97,7 +97,7 @@ const AboutPage = () => {
               <h2 className="text-themeOrange-100 text-5xl font-BebasNeue text-left py-5">
                 TEAM LEADERSHIP
               </h2>
-              <h3 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left pb-5">
+              <h3 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left pb-5">
                 MEET OUR PROJECT MANAGERS
               </h3>
               <p className="text-themeGray-200 text-lg font-Lato pb-10">
@@ -115,7 +115,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Gabrielle">
             <div className="conts_wrapper">
               <div className="content_pnl">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   GABRIELLE TALLEY
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -135,7 +135,7 @@ const AboutPage = () => {
           <div className="pt-8" id="team-Puneet">
             <div className="conts_wrapper">
               <div className="content_pnl">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   PUNEET JAIN
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -156,7 +156,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Chris">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   KATRINA GELINO
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -180,7 +180,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Michael">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   Michael Wilson
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -203,7 +203,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Scott">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   Scott Robbins
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -225,7 +225,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Kelly">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   KELLY BOYER SAGERT
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -247,7 +247,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Robert">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   Robert MacNeil
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -269,7 +269,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Robert">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   KSri RangaNarayanan
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -296,7 +296,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Robert">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   Arul Venkatachalam
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -322,7 +322,7 @@ const AboutPage = () => {
           <div className="mdl_cont_section bgnone ab-bg" id="team-Robert">
             <div className="conts_wrapper">
               <div className="pt-8">
-                <h2 className="text-themeBlue-100 text-2xl font-Montserrat uppercase text-left">
+                <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-left">
                   Narendra Babu Bhaskar
                 </h2>
                 <span className="text-themeGray-200 text-lg font-Lato">
@@ -340,7 +340,7 @@ const AboutPage = () => {
       </section>
 
       <div className="flex">
-        <hr className="border-4 border-themeBlue-100 w-1/2" />
+        <hr className="border-4 border-themeBlue-600 w-1/2" />
         <hr className="border-4 border-themeOrange-100 w-1/2" />
       </div>
       <FreeAuditForm />

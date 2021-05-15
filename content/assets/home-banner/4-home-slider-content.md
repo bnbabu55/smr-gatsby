@@ -1,7 +1,7 @@
 ---
 title1: Best Reviews
 title2: "& Testimonials"
-titleStyles: title absolute top-3 left-5 lg:top-1/4 lg:left-40 text-themeBlue-100 text-base lg:text-7xl font-LatoBold text-center
+titleStyles: title absolute top-3 left-5 lg:top-1/4 lg:left-40 text-themeBlue-600 text-base lg:text-7xl font-LatoBold text-center
 subTitle1: Industry Leading Client Retention
 subTitle2: Competitive Pricing – Professional
 subTitle3: Results

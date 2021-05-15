@@ -1,7 +1,7 @@
 ---
 title1: Effective Search
 title2: Marketing Strategies
-titleStyles: title absolute top-2 left-36 lg:top-28 lg:-right-72 text-themeBlue-100 text-base lg:text-7xl font-LatoBold text-center
+titleStyles: title absolute top-2 left-36 lg:top-28 lg:-right-72 text-themeBlue-600 text-base lg:text-7xl font-LatoBold text-center
 subTitle1: Increase Your Online Visibility
 subTitle2: Create New Business Leads 24/7
 subTitle3: 
