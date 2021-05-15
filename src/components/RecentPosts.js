@@ -53,7 +53,7 @@ const RecentPosts = () => {
             {renderHeader && (
               <h3
                 key={post.id + "-title"}
-                className="block font-Lato font-semibold text-lg text-themeBlue-text py-2 mb-2 border-b-2 border-themeBlue-100"
+                className="block font-Lato font-semibold text-lg text-themeBlue-100 py-2 mb-2 border-b-2 border-themeBlue-100"
               >
                 {post.month}
               </h3>
@@ -98,7 +98,7 @@ const RecentPosts = () => {
                     </h2>
                     <p
                       key={post.id + "-body-p"}
-                      className="font-Lato text-xs text-themeBlue-text pb-1"
+                      className="font-Lato text-xs text-themeBlue-100 pb-1"
                     >
                       <span key={post.id + "-body-span"}>{post.date}</span>
                     </p>

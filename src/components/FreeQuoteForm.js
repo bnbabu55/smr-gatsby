@@ -53,7 +53,7 @@ const FreeQuoteForm = () => {
         </div>
         <div className="bg-themeOrange-400 flex-1 p-8">
           <fieldset className="border-4 border-opacity-50 border-white p-5 mx-auto">
-            <legend className="text-themeBlue-text text-center font-MontserratBold text-xl uppercase px-8">
+            <legend className="text-themeBlue-100 text-center font-MontserratBold text-xl uppercase px-8">
               Website Design Quote
             </legend>
             <p>

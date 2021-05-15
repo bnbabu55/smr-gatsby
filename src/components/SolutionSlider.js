@@ -81,7 +81,7 @@ const SolutionSlider = () => {
               <div className="w-full lg:w-3/5">
                 <Link
                   to={`/${solutionSlide.frontmatter.linkedPage}`}
-                  className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5"
+                  className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-100 pb-5"
                 >
                   {solutionSlide.frontmatter.title}
                 </Link>

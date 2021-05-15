@@ -65,7 +65,7 @@ export const SocialMedia = () => {
               <div className="">
                 <div
                   className={`font-Lato text-left ${
-                    i % 2 === 0 ? "text-themeBlue-text" : "text-themeOrange-400"
+                    i % 2 === 0 ? "text-themeBlue-100" : "text-themeOrange-400"
                   }`}
                 >
                   <h2 className=" text-3xl font-bold">

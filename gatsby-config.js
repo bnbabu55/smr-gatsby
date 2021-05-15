@@ -48,6 +48,7 @@ module.exports = {
           perPage: 20, // currently set to 100
           requestConcurrency: 5, // currently set to 15
           previewRequestConcurrency: 2, // currently set to 5
+          timeout: 60000,
         },
       },
     },
@@ -85,6 +86,9 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/smr-icon.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
 

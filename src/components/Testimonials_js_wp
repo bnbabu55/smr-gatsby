@@ -65,7 +65,7 @@ const Testimonials = () => {
           <Link
             key="testi-link"
             to="#"
-            className="font-BebasNeue text-themeBlue-text text-5xl lg:text-7xl"
+            className="font-BebasNeue text-themeBlue-100 text-5xl lg:text-7xl"
           >
             Testimonials
             <span

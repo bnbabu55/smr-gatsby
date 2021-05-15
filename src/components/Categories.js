@@ -71,7 +71,7 @@ const Categories = () => {
 
   return (
     <div className="category">
-      <h3 className="font-LatoBold text-lg text-themeBlue-text py-5">
+      <h3 className="font-LatoBold text-lg text-themeBlue-100 py-5">
         Categories
       </h3>
       {catComponent}

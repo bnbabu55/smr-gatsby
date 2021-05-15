@@ -79,7 +79,7 @@ const SolutionSlider = () => {
                 />
               </div>
               <div className="w-full lg:w-3/5">
-                <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-text pb-5">
+                <div className="font-Montserrat font-bold text-xl text-left uppercase text-themeBlue-100 pb-5">
                   {solutionSlide.frontmatter.title}
                 </div>
                 <div

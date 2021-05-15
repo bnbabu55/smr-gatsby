@@ -164,6 +164,7 @@ const HomeNews = () => {
                       itemProp="url"
                       key={post.id + "-body-link"}
                       className="w-full"
+                      aria-label={post.featuredImage.node.altText}
                     >
                       <GatsbyImage
                         key={post.id + "-image"}

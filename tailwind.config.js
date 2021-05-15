@@ -51,7 +51,6 @@ module.exports = {
         themeBlue: {
           100: "#00497a",
           200: "#0476ac",
-          text: "#00497a",
         },
         themeGray: {
           50: "#cfcfcf",
@@ -82,9 +81,9 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: "#ffa800",
+              color: "#b95e02",
               "&:hover": {
-                color: "#e69700",
+                color: "#7c3f02",
               },
               textDecoration: "none !important",
             },

@@ -36,7 +36,7 @@ const TeamSlider = () => {
           </Link>
         </h2>
 
-        <h3 className="text-themeBlue-text font-Montserrat text-2xl uppercase my-5">
+        <h3 className="text-themeBlue-100 font-Montserrat text-2xl uppercase my-5">
           Knowledgeable, Experienced, Professional &amp; Dedicated
         </h3>
 

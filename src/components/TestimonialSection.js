@@ -82,7 +82,7 @@ export const TestimonialSection = () => {
               </h1>
             </div>
             <div className="py-5">
-              <h2 className="text-themeBlue-text text-2xl font-MontserratSemiBold uppercase pb-5">
+              <h2 className="text-themeBlue-100 text-2xl font-MontserratSemiBold uppercase pb-5">
                 DIGITAL MARKETING & WEBSITE DESIGN CLIENT TESTIMONIALS
               </h2>
               <p className="text-themeGray-200 text-lg font-Lato">
@@ -149,7 +149,7 @@ export const TestimonialSection = () => {
                   {testimonial.frontmatter.companyName} {" - "}
                   <a
                     href={testimonial.frontmatter.websiteUrl}
-                    className="text-themeBlue-text text-xl font-Montserrat lowercase"
+                    className="text-themeBlue-100 text-xl font-Montserrat lowercase"
                   >
                     {testimonial.frontmatter.websiteUrl
                       .replace(/^\/\/|^.*?:(\/\/)?/g, "")
@@ -159,7 +159,7 @@ export const TestimonialSection = () => {
                 <div className="text-themeGray-200 text-lg font-Lato py-5">
                   {parse(testimonial.html)}
                 </div>
-                <h3 className="text-themeBlue-text text-2xl font-NothingYouCouldDo font-bold uppercase text-left">
+                <h3 className="text-themeBlue-100 text-2xl font-NothingYouCouldDo font-bold uppercase text-left">
                   {testimonial.frontmatter.title}
                 </h3>
                 <span className="text-themeGray-200 text-lg font-Lato">

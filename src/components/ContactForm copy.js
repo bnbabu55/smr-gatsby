@@ -8,7 +8,7 @@ const ContactForm = () => {
           <h2 className="mx-auto text-center font-BebasNeue text-themeOrange-400 text-5xl">
             CONTACT US
           </h2>
-          <h3 className="mx-auto text-center font-Montserrat text-themeBlue-text text-2xl py-5">
+          <h3 className="mx-auto text-center font-Montserrat text-themeBlue-100 text-2xl py-5">
             WEBSITE SEO, DESIGN AND DEVELOPMENT COMPANY
           </h3>
 
@@ -123,7 +123,7 @@ const ContactForm = () => {
                 </span>
               </li>
             </ul>
-            <ul className="w-full mt-3 lg:mt-0 text-themeBlue-text text-base lg:text-2xl pb-3">
+            <ul className="w-full mt-3 lg:mt-0 text-themeBlue-100 text-base lg:text-2xl pb-3">
               <li className="">
                 sales@searchmarketingresource.com <br />
                 <span className="text-themeGray-300">888-842-9033 x 11</span>
