@@ -41,7 +41,7 @@ const Header = () => {
   function renderNavDropdown(dropdownMenu) {
     return (
       <div
-        className={`-mx-5 py-2 bg-themeBlue-600 border-b-4 border-l-4 border-r-4 border-themeGray-50 shadow-xl w-76 absolute z-10 mt-1 hidden group-hover:flex flex-col shadow-themeShadow`}
+        className={`-mx-3 py-2 bg-themeBlue-600 border-b-4 border-l-4 border-r-4 border-themeGray-50 shadow-xl w-76 absolute z-10 mt-1 hidden group-hover:flex flex-col shadow-themeShadow`}
       >
         {dropdownMenu.map(renderNavDropdownItem)}
       </div>
