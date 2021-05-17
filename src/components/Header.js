@@ -41,7 +41,7 @@ const Header = () => {
   function renderNavDropdown(dropdownMenu) {
     return (
       <div
-        className={`-mx-3 py-2 bg-themeBlue-600 border-b-4 border-l-4 border-r-4 border-themeGray-50 shadow-xl w-76 absolute z-10 mt-1 hidden group-hover:flex flex-col shadow-themeShadow`}
+        className={`-mx-3 pb-2 bg-themeBlue-600 border-b-4 border-l-4 border-r-4 border-themeGray-50 w-76 absolute z-10 mt-8 hidden group-hover:flex flex-col`}
       >
         {dropdownMenu.map(renderNavDropdownItem)}
       </div>
@@ -63,7 +63,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full mt-0 pt-0 bg-themeBlue-600 text-white font-MontserratSemiBold border-b-4 border-themeGray-50 shadow-themeShadow">
-      <div className="mx-auto md:flex md:justify-evenly md:items-center md:px-4 md:py-3">
+      <div className="mx-auto md:flex md:justify-evenly md:items-center md:px-4">
         <div className="flex px-4 py-3 items-center justify-between md:p-0">
           <Link to="/">
             <svg
@@ -151,7 +151,7 @@ const Header = () => {
         </div>
         {filteredMenu?.length > 0 ? (
           <ul
-            className={`px-2 pb-4 pt-2 ${
+            className={`px-2 pb-2 ${
               isMenuVisible ? "block" : "hidden"
             } md:flex md:p-0 md:leading-4`}
           >
@@ -169,13 +169,13 @@ const Header = () => {
               return (
                 <li
                   key={menuItem?.id}
-                  className={
+                  className={`py-8 ${
                     menuItem.childItems.nodes.length > 0 ? "group realtive" : ""
-                  }
+                  }`}
                 >
                   <Link
                     to={pageAnchor}
-                    className={`px-2 py-1 text-white uppercase font-MontserratSemiBold text-xs tracking-wide rounded focus-within:bg-themeBlue-200
+                    className={`px-2 py-1 text-white uppercase font-MontserratSemiBold text-xs tracking-wide rounded 
 `}
                     activeClassName="bg-themeBlue-200"
                     partiallyActive={menuItem?.label === "News" ? true : false}
