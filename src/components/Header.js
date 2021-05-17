@@ -15,6 +15,7 @@ const Header = () => {
             url
             id
             path
+            parentId
             childItems {
               nodes {
                 label
@@ -33,10 +34,14 @@ const Header = () => {
 
   if (!wpMenu?.menuItems?.nodes || wpMenu.menuItems.nodes === 0) return null
 
+  const filteredMenu = wpMenu?.menuItems?.nodes.filter(
+    menuItem => menuItem.parentId === null
+  )
+
   function renderNavDropdown(dropdownMenu) {
     return (
       <div
-        className={`py-2 flex-col bg-gray-600 rounded-lg shadow-xl w-80 absolute z-10 hidden group-hover:block`}
+        className={`-mx-5 py-2 bg-themeBlue-600 border-b-4 border-l-4 border-r-4 border-themeGray-50 shadow-xl w-76 absolute z-10 mt-1 hidden group-hover:flex flex-col shadow-themeShadow`}
       >
         {dropdownMenu.map(renderNavDropdownItem)}
       </div>
@@ -48,8 +53,8 @@ const Header = () => {
       <Link
         key={subMenuItem?.id}
         to={subMenuItem?.path}
-        className="block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs"
-        activeClassName="bg-themeBlue-200 text-themeOrange-100"
+        className="px-2 mx-2 py-1 my-1 text-white uppercase rounded font-MontserratSemiBold text-xs"
+        activeClassName="bg-themeBlue-200"
       >
         {subMenuItem?.label}
       </Link>
@@ -144,13 +149,13 @@ const Header = () => {
             </button>
           </div>
         </div>
-        {wpMenu.menuItems.nodes?.length > 0 ? (
+        {filteredMenu?.length > 0 ? (
           <ul
             className={`px-2 pb-4 pt-2 ${
               isMenuVisible ? "block" : "hidden"
             } md:flex md:p-0 md:leading-4`}
           >
-            {wpMenu.menuItems.nodes.map((menuItem, i) => {
+            {filteredMenu?.map((menuItem, i) => {
               const pathVar = menuItem?.path
               const anchorPosition = pathVar.indexOf("#")
               let pageAnchor = ""
@@ -162,34 +167,39 @@ const Header = () => {
               }
 
               return (
-                <li key={menuItem?.id}>
+                <li
+                  key={menuItem?.id}
+                  className={
+                    menuItem.childItems.nodes.length > 0 ? "group realtive" : ""
+                  }
+                >
                   <Link
                     to={pageAnchor}
-                    className={`block px-2 py-1 text-white uppercase rounded font-MontserratSemiBold text-xs
-                        ${
-                          menuItem.childItems.nodes.length > 0
-                            ? "relative group"
-                            : null
-                        }`}
+                    className={`px-2 py-1 text-white uppercase font-MontserratSemiBold text-xs tracking-wide rounded focus-within:bg-themeBlue-200
+`}
                     activeClassName="bg-themeBlue-200"
+                    partiallyActive={menuItem?.label === "News" ? true : false}
                   >
                     {menuItem?.label}
                   </Link>
                   {menuItem.childItems.nodes.length > 0
                     ? renderNavDropdown(menuItem?.childItems?.nodes)
-                    : null}
+                    : ""}
                 </li>
               )
             })}
           </ul>
         ) : null}
       </div>
-      <figure className="overflow-hidden z-10 absolute top-18 right-12 hidden lg:block">
+      <Link
+        to="/search-marketing-website-design-proposal-form"
+        className="overflow-hidden z-10 absolute top-18 right-12 hidden lg:block"
+      >
         <StaticImage
           src="../../static/images/smr-proposal-icon.png"
           alt="Freequote button"
         />
-      </figure>
+      </Link>
     </header>
   )
 }

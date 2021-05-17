@@ -47,7 +47,7 @@ const Testimonials = () => {
         <h2 className="pb-8 text-center">
           <Link
             key="testi-link"
-            to="#"
+            to="/testimonials"
             className="font-BebasNeue text-themeBlue-600 text-5xl"
           >
             Testimonials
@@ -93,32 +93,35 @@ const Testimonials = () => {
         <div className="w-3/4">
           {testimonialSlides?.nodes?.map(testimonialSlide => {
             return (
-              <SwiperSlide className="w-full flex flex-col justify-center items-center border-themeGray-50 border-4 p-5" key={testimonialSlide.id}>
-                  <div
-                    style={{
-                      border: "solid 5px #a63f00",
-                      borderRadius: "50%",
-                      overflow: "hidden",
-                    }}
-                    className="mb-12 shadow-themeShadow"
-                  >
-                    <GatsbyImage
-                      alt={testimonialSlide?.frontmatter?.altTxt}
-                      image={
-                        testimonialSlide?.frontmatter?.featuredImage
-                          ?.childImageSharp?.gatsbyImageData
-                      }
-                    />
-                  </div>
-                  <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                    {parse(testimonialSlide?.html)}
-                  </div>
-                  <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
-                    {testimonialSlide?.frontmatter?.title}
-                  </div>
-                  <div className="font-Montserrat text-xl text-themeOrange-400">
-                    {testimonialSlide?.frontmatter?.memberRole}
-                  </div>
+              <SwiperSlide
+                className="w-full flex flex-col justify-center items-center border-themeGray-50 border-4 p-5"
+                key={testimonialSlide.id}
+              >
+                <div
+                  style={{
+                    border: "solid 5px #a63f00",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                  }}
+                  className="mb-12 shadow-themeShadow"
+                >
+                  <GatsbyImage
+                    alt={testimonialSlide?.frontmatter?.altTxt}
+                    image={
+                      testimonialSlide?.frontmatter?.featuredImage
+                        ?.childImageSharp?.gatsbyImageData
+                    }
+                  />
+                </div>
+                <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
+                  {parse(testimonialSlide?.html)}
+                </div>
+                <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
+                  {testimonialSlide?.frontmatter?.title}
+                </div>
+                <div className="font-Montserrat text-xl text-themeOrange-400">
+                  {testimonialSlide?.frontmatter?.memberRole}
+                </div>
               </SwiperSlide>
             )
           })}

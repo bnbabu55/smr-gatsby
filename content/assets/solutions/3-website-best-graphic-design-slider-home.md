@@ -1,6 +1,6 @@
 ---
 title: Best Graphic Design
-linkedPage: website-development-company.php
+linkedPage: "web-design-services"
 featuredImage: 3-website-best-graphic-design-slider-home.png
 altTxt: Website Graphic Design Services Company
 ---

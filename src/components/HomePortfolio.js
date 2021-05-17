@@ -67,7 +67,7 @@ const HomePortfolio = () => {
         <div className="w-full">
           <div className="flex justify-center items-center text-center pb-5">
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="font-MontserratSemiBold text-themeOrange-100 text-2xl"
             >
               Website Design Services <br className="lg:hidden" />
@@ -87,7 +87,7 @@ const HomePortfolio = () => {
           </p>
           <div className="grid grid-cols-2 grid-rows-5 lg:grid-cols-4 lg:grid-rows-3 gap-5 divide-x divide-white pt-10">
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-1 row-end-2"
             >
               <GatsbyImage
@@ -96,7 +96,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-1 row-end-2"
             >
               <GatsbyImage
@@ -105,7 +105,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-2 row-end-3 lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2"
             >
               <GatsbyImage
@@ -114,7 +114,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-2 row-end-3 lg:col-start-4 lg:col-end-5 lg:row-start-1 lg:row-end-2"
             >
               <GatsbyImage
@@ -124,7 +124,7 @@ const HomePortfolio = () => {
             </Link>
             <hr className="col-start-1 col-end-3 row-start-3 row-end-4 lg:col-end-5 lg:row-start-2 lg:row-end-3 border-b border-white self-center" />
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4"
             >
               <GatsbyImage
@@ -133,7 +133,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4"
             >
               <GatsbyImage
@@ -142,7 +142,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-5 row-end-6 lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4"
             >
               <GatsbyImage
@@ -151,7 +151,7 @@ const HomePortfolio = () => {
               />
             </Link>
             <Link
-              to={`/search-marketing-and-website-design-portfolio.php`}
+              to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-5 row-end-6 lg:col-start-4 lg:col-end-5 lg:row-start-3 lg:row-end-4"
             >
               <GatsbyImage

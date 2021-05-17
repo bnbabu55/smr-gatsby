@@ -43,7 +43,7 @@ const FreeQuoteForm = () => {
             </div>
             <div className="my-5">
               <a
-                href="website-design-search-marketing-proposal-form.php"
+                href="/search-marketing-website-design-proposal-form"
                 className="w-full text-white uppercase bg-themeOrange-400 font-MontserratSemiBold px-8 py-2 tracking-wider text-lg shadow-2xl mt-5"
               >
                 Free Quote
@@ -89,7 +89,7 @@ const FreeQuoteForm = () => {
             <div className="my-5">
               <a
                 className="w-full text-white uppercase bg-themeBlue-600 font-MontserratSemiBold px-8 py-2 tracking-wider text-lg shadow-2xl mt-5"
-                href="website-design-search-marketing-quote-form.php"
+                href="/website-design-search-marketing-quote-form"
               >
                 Free Quote
               </a>

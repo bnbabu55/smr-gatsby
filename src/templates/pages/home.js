@@ -21,7 +21,7 @@ const HomePage = ({ data: { page } }) => (
     <WebDesign />
     <SolutionSlider />
     <HomePortfolio />
-    <FreeAuditForm />
+    <FreeAuditForm home={true} />
     <Testimonials />
     <FreeQuoteForm />
     <TeamSlider />

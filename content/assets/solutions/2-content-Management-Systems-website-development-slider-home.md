@@ -1,6 +1,6 @@
 ---
 title: CONTENT MANAGEMENT
-linkedPage: website-content-management.php
+linkedPage: "content-management-2"
 featuredImage: 2-content-Management-Systems-website-development-slider-home.jpg
 altTxt: Website Content Management Systems Development
 ---

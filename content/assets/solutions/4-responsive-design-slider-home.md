@@ -1,6 +1,6 @@
 ---
 title: RESPONSIVE DESIGNS
-linkedPage: mobile-friendly-website-design.php
+linkedPage: "mobile-responsive-website-design"
 featuredImage: 4-responsive-design-slider-home.jpg
 altTxt: Website Responsive Design Services Company
 ---

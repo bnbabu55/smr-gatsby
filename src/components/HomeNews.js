@@ -91,7 +91,7 @@ const HomeNews = () => {
       // Spread bgImage into BackgroundImage:
       {...image}
       preserveStackingContext
-      id="HomePortfolio"
+      id="HomeNews"
       className="py-10 mx-auto home-news"
     >
       <div className="w-11/12 text-center mx-auto py-5">

@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const SMServices = () => {
@@ -67,53 +67,45 @@ const SMServices = () => {
   }
 
   return (
-    <section id="sm-services" className="pt-5 pb-10 border-b border-gray-300">
+    <section id="sm-services" className="py-10 border-b border-gray-300">
       <div className="wrapper grid gap-3 grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto">
         <div className="text-center col-start-1 col-end-2 lg:col-end-4 row-start-1 row-end-2">
-          <h2 className="pt-8">
-            <a
-              href="search-marketing-services.php"
-              className="text-themeOrange-400 text-5xl font-BebasNeue"
-            >
-              Search Marketing SERVICES
-            </a>
-          </h2>
-          <div className="service_top_text py-5">
-            <h2 className="text-themeBlue-600 text-2xl font-Montserrat uppercase text-center">
-              Industry Leading Digital Marketing Services
-            </h2>
+          <Link
+            to={`/search-marketing-programs`}
+            className="text-themeOrange-400 text-5xl font-BebasNeue pt-8"
+          >
+            Search Marketing SERVICES
+          </Link>
+          <div className="service_top_text py-5 text-themeBlue-600 text-2xl font-Montserrat font-semibold uppercase text-center">
+            Industry Leading Digital Marketing Services
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-2 row-end-3 flex gap-x-2">
-          <div className="w-1/4">
-            <figure className="overflow-hidden">
-              <GatsbyImage
-                image={smIcons.nodes[0].childImageSharp.gatsbyImageData}
-                alt="Best Practice Search Marketing Programs"
-                data-imagesrc={
-                  smSlides.nodes[0].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              />
-            </figure>
+          <div className="w-1/4 overflow-hidden">
+            <GatsbyImage
+              image={smIcons.nodes[0].childImageSharp.gatsbyImageData}
+              alt="Best Practice Search Marketing Programs"
+              data-imagesrc={
+                smSlides.nodes[0].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            />
           </div>
           <div className="w-3/4">
-            <h3>
-              <a
-                className="text-themeOrange-400 text-xl font-RalewaySemiBold"
-                href="search-marketing-programs.php"
-                data-imagesrc={
-                  smSlides.nodes[0].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              >
-                Search Marketing Program
-              </a>
-            </h3>
+            <Link
+              className="text-themeOrange-400 text-xl font-RalewaySemiBold"
+              to={`/search-marketing-programs`}
+              data-imagesrc={
+                smSlides.nodes[0].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            >
+              Search Marketing Program
+            </Link>
             <p className="text-themeGray-200 text-lg font-Lato">
               SEO marketing solutions and all-inclusive Search Marketing
               programs that significantly increase keyword search rankings,
@@ -122,35 +114,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 lg:col-start-2 lg:col-end-3 row-start-3 row-end-4 lg:row-start-2 lg:row-end-3 flex gap-x-2">
-          <div className="w-1/4">
-            <figure className="overflow-hidden">
-              <GatsbyImage
-                alt="Search Marketing Press Release Writing Icon"
-                image={smIcons.nodes[1].childImageSharp.gatsbyImageData}
-                data-imagesrc={
-                  smSlides.nodes[1].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              />
-            </figure>
+          <div className="w-1/4 overflow-hidden">
+            <GatsbyImage
+              alt="Search Marketing Press Release Writing Icon"
+              image={smIcons.nodes[1].childImageSharp.gatsbyImageData}
+              data-imagesrc={
+                smSlides.nodes[1].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            />
           </div>
           <div className="w-3/4">
-            <h3>
-              <a
-                href="press-release-writing-services.php"
-                data-imagesrc={
-                  smSlides.nodes[1].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                className="text-themeOrange-400 text-xl font-RalewaySemiBold"
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              >
-                Optimized Press Release
-              </a>
-            </h3>
+            <Link
+              to={`/optimized-press-release`}
+              data-imagesrc={
+                smSlides.nodes[1].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              className="text-themeOrange-400 text-xl font-RalewaySemiBold"
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            >
+              Optimized Press Release
+            </Link>
             <p className="text-themeGray-200 text-lg font-Lato">
               SEO ‘backlink’ building Press Releases are ‘optimized’ with
               keyword phrases and written in AP format with imbedded links
@@ -159,35 +147,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4 flex gap-x-2">
-          <div className="w-1/4">
-            <figure className="overflow-hidden">
-              <GatsbyImage
-                alt="SEO Program Success Icon"
-                image={smIcons.nodes[2].childImageSharp.gatsbyImageData}
-                data-imagesrc={
-                  smSlides.nodes[2].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              />
-            </figure>
+          <div className="w-1/4 overflow-hidden">
+            <GatsbyImage
+              alt="SEO Program Success Icon"
+              image={smIcons.nodes[2].childImageSharp.gatsbyImageData}
+              data-imagesrc={
+                smSlides.nodes[2].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            />
           </div>
           <div className="w-3/4">
-            <h3>
-              <a
-                href="search-marketing-success.php"
-                data-imagesrc={
-                  smSlides.nodes[2].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                className="text-themeOrange-400 text-xl font-RalewaySemiBold"
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              >
-                SEO Program Analytics
-              </a>
-            </h3>
+            <Link
+              to={`/program-success-analytics`}
+              data-imagesrc={
+                smSlides.nodes[2].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              className="text-themeOrange-400 text-xl font-RalewaySemiBold"
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            >
+              SEO Program Analytics
+            </Link>
             <p className="text-themeGray-200 text-lg font-Lato">
               Real-time access to SEO marketing analytics for 24/7 program
               success tracking including website traffic generated, backlinks
@@ -196,35 +180,31 @@ const SMServices = () => {
           </div>
         </div>
         <div className="col-start-1 col-end-2 row-start-5 row-end-6 lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4 flex gap-x-2">
-          <div className="w-1/4">
-            <figure className="overflow-hidden">
-              <GatsbyImage
-                alt="Social Media Management Icon"
-                image={smIcons.nodes[3].childImageSharp.gatsbyImageData}
-                data-imagesrc={
-                  smSlides.nodes[3].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              />
-            </figure>
+          <div className="w-1/4 overflow-hidden">
+            <GatsbyImage
+              alt="Social Media Management Icon"
+              image={smIcons.nodes[3].childImageSharp.gatsbyImageData}
+              data-imagesrc={
+                smSlides.nodes[3].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            />
           </div>
           <div className="w-3/4">
-            <h3>
-              <a
-                href="social-media-management.php"
-                data-imagesrc={
-                  smSlides.nodes[3].childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                className="text-themeOrange-400 text-xl font-RalewaySemiBold"
-                onMouseOver={changeImage}
-                onFocus={changeImage}
-              >
-                Social Media Management
-              </a>
-            </h3>
+            <Link
+              to={`/social-media`}
+              data-imagesrc={
+                smSlides.nodes[3].childImageSharp.gatsbyImageData.images
+                  .fallback.src
+              }
+              className="text-themeOrange-400 text-xl font-RalewaySemiBold"
+              onMouseOver={changeImage}
+              onFocus={changeImage}
+            >
+              Social Media Management
+            </Link>
             <p className="text-themeGray-200 text-lg font-Lato">
               Ongoing Social Media articles (Facebook, LinkedIn, Twitter,
               Google+) and Blog posts are written targeting the keyword phrases

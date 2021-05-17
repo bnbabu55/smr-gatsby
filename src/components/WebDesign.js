@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const WebDesign = () => {
   const { wdIcons, wdSlides } = useStaticQuery(graphql`
@@ -66,12 +66,12 @@ const WebDesign = () => {
       <div className="wrapper w-full mx-auto lg:w-6/12">
         <div className="top_content flex flex-col justify-center items-center text-center">
           <h3 className="py-5">
-            <a
-              href="search-marketing-services.php"
-              className="text-themeBlue-600 text-3xl font-Montserrat uppercase"
+            <Link
+              to={`/web-design-services`}
+              className="text-themeBlue-600 text-3xl font-Montserrat font-semibold uppercase"
             >
               Web Design Services
-            </a>
+            </Link>
           </h3>
           <p className="text-themeGray-200 text-lg font-Lato pb-10 text-center">
             Award winning search optimized website development services,

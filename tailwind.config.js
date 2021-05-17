@@ -24,6 +24,12 @@ module.exports = {
   },
   theme: {
     extend: {
+      // fontSize: {
+      //   "2xs": ".65rem",
+      // },
+      zIndex: {
+        "-10": "-10",
+      },
       fontFamily: {
         Montserrat: ["Montserrat", "Helvetica", "sans-serif"],
         MontserratSemiBold: ["MontserratSemiBold", "Helvetica", "sans-serif"],
@@ -91,8 +97,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      // backgroundColor: ["active"],
+      backgroundColor: ["active", "focus-within"],
       // textColor: ["active"],
+      display: ["responsive", "group-hover", "group-focus"],
     },
   },
   plugins: [
