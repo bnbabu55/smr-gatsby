@@ -29,7 +29,7 @@ const TeamSlider = () => {
       <div className="mx-auto text-center">
         <h2>
           <Link
-            to={`/about-search-marketing-resource.php`}
+            to={`/about`}
             className="text-themeOrange-100 font-BebasNeue text-5xl hover:underline"
           >
             The Team

@@ -92,7 +92,7 @@ const HomeNews = () => {
       {...image}
       preserveStackingContext
       id="HomeNews"
-      className="py-10 mx-auto home-news"
+      className="py-10 mx-auto home-news bg-themeBlue-600"
     >
       <div className="w-11/12 text-center mx-auto py-5">
         <div className="text-center mx-auto mb-5">
@@ -105,7 +105,7 @@ const HomeNews = () => {
             </Link>
           </h2>
 
-          <h2 className="text-themeOrange-100 font-Montserrat text-2xl uppercase my-5">
+          <h2 className="text-themeOrange-50 font-Montserrat text-2xl uppercase my-5">
             Digital Marketing &amp; Website Design News
           </h2>
 
@@ -186,7 +186,7 @@ const HomeNews = () => {
                       to={`/news${post.uri}`}
                       itemProp="url"
                       key={post.id + "-body-link"}
-                      className="w-full font-Montserrat text-xl uppercase text-themeOrange-100"
+                      className="w-full font-Montserrat text-xl uppercase text-themeOrange-50"
                     >
                       {parse(post.title)}
                     </Link>

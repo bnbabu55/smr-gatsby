@@ -61,14 +61,14 @@ const HomePortfolio = () => {
       {...image}
       preserveStackingContext
       id="HomePortfolio"
-      className="py-10 mx-auto"
+      className="py-10 mx-auto bg-themeBlue-600"
     >
       <div className="w-11/12 mx-auto text-white">
         <div className="w-full">
           <div className="flex justify-center items-center text-center pb-5">
             <Link
               to={`/portfolio`}
-              className="font-MontserratSemiBold text-themeOrange-100 text-2xl"
+              className="font-MontserratSemiBold text-themeOrange-50 text-2xl"
             >
               Website Design Services <br className="lg:hidden" />
               <span className="font-BebasNeue text-white text-5xl px-8 hover:underline">
@@ -89,6 +89,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-1 row-end-2"
+              aria-label={portfolioImages.nodes[0].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[0].name}
@@ -98,6 +99,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-1 row-end-2"
+              aria-label={portfolioImages.nodes[1].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[1].name}
@@ -107,6 +109,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-2 row-end-3 lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2"
+              aria-label={portfolioImages.nodes[2].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[2].name}
@@ -116,6 +119,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-2 row-end-3 lg:col-start-4 lg:col-end-5 lg:row-start-1 lg:row-end-2"
+              aria-label={portfolioImages.nodes[3].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[3].name}
@@ -126,6 +130,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4"
+              aria-label={portfolioImages.nodes[4].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[4].name}
@@ -135,6 +140,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-4 row-end-5 lg:row-start-3 lg:row-end-4"
+              aria-label={portfolioImages.nodes[5].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[5].name}
@@ -144,6 +150,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-1 col-end-2 row-start-5 row-end-6 lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4"
+              aria-label={portfolioImages.nodes[6].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[6].name}
@@ -153,6 +160,7 @@ const HomePortfolio = () => {
             <Link
               to={`/portfolio`}
               className="col-start-2 col-end-3 row-start-5 row-end-6 lg:col-start-4 lg:col-end-5 lg:row-start-3 lg:row-end-4"
+              aria-label={portfolioImages.nodes[7].name}
             >
               <GatsbyImage
                 alt={portfolioImages.nodes[7].name}

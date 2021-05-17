@@ -91,7 +91,7 @@ export const TestimonialSection = () => {
                 Marketing Resource team has provided over the years. The
                 different requirements performed included Content Writing,{" "}
                 <Link
-                  to="/search-marketing-programs.php"
+                  to="/search-marketing-programs"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   SEO Programs
@@ -99,35 +99,35 @@ export const TestimonialSection = () => {
                 {", "}
                 optimized{" "}
                 <Link
-                  to="/press-release-writing-services.php"
+                  to="/optimized-press-release"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   Press Releases
                 </Link>
                 {", "}
                 <Link
-                  to="/email-marketing-services.php"
+                  to="/email-marketing"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   Email Marketing campaigns
                 </Link>
                 {", "}
                 <Link
-                  to="/adwords-management.php"
+                  to="/google-ads-management"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   Google Adwords management
                 </Link>
                 {", "}
                 <Link
-                  to="/social-media-management.php"
+                  to="/social-media"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   Social Media posts
                 </Link>
                 {", "}
                 <Link
-                  to="/web-design-services.php"
+                  to="/web-design-services"
                   className="text-themeGray-200 text-lg font-Lato underline"
                 >
                   Website Development
