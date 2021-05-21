@@ -4,16 +4,16 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 
-const WebDesignProposalPage = ({ data: { page, seoImages } }) => {
+const WebDesignQuotePage = ({ data: { page, seoImages } }) => {
   const onChangeHandler = e => {
     const chosenPlan = e.target.value
     const targetElem = document.getElementById(`target${chosenPlan}`)
     targetElem.checked = true
+    const hideBox =
+      e.target.parentElement.parentElement.previousSibling.firstChild
+    hideBox.classList.remove("invisible")
 
     if (chosenPlan !== "webdesign") {
-      const hideBox =
-        e.target.parentElement.parentElement.previousSibling.firstChild
-      hideBox.classList.remove("invisible")
       const resetElems = document.querySelectorAll(
         `input[name="services14N"]:not(:checked)`
       )
@@ -33,19 +33,203 @@ const WebDesignProposalPage = ({ data: { page, seoImages } }) => {
       <section className="w-11/12 mx-auto pt-20 pb-10">
         <div className="wrapper">
           <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
-            Search Marketing Programs <br /> & <br /> Web Design Services
+            Web Design Services <br /> & <br /> Search Marketing Programs
           </h1>
           <hr className="w-1/2 mx-auto my-5 border-2 border-gray-300" />
-          <p className="px-4 py-5 text-themeGray-200 text-lg font-Lato text-center mx-auto">
+          <p className="w-4/5 px-4 py-5 text-themeGray-200 text-lg font-Lato text-center mx-auto">
+            Our website design and development services are industry recognized
+            in delivering 'best in class' graphic designs and end-user
+            experience. We have the experience and tenure to guide your team
+            through the entire process of launching a new, dynamic online
+            presentation of your products and services.
+          </p>
+          <div className="w-4/5 border-2 border-gray-300 rounded mx-auto py-5 my-5">
+            <form name="webdesignform">
+              <div className="flex justify-self-end ml-5">
+                <Link
+                  to="/web-design-services"
+                  target="_blank"
+                  className="py-2 px-3 bg-themeBlue-600 text-white text-base rounded"
+                >
+                  Read More
+                </Link>
+              </div>
+              <h3 className="text-3xl text-themeOrange-400 underline py-5 text-center">
+                Website Design, Development & Maintenance
+              </h3>
+              <ul className="webdesign-form grid grid-cols-1 lg:grid-cols-3 text-lg text-themeBlue-600 text-left mx-8">
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Assigned Project Manager
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Senior Graphic Designer
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Development Team Lead
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Site Navigation Approval
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Design Mockups
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Mobile Friendly Design
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Fast Page Load Times
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  News & Events (Blog)
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Content Management (CMS)
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Email Opt-In Captures
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Request Quote Forms
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Ecommerce Solutions
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  SEO Page Attributes
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Customer Testimonials
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Site Traffic Analytics
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Landing Page Design
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Hi-Res Stock Photos
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Video Libraries & Stream
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Ongoing Website Maintenance{" "}
+                </li>
+                <li className="flex items-center">
+                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
+                    &#62;
+                  </span>
+                  Page Copy Writing (Optional)
+                </li>
+              </ul>
+              <div className="mr-2 py-5 mx-10 flex justify-between">
+                <div className="hide-box pl-1">
+                  <Link
+                    to="#contact"
+                    className="invisible text-base underline text-themeBlue-600"
+                  >
+                    Scroll Down To Complete Form
+                  </Link>
+                </div>
+                <div className="check-services text-right text-base font-semibold text-themeOrange-400">
+                  <label>
+                    Select Services
+                    <input
+                      className="topradio ml-2 checked:bg-themeBlue-600 text-themeBlue-600 border-themeBlue-600 focus:ring-themeBlue-600 text-lg"
+                      type="radio"
+                      id="webdesign"
+                      value="webdesign"
+                      name="webdesign"
+                      onChange={onChangeHandler}
+                    />
+                  </label>
+                </div>
+              </div>
+              {/* <div className="justify-self-end mr-5 py-5 check-services text-right text-base font-semibold text-themeOrange-400">
+                <label>
+                  Select Services
+                  <input
+                    className="ml-2 checked:bg-themeBlue-600 text-themeBlue-600 border-themeBlue-600 focus:ring-themeBlue-600 text-lg"
+                    type="radio"
+                    id="webdesign"
+                    value="webdesign"
+                    name="webdesign"
+                    onChange={onChangeHandler}
+                  />
+                </label>
+              </div> */}
+            </form>
+          </div>
+          <h2 className="text-themeOrange-400 pt-10 text-4xl font-BebasNeue font-bold tracking-wide text-center underline">
+            Want To Increase Your Search Rankings
+          </h2>
+
+          <p className="py-5 text-center text-themeBlue-600 text-lg italic font-semibold">
+            - Include Digital Marketing Or Social Media Services -
+          </p>
+          <p className="w-4/5 mx-auto px-4 py-5 text-themeGray-200 text-lg font-Lato text-center mx-auto">
             For the past 15 years, Search Marketing Resource has been providing
-            online marketing services ranging from 100/% turn-key solutions to
+            online marketing services ranging from 100% turn-key solutions to
             ala carte programs tailored to a client's specific needs and budget.
             As such, we have developed four uniquely effective Digital Marketing
             grouping of services that will fit your business needs well.
-          </p>
-          <p className="py-10 text-center text-themeBlue-600 text-lg italic font-semibold">
-            - Select an individual marketing program and add website design
-            services as well -
           </p>
         </div>
         <form
@@ -764,176 +948,6 @@ const WebDesignProposalPage = ({ data: { page, seoImages } }) => {
             </tbody>
           </table>
         </div>
-        <div className="py-10 font-Lato text-center mx-auto">
-          <div className="">
-            <h3 className="text-3xl text-themeBlue-600 uppercase py-5">
-              website design service
-            </h3>
-            <span className="text-xl italic text-themeOrange-400">
-              - Include a Website Redesign Quote -
-            </span>
-            <p className="text-lg py-5 w-4/5 mx-auto">
-              If you are considering a redesign of your current site, our
-              website design and development services are industry recognized in
-              delivering 'best in class' graphic designs and end-user
-              experience. We have the experience and tenure to guide your team
-              through the entire process of launching a new, dynamic online
-              presentation of your products and services.
-            </p>
-          </div>
-          <div className="w-4/5 border-2 border-gray-300 rounded mx-auto py-5">
-            <form name="webdesignform">
-              <div className="flex justify-self-end ml-5">
-                <Link
-                  to="/web-design-services"
-                  target="_blank"
-                  className="py-2 px-3 bg-themeBlue-600 text-white text-base rounded"
-                >
-                  Read More
-                </Link>
-              </div>
-              <h3 className="text-3xl text-themeOrange-400 underline py-5">
-                Website Design, Development & Maintenance
-              </h3>
-              <ul className="webdesign-form grid grid-cols-1 lg:grid-cols-3 text-lg text-themeBlue-600 text-left mx-8">
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Assigned Project Manager
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Senior Graphic Designer
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Development Team Lead
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Site Navigation Approval
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Design Mockups
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Mobile Friendly Design
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Fast Page Load Times
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  News & Events (Blog)
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Content Management (CMS)
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Email Opt-In Captures
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Request Quote Forms
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Ecommerce Solutions
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  SEO Page Attributes
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Customer Testimonials
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Site Traffic Analytics
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Landing Page Design
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Hi-Res Stock Photos
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Video Libraries & Stream
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Ongoing Website Maintenance{" "}
-                </li>
-                <li className="flex items-center">
-                  <span className="font-bold text-2xl text-themeOrange-400 mr-2">
-                    &#62;
-                  </span>
-                  Page Copy Writing (Optional)
-                </li>
-              </ul>
-              <div className="justify-self-end mr-5 py-5 check-services text-right text-base font-semibold text-themeOrange-400">
-                <label>
-                  Select Services
-                  <input
-                    className="ml-2 checked:bg-themeBlue-600 text-themeBlue-600 border-themeBlue-600 focus:ring-themeBlue-600 text-lg"
-                    type="radio"
-                    id="webdesign"
-                    value="webdesign"
-                    name="webdesign"
-                    onChange={onChangeHandler}
-                  />
-                </label>
-              </div>
-            </form>
-          </div>
-        </div>
-
         <div className="pt-10">
           <form
             id="contact"
@@ -977,7 +991,7 @@ const WebDesignProposalPage = ({ data: { page, seoImages } }) => {
               />
               <div className="program-section flex gap-x-10 py-5 col-start-1 col-end-3 text-xs md:text-base">
                 <div className="program-section-heading">
-                  *Services Selected - Request Proposal
+                  *Services Selected - Request Quote
                 </div>
                 <div className="program-section-content flex flex-col">
                   <label className="inline-flex md:items-center">
@@ -1059,10 +1073,10 @@ const WebDesignProposalPage = ({ data: { page, seoImages } }) => {
   )
 }
 
-export default WebDesignProposalPage
+export default WebDesignQuotePage
 
 export const pageQuery = graphql`
-  query WebDesignProposalPageById(
+  query WebDesignQuotePageById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
   ) {
