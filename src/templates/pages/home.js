@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import ContactForm from "../../components/ContactForm"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import HeroBanner from "../../components/HeroBanner"
@@ -26,6 +27,7 @@ const HomePage = ({ data: { page } }) => (
     <FreeQuoteForm />
     <TeamSlider />
     <HomeNews />
+    <ContactForm />
   </Layout>
 )
 

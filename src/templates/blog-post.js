@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
+import ContactForm from "../components/ContactForm"
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
   const featuredImage = {
@@ -222,6 +223,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
           </div>
         </div>
       </section>
+      <ContactForm />
     </Layout>
   )
 }

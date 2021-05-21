@@ -238,3 +238,28 @@ body {
 .sidebar {
   grid-area: side;
 }
+
+.comparision-table tr:nth-child(even) {
+  @apply bg-gray-200;
+}
+
+.comparision-table tr:nth-child(od) {
+  @apply bg-white;
+}
+
+.comparision-table tr > td {
+  @apply py-2;
+}
+
+.comparision-table tr > th {
+  @apply text-themeOrange-400 py-5;
+}
+
+.comparision-table th:nth-child(1),
+.comparision-table td:nth-child(1) {
+  @apply text-themeBlue-600 text-left pl-2 w-2/5;
+}
+
+.comparision-table td:nth-child(1) {
+  @apply text-xs md:text-sm;
+}

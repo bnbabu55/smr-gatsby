@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
+import ContactForm from "../components/ContactForm"
 
 const BlogIndex = ({
   data,
@@ -217,6 +218,7 @@ const BlogIndex = ({
           )}
         </ul>
       </div>
+      <ContactForm />
     </Layout>
   )
 }

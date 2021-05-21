@@ -60,6 +60,7 @@ module.exports = {
         },
         themeGray: {
           50: "#cfcfcf",
+          100: "#333333",
           200: "#2f2f2f",
           300: "#2a2a2a",
           400: "#202020",
@@ -72,7 +73,6 @@ module.exports = {
       boxShadow: {
         themeShadow: "0 0px 20px rgba(0, 0, 0, 0.72)",
       },
-      ringColor: ["hover", "active", "focus"],
       typography: {
         DEFAULT: {
           css: {
@@ -98,7 +98,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ["active", "focus-within"],
+      backgroundColor: ["active", "focus-within", "checked"],
+      ringColor: ["hover", "active", "focus", "checked"],
+      borderColor: ["checked"],
       // textColor: ["active"],
       display: ["responsive", "group-hover", "group-focus"],
     },

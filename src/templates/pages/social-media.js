@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import ContactForm from "../../components/ContactForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -18,7 +19,7 @@ const SocialMediaPage = ({ data: { page } }) => {
               </h1>
             </div>
             <div className="py-5 text-themeGray-200 text-lg font-Lato">
-              <p> 
+              <p>
                 Having an active Social Media campaign is an important element
                 to increasing and maintaining your online visibility. Social
                 Media offers a platform from which to engage the End-Users,
@@ -51,6 +52,7 @@ const SocialMediaPage = ({ data: { page } }) => {
         <SocialMedia />
       </section>
       <FreeQuoteForm />
+      <ContactForm />
     </Layout>
   )
 }
