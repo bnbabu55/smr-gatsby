@@ -202,19 +202,6 @@ const WebDesignQuotePage = ({ data: { page, seoImages } }) => {
                   </label>
                 </div>
               </div>
-              {/* <div className="justify-self-end mr-5 py-5 check-services text-right text-base font-semibold text-themeOrange-400">
-                <label>
-                  Select Services
-                  <input
-                    className="ml-2 checked:bg-themeBlue-600 text-themeBlue-600 border-themeBlue-600 focus:ring-themeBlue-600 text-lg"
-                    type="radio"
-                    id="webdesign"
-                    value="webdesign"
-                    name="webdesign"
-                    onChange={onChangeHandler}
-                  />
-                </label>
-              </div> */}
             </form>
           </div>
           <h2 className="text-themeOrange-400 pt-10 text-4xl font-BebasNeue font-bold tracking-wide text-center underline">
