@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ContactForm from "../../components/ContactForm"
+import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -32,12 +33,18 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
             forward facing content of the site and page optimization.
             Additionally, Google, Yahoo and Bing deliver top rankings to
             companies who are active in their industry with{" "}
-            <Link to="/social-media">Social Media</Link> posts,{" "}
-            <Link to="/optimized-press-release">Press Releases</Link>, Blog
-            articles, SEO Local marketing, Forum listings and keyword tagged
-            images or videos.
+            <Link to="/social-media" className="text-lg underline">
+              {" "}
+              Social Media
+            </Link>{" "}
+            posts,{" "}
+            <Link to="/optimized-press-release" className="text-lg underline">
+              Press Releases
+            </Link>
+            , Blog articles, SEO Local marketing, Forum listings and keyword
+            tagged images or videos.
           </p>
-          <ul className="col-start-2 col-end-3 row-start-1 row-end-3 grid grid-cols-2">
+          <ul className="col-start-1 col-end-2 row-start-3 row-end-4 mt-5 lg:mt-0 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-3 grid grid-col-1 lg:grid-cols-2">
             <li className="flex items-center">
               <GatsbyImage
                 image={checkMarkImage}
@@ -168,7 +175,7 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
             </li>
           </ul>
         </div>
-        <div className="flex gap-x-5 items-center py-5">
+        <div className="flex flex-col lg:flex-row gap-x-5 items-center py-5">
           <div className="w-full lg:w-2/5">
             <GatsbyImage
               image={analyticsImage}
@@ -296,12 +303,14 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
                 </p>
                 <p className="pb-3">
                   In our digital marketing SEO programs, all{" "}
-                  <Link to="/social-media">Social Media</Link> posts have
-                  backlinks placed in the copy. Depending on the platform, the
-                  links show up in search engines including the keyword phrases
-                  targeted in the marketing plan. This tactic is also utilized
-                  in all Press Release publications where up to 3 URL’s are
-                  embedded in the content.
+                  <Link to="/social-media" className="text-xl underline">
+                    Social Media
+                  </Link>{" "}
+                  posts have backlinks placed in the copy. Depending on the
+                  platform, the links show up in search engines including the
+                  keyword phrases targeted in the marketing plan. This tactic is
+                  also utilized in all Press Release publications where up to 3
+                  URL’s are embedded in the content.
                 </p>
               </div>
               <div className="wrapper py-5">
@@ -315,7 +324,12 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
                   </span>
                 </h3>
                 <p className="pb-3">
-                  <Link to="/optimized-press-release">Press Releases</Link>{" "}
+                  <Link
+                    to="/optimized-press-release"
+                    className="text-xl underline"
+                  >
+                    Press Releases
+                  </Link>{" "}
                   provide an excellent opportunity to create backlinks, build
                   your brand, generate new website visitors, and promote your
                   company to the Search Engines.
@@ -355,9 +369,12 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
                 </p>
                 <p className="pb-3">
                   Each month we write and post articles to your{" "}
-                  <Link to="/social-media">Social Media</Link> accounts and Blog
-                  pages and also regularly create and upload keyword tagged
-                  videos and images to YouTube, Pinterest and Instagram.
+                  <Link to="/social-media" className="text-xl underline">
+                    Social Media
+                  </Link>{" "}
+                  accounts and Blog pages and also regularly create and upload
+                  keyword tagged videos and images to YouTube, Pinterest and
+                  Instagram.
                 </p>
                 <p className="pb-3">
                   This, added to the ongoing published Press Releases we create,
@@ -500,6 +517,7 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
           </div>
         </div>
       </section>
+      <FreeAuditForm />
       <FreeQuoteForm />
       <ContactForm />
     </Layout>
