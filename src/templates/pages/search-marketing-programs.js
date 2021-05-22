@@ -11,7 +11,6 @@ const SMPPage = ({ data: { page, smpIcons, checkMark, analytics } }) => {
   const checkMarkImage = checkMark.childImageSharp.gatsbyImageData
 
   const analyticsImage = analytics.childImageSharp.gatsbyImageData
-  console.log("analyticsImage: " + JSON.stringify(smpIcons, null, 2))
 
   return (
     <Layout>

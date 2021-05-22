@@ -19,8 +19,8 @@ const FreeQuoteForm = () => {
             <p className="py-5 font-bold underline tracking-wider">
               Services to Include
             </p>
-            <div className="flex justify-around text-left">
-              <ul className="font-Lato text-lg list-disc">
+            <div className="flex justify-around text-left font-Lato text-sm md:text-lg">
+              <ul className="list-disc">
                 <li>Assigned SEO Manager</li>
                 <li>Monthly Blog Articles</li>
                 <li>Business Directory Updates</li>
@@ -30,7 +30,7 @@ const FreeQuoteForm = () => {
                 <li>YouTube Channel Managed</li>
                 <li>Tagged Pinterest Images</li>
               </ul>
-              <ul className="font-Lato text-lg list-disc">
+              <ul className="list-disc">
                 <li>Keyword Research</li>
                 <li>Competitor Analysis</li>
                 <li>Website SEO Audit & Repairs</li>
@@ -64,8 +64,8 @@ const FreeQuoteForm = () => {
             <p className="py-5 font-bold underline tracking-wider">
               Services to Include
             </p>
-            <div className="flex justify-around text-left">
-              <ul className="font-Lato text-lg list-disc">
+            <div className="flex justify-around text-left font-Lato text-sm md:text-lg">
+              <ul className="list-disc">
                 <li>Assigned Project Designer</li>
                 <li>Development Test Manager</li>
                 <li>Senior Graphics Lead</li>
@@ -75,7 +75,7 @@ const FreeQuoteForm = () => {
                 <li>Content Management (CMS)</li>
                 <li>Email Opt-In Captures</li>
               </ul>
-              <ul className="font-Lato text-lg list-disc">
+              <ul className="list-disc">
                 <li>Request Quote Forms</li>
                 <li>Ecommerce Solutions</li>
                 <li>SEO Page Attributes</li>
