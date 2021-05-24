@@ -4,7 +4,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  // mode: "jit",
+  mode: "jit",
   purge: {
     preserveHtmlElements: true,
     mode: "layers",
