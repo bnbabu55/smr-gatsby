@@ -146,7 +146,7 @@ const ProgSuccessPage = ({ data: { page, checkMark, analytics } }) => {
         <div className="w-11/12 mx-auto pt-10">
           <div className="wrapper py-3 text-lg text-left">
             <h3 className="flex items-center pb-3 text-2xl">
-              <span className="text-themeOrange-400 -mt-3 pr-3 text-6xl filter shadow-xl">
+              <span className="text-themeOrange-400 -mt-3 pr-3 text-6xl">
                 &#10033;
               </span>
               SEO Traffic Analytics
@@ -175,7 +175,7 @@ const ProgSuccessPage = ({ data: { page, checkMark, analytics } }) => {
           </div>
           <div className="wrapper py-3 text-lg text-left">
             <h3 className="flex items-center pb-3 text-2xl">
-              <span className="text-themeBlue-600 -mt-3 pr-3 text-6xl filter shadow-xl">
+              <span className="text-themeBlue-600 -mt-3 pr-3 text-6xl">
                 &#10033;
               </span>
               Keyword Rankings
