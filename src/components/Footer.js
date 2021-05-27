@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const Footer = () => {
   const { wpMenu } = useStaticQuery(graphql`

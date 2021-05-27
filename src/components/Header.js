@@ -1,7 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
-import { useState } from "react"
+import React, { useState } from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Header = () => {

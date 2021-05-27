@@ -97,7 +97,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require(`tailwindcss`)(tailwindConfig)],
+        postCssPlugins: [
+          require(`tailwindcss`)(tailwindConfig),
+          require("autoprefixer"),
+        ],
       },
     },
     `gatsby-plugin-advanced-sitemap`,
