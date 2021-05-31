@@ -2,11 +2,12 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ContactForm from "../../components/ContactForm"
+import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 
-const BusinessDirectoryPage = ({
+const DirectoryListingPage = ({
   data: { page, checkMarks, dSubmission, listings, yext },
 }) => {
   const checkMarkBlue = checkMarks.nodes[0].childImageSharp.gatsbyImageData
@@ -20,17 +21,22 @@ const BusinessDirectoryPage = ({
       <section className="w-full mx-auto text-center py-10">
         <div className="w-11/12 mx-auto">
           <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center pt-10">
-            Business Directory Management
+            BUSINESS LISTING NETWORK
           </h1>
           <div className="py-10 text-themeGray-200 text-left text-lg">
             <p className="pb-3">
-              An important step in optimizing your website for both national and
-              local searches is claiming or creating your business listing with
-              the recognized online business directories. This will help to
-              increase your online visibility with the Search Engines and in the
-              business directory sites your business prospects and customers are
-              using, such as Yelp, Manta, Yellow Pages, Super Pages and Merchant
-              Circle, just to name a few.
+              Today, Google, Yahoo and Bing are proactively involved between
+              your customers and their having access to your website, directly
+              affecting your search rankings. As such, to be relevant both
+              nationally and locally, it is important your business information
+              is available on all reputable directories and categorized
+              specifically to your products and services in those databases.
+            </p>
+            <p className="pb-3">
+              Creating or updating your NAP (Name, Address, Phone Number)
+              information on the top directories, online business listing sites
+              and citation websites improves your search visibility while
+              creating qualified ‘backlinks’ from these network directories.
             </p>
           </div>
           <div className="flex justify-between py-5">
@@ -434,10 +440,10 @@ const BusinessDirectoryPage = ({
   )
 }
 
-export default BusinessDirectoryPage
+export default DirectoryListingPage
 
 export const pageQuery = graphql`
-  query BusinessDirectoryPageById(
+  query DirectoryListingPageById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
   ) {

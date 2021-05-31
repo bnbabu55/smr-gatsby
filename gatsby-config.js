@@ -14,7 +14,7 @@ module.exports = {
       "Website SEO, Design and Development Company | Search Marketing Resource LLC",
     description:
       "Search Marketing Resource provides digital marketing services in the form of Search Engine Optimization (SEO), graphic design and website development solutions. Our Search Marketing programs are affordable and turnkey, with award-winning design and results-oriented SEO services.",
-    siteUrl: process.env.PROJ_URL || `http://localhost:8000`,
+    siteUrl: process.env.PROJ_URL || `http://localhost:8000/`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true },
   /**
