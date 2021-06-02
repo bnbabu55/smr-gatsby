@@ -200,6 +200,10 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+a {
+  font: 400 18px/22px Lato, Arial, Helvetica, sans-serif;
+}
+
 .main-content,
 .sidebar {
   padding: 0.95em;

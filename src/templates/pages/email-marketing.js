@@ -160,7 +160,7 @@ const EmailMktPage = ({ data: { page, emIcons } }) => {
             </h3>
             <GatsbyImage
               alt="Email Marketing Activity Tracking and Reporting"
-              image={emIcons.nodes[3].childImageSharp.gatsbyImageData}
+              image={emIcons.nodes[4].childImageSharp.gatsbyImageData}
               className="mr-3"
               style={{ float: "left" }}
             />
@@ -189,7 +189,7 @@ const EmailMktPage = ({ data: { page, emIcons } }) => {
             </h3>
             <GatsbyImage
               alt="Email Marketing Newsletter Campaigns and Repurposing"
-              image={emIcons.nodes[3].childImageSharp.gatsbyImageData}
+              image={emIcons.nodes[5].childImageSharp.gatsbyImageData}
               className="mr-3"
               style={{ float: "left" }}
             />
