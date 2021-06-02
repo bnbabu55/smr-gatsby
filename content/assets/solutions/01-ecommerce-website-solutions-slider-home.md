@@ -1,7 +1,7 @@
 ---
 title: Ecommerce Solutions
 linkedPage: "ecommerce-website-design"
-featuredImage: 1-ecommerce-website-solutions-slider-home.png
+featuredImage: 01-ecommerce-website-solutions-slider-home.png
 altTxt: Ecommerce Solutions Illustration
 ---
 

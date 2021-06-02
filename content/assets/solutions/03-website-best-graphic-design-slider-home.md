@@ -1,7 +1,7 @@
 ---
 title: Best Graphic Design
 linkedPage: "web-design-services"
-featuredImage: 3-website-best-graphic-design-slider-home.png
+featuredImage: 03-website-best-graphic-design-slider-home.png
 altTxt: Website Graphic Design Services Company
 ---
 

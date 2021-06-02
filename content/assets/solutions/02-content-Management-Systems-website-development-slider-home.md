@@ -1,7 +1,7 @@
 ---
 title: CONTENT MANAGEMENT
 linkedPage: "content-management-2"
-featuredImage: 2-content-Management-Systems-website-development-slider-home.jpg
+featuredImage: 02-content-Management-Systems-website-development-slider-home.jpg
 altTxt: Website Content Management Systems Development
 ---
 

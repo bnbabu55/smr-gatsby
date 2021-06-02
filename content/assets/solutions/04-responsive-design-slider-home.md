@@ -1,7 +1,7 @@
 ---
 title: RESPONSIVE DESIGNS
 linkedPage: "mobile-responsive-website-design"
-featuredImage: 4-responsive-design-slider-home.jpg
+featuredImage: 04-responsive-design-slider-home.jpg
 altTxt: Website Responsive Design Services Company
 ---
 
