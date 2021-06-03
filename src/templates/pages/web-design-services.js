@@ -8,9 +8,14 @@ import ContactForm from "../../components/ContactForm"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import SwiperCore, { Autoplay, Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+import parse from "html-react-parser"
+
+SwiperCore.use([Autoplay, Pagination])
 
 const WebDesignPage = ({
-  data: { page, bgImage, checkMark, sbClient, slides },
+  data: { page, bgImage, checkMark, sbClient, slides, clientSlides },
 }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
 
@@ -312,6 +317,69 @@ const WebDesignPage = ({
           />
         </div>
       </section>
+      <section>
+        <div className="w-full mx-auto bg-themeBlue-600 text-white my-5 py-10">
+          <h3 className="w-11/12 mx-auto text-center flex justify-center items-center gap-x-5 pb-5">
+            <Link
+              to="/portfolio/"
+              className="font-BebasNeue text-5xl text-white"
+            >
+              RECENT PROJECTS
+            </Link>
+
+            <Link to="/portfolio/" className="text-xl text-white">
+              view more...
+            </Link>
+          </h3>
+          <p className="w-11/12 mx-auto text-lg text-center">
+            From our Project Managers, Programmers and Design team, Search
+            Marketing Resource has the technical abilities and graphic arts
+            ‘vision' to exceed your online marketing needs. Here are few of our
+            recent SEO marketing and website design efforts as examples of our
+            diversity in meeting the varied requirements of our Clients.
+          </p>
+        </div>
+        <Swiper
+          className="w-11/12 mx-auto my-10"
+          spaceBetween={30}
+          slidesPerView={1}
+          loop
+          autoplay
+          pagination={{ clickable: true }}
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={swiper => console.log(swiper)}
+        >
+          {clientSlides?.nodes.map((clientSlide, index) => {
+            return (
+              <SwiperSlide key={clientSlide?.id} className="p-5">
+                <div className="flex flex-col lg:flex-row gap-y-5 lg:gap-x-5">
+                  <div className="w-full lg:w-2/3 mx-auto flex flex-col">
+                    <Link
+                      to={clientSlide?.frontmatter?.linkedPage}
+                      className="text-3xl text-themeOrange-400 hover:underline mb-5"
+                    >
+                      {clientSlide?.frontmatter?.title}
+                    </Link>
+                    <span className="text-xl text-themeBlue-600 font-semibold italic tracking-wide">
+                      {clientSlide?.frontmatter?.subTitle1}
+                    </span>
+                    <p className="text-lg pt-5">{parse(clientSlide?.html)}</p>
+                  </div>
+
+                  <GatsbyImage
+                    className="w-full lg:w-1/3 border-4 border-themeOrange-700"
+                    image={
+                      clientSlide?.frontmatter?.featuredImage?.childImageSharp
+                        ?.gatsbyImageData
+                    }
+                    alt={clientSlide?.frontmatter?.altTxt}
+                  />
+                </div>
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+      </section>
 
       <div className="flex">
         <hr className="border-4 border-themeBlue-600 w-1/2" />
@@ -406,6 +474,31 @@ export const pageQuery = graphql`
             quality: 90
             formats: [AUTO, WEBP, AVIF]
           )
+        }
+      }
+    }
+    clientSlides: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/webdesign-page/" } }
+      sort: { fields: frontmatter___featuredImage___name, order: ASC }
+    ) {
+      nodes {
+        id
+        html
+        frontmatter {
+          title
+          subTitle1
+          altTxt
+          linkedPage
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 90
+                width: 415
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
       }
     }
