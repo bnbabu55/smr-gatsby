@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export const TestimonialSection = () => {
   const { bgImages, testimonials } = useStaticQuery(
@@ -26,7 +26,7 @@ export const TestimonialSection = () => {
             }
           }
         }
-        testimonials: allMarkdownRemark(
+        testimonials: allMdx(
           filter: {
             frontmatter: {
               featuredImage: { relativeDirectory: { eq: "testimonials" } }
@@ -36,7 +36,7 @@ export const TestimonialSection = () => {
         ) {
           nodes {
             id
-            html
+            body
             frontmatter {
               title
               memberRole
@@ -157,7 +157,9 @@ export const TestimonialSection = () => {
                   </a>
                 </h3>
                 <div className="text-themeGray-200 text-lg font-Lato py-5">
-                  {parse(testimonial.html)}
+                  <MDXRenderer className="text-lg text-justify prose">
+                    {testimonial.body}
+                  </MDXRenderer>
                 </div>
                 <h3 className="text-themeBlue-600 text-2xl font-NothingYouCouldDo font-bold uppercase text-left">
                   {testimonial.frontmatter.title}

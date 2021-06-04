@@ -9,13 +9,13 @@ SwiperCore.use([Autoplay])
 const HeroBanner = () => {
   const { bannerSlides } = useStaticQuery(graphql`
     query {
-      bannerSlides: allMarkdownRemark(
+      bannerSlides: allMdx(
         filter: { fileAbsolutePath: { regex: "/home-banner/" } }
-        sort: { fields: fileAbsolutePath, order: ASC }
+        sort: { fields: frontmatter___featuredImage___name, order: ASC }
       ) {
         nodes {
           id
-          html
+          body
           frontmatter {
             title1
             title2

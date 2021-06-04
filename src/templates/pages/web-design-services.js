@@ -10,7 +10,7 @@ import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 import SwiperCore, { Autoplay, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import parse from "html-react-parser"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 SwiperCore.use([Autoplay, Pagination])
 
@@ -363,7 +363,9 @@ const WebDesignPage = ({
                     <span className="text-xl text-themeBlue-600 font-semibold italic tracking-wide">
                       {clientSlide?.frontmatter?.subTitle1}
                     </span>
-                    <p className="text-lg pt-5">{parse(clientSlide?.html)}</p>
+                    <MDXRenderer className="text-lg pt-5">
+                      {clientSlide.body}
+                    </MDXRenderer>
                   </div>
 
                   <GatsbyImage
@@ -477,13 +479,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    clientSlides: allMarkdownRemark(
+    clientSlides: allMdx(
       filter: { fileAbsolutePath: { regex: "/webdesign-page/" } }
       sort: { fields: frontmatter___featuredImage___name, order: ASC }
     ) {
       nodes {
         id
-        html
+        body
         frontmatter {
           title
           subTitle1

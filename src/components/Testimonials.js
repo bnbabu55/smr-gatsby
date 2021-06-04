@@ -3,14 +3,14 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import parse from "html-react-parser"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 SwiperCore.use([Navigation, Pagination, Autoplay])
 
 const Testimonials = () => {
   const { testimonialSlides } = useStaticQuery(graphql`
     query {
-      testimonialSlides: allMarkdownRemark(
+      testimonialSlides: allMdx(
         filter: {
           frontmatter: {
             featuredImage: { relativeDirectory: { eq: "testimonials" } }
@@ -20,7 +20,7 @@ const Testimonials = () => {
       ) {
         nodes {
           id
-          html
+          body
           frontmatter {
             title
             memberRole
@@ -114,7 +114,9 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="font-Lato text-base text-themeGray-400 text-center line-clamp-4">
-                  {parse(testimonialSlide?.html)}
+                  <MDXRenderer className="text-lg text-justify prose">
+                    {testimonialSlide.body}
+                  </MDXRenderer>
                 </div>
                 <div className="font-NothingYouCouldDo font-bold text-2xl text-themeDarkBrown pt-8">
                   {testimonialSlide?.frontmatter?.title}

@@ -1,5 +1,5 @@
 ---
-title: FINANCIAL &amp; BANKING
+title: FINANCIAL & BANKING
 subTitle1: North Mill EF - www.northmillef.com
 linkedPage: "/portfolio/"
 featuredImage: 05-website-design-for-small-business-north-mill.jpg

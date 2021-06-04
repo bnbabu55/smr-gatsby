@@ -3,14 +3,14 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import SwiperCore, { Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import parse from "html-react-parser"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 SwiperCore.use([Autoplay])
 
 const SolutionSlider = () => {
   const { solutionSlides } = useStaticQuery(graphql`
     query {
-      solutionSlides: allMarkdownRemark(
+      solutionSlides: allMdx(
         filter: {
           frontmatter: {
             featuredImage: { relativeDirectory: { eq: "solutions" } }
@@ -20,7 +20,7 @@ const SolutionSlider = () => {
       ) {
         nodes {
           id
-          html
+          body
           frontmatter {
             linkedPage
             altTxt
@@ -89,7 +89,9 @@ const SolutionSlider = () => {
                   key={solutionSlide.id + "content"}
                   className="mb-5 text-xl"
                 >
-                  {parse(solutionSlide.html)}
+                  <MDXRenderer className="text-lg text-justify prose">
+                    {solutionSlide.body}
+                  </MDXRenderer>
                 </div>
               </div>
             </SwiperSlide>

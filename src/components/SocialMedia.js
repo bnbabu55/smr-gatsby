@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export const SocialMedia = () => {
   const { bgImages, socialItems } = useStaticQuery(
@@ -26,13 +26,13 @@ export const SocialMedia = () => {
             }
           }
         }
-        socialItems: allMarkdownRemark(
+        socialItems: allMdx(
           filter: { fileAbsolutePath: { regex: "/social-media/" } }
-          sort: { fields: fileAbsolutePath, order: ASC }
+          sort: { fields: frontmatter___featuredImage___name, order: ASC }
         ) {
           nodes {
             id
-            html
+            body
             frontmatter {
               title
             }
@@ -71,7 +71,9 @@ export const SocialMedia = () => {
                   <h2 className=" text-3xl font-bold">
                     {socialItem.frontmatter.title}
                   </h2>
-                  <div className="text-lg py-5">{parse(socialItem.html)}</div>
+                  <MDXRenderer className="text-lg py-5">
+                    {socialItem.body}
+                  </MDXRenderer>
                 </div>
               </div>
             </div>
