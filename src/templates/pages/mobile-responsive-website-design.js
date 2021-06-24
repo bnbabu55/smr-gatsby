@@ -1,12 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ContactForm from "../../components/ContactForm"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const MobilePage = ({ data: { page, mobile, checkMark } }) => {
   return (
