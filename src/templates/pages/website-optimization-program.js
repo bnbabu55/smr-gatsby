@@ -63,8 +63,8 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             SEARCH MARKETING PROGRAM OVERVIEW
           </h2>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeBlue-600 underline">
-              SEO MANAGER &amp; TEAM
+            <h3 className="font-Lato text-2xl text-themeBlue-600 underline">
+              SEO Manager &amp; Team
             </h3>
             <p className="pt-3 text-lg">
               Managing the entire website optimization process is a tenured
@@ -75,7 +75,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeOrange-400 underline">
+            <h3 className="font-Lato text-2xl text-themeOrange-400 underline">
               Website Technical Review
             </h3>
             <p className="pt-3 text-lg">
@@ -88,7 +88,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeBlue-600 underline">
+            <h3 className="font-Lato text-2xl text-themeBlue-600 underline">
               Keyword Selection Process
             </h3>
             <p className="pt-3 text-lg">
@@ -100,7 +100,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeOrange-400 underline">
+            <h3 className="font-Lato text-2xl text-themeOrange-400 underline">
               SEO Performance Dashboard
             </h3>
             <p className="pt-3 text-lg">
@@ -114,7 +114,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeBlue-600 underline">
+            <h3 className="font-Lato text-2xl text-themeBlue-600 underline">
               SEO Monthly Planner
             </h3>
             <p className="pt-3 text-lg">
@@ -127,7 +127,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeOrange-400 underline">
+            <h3 className="font-Lato text-2xl text-themeOrange-400 underline">
               Page Content Rewrites
             </h3>
             <p className="pt-3 text-lg">
@@ -140,7 +140,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </p>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeBlue-600 underline">
+            <h3 className="font-Lato text-2xl text-themeBlue-600 underline">
               Website Page Optimization - SEO Attributes
             </h3>
             <p className="pt-3 text-lg">
@@ -202,7 +202,7 @@ const WebOptPage = ({ data: { page, webImage } }) => {
             </ul>
           </div>
           <div className="pb-8">
-            <h3 className="font-Lato text-2xl uppercase text-themeOrange-400 underline">
+            <h3 className="font-Lato text-2xl text-themeOrange-400 underline">
               Digital Marketing Program
             </h3>
             <p className="pt-3 text-lg">
