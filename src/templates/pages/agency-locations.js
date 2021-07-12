@@ -7,10 +7,7 @@ import ContactForm from "../../components/ContactForm"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import SwiperCore, { Autoplay, Pagination } from "swiper"
 import Testimonials from "../../components/Testimonials"
-
-SwiperCore.use([Autoplay, Pagination])
 
 const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)

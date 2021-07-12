@@ -1,15 +1,12 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import SwiperCore, { Autoplay, Pagination } from "swiper"
-
-SwiperCore.use([Autoplay, Pagination])
 
 const ContactPage = ({ data: { page, bgImage, plxImage } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
