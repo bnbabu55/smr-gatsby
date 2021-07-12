@@ -8,6 +8,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 import SwiperCore, { Autoplay, Pagination } from "swiper"
+import Testimonials from "../../components/Testimonials"
 
 SwiperCore.use([Autoplay, Pagination])
 
@@ -37,7 +38,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
   }
 
   return (
-    <Layout className="overflow-x-hidden">
+    <Layout className="overflow-x-hidden break-all">
       <Seo seoData={page?.seo} />
       <BackgroundImage
         Tag="section"
@@ -57,7 +58,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
           </div>
           <Link
             to="/search-marketing-website-design-proposal-form"
-            className="bg-themeOrange-400 text-white uppercase text-xl rounded px-4 py-2"
+            className="bg-themeOrange-400 font-Montserrat text-white uppercase text-xs lg:text-base rounded px-6 py-3"
           >
             Request Your Free Proposal
           </Link>
@@ -81,7 +82,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
           </p>
           <Link
             to="/search-marketing-website-design-proposal-form"
-            className="bg-themeOrange-400 text-white uppercase text-xl rounded px-4 py-2"
+            className="bg-themeOrange-400 font-Montserrat text-white uppercase text-xs lg:text-base rounded px-6 py-3"
           >
             Get Your Free Proposal
           </Link>
@@ -155,13 +156,158 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
               </li>
             </ul>
             <Link
-              to="/search-marketing-website-design-proposal-form"
-              className="bg-themeBlue-600 text-white uppercase text-xl rounded px-4 py-2"
+              to="/about/"
+              className="bg-themeBlue-600 font-Montserrat text-white uppercase text-xs lg:text-base rounded px-6 py-3"
             >
               Meet The Team
             </Link>
           </div>
         </div>
+      </section>
+      <section className="w-11/12 mx-auto py-12">
+        <p className="pb-3 text-themeGray-200 text-lg font-Lato mx-auto">
+          Many businesses no longer rely on traditional methods of
+          advertisement, and they have come to realize that there is a strong
+          online reach which, when used to its full effect, can grow their
+          businesses exponentially. For this reason, we work hard to see to it
+          that our clients have a strong online presence and reach, ensuring
+          that their products and services reach as many people as possible.
+        </p>
+        <h2
+          className="font-Lato text-3xl underline pb-5 text-center"
+          style={{ textDecorationColor: "#ffa800" }}
+        >
+          Why Choose Search Marketing Resource as Your Chicago SEO Company?
+        </h2>
+        <p className="pb-3 text-themeGray-200 text-lg font-Lato mx-auto">
+          Search Marketing Resource has a passion to see that your business uses
+          premium SEO knowledge and tools to generate leads for your local or
+          national business.
+        </p>
+        <p className="pb-3 text-themeGray-200 text-lg font-Lato mx-auto">
+          Our Team Strives to Ensure:
+        </p>
+        <ul className="font-Lato text-lg">
+          <li className="flex gap-x-3 items-center pb-3">
+            <GatsbyImage
+              image={checkMark?.childImageSharp?.gatsbyImageData}
+              alt="Blue Check Mark"
+            />
+            Your business has a great local or national online presence
+          </li>
+          <li className="flex gap-x-3 items-center pb-3">
+            <GatsbyImage
+              image={checkMark?.childImageSharp?.gatsbyImageData}
+              alt="Blue Check Mark"
+            />
+            The views to your website generate and grow your business
+          </li>
+          <li className="flex gap-x-3 items-center pb-3">
+            <GatsbyImage
+              image={checkMark?.childImageSharp?.gatsbyImageData}
+              alt="Blue Check Mark"
+            />
+            The result of traffic to your business is measured
+          </li>
+        </ul>
+        <div className="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5 lg:gap-y-0 items-center">
+          <div className="flex-1">
+            <h2
+              className="font-Lato text-3xl underline pb-5 text-center"
+              style={{ textDecorationColor: "#ffa800" }}
+            >
+              When you choose Search Marketing Resource, you can expect:
+            </h2>
+            <ul className="font-Lato text-lg list-disc list-inside">
+              <li className="pb-3">
+                <strong>Dedicated SEO Manager –</strong> Our SEO managers
+                partner with you to reach your goals in local and national SEO
+                results. We develop strategic SEO, PPC, social media, and
+                conversion optimized digital marketing plans for your campaign.
+                We are available during business hours to talk with you about
+                your campaign.
+              </li>
+              <li className="pb-3">
+                <strong>Full Transparency –</strong> We onboard you with a
+                user-friendly analytics dashboard. It pulls in data directly
+                from Google Analytics, Google My Business, all your social media
+                accounts, Google Ads, Google and Bing keyword ranking results,
+                and more to have in one place for real-time results.
+              </li>
+              <li className="pb-3">
+                <strong>Targeted Results-Driven Decisions –</strong> Our team
+                has years of experience researching a variety of keywords for
+                service and product-based industries in lead-generation and
+                ecommerce. We provide high-quality targeted leads that can bring
+                your business more conversions
+              </li>
+              <li className="pb-3">
+                <strong>Weekly and Monthly Reporting –</strong> Our in-depth
+                reports provide the data you need on a weekly and monthly basis
+                to make quick, efficient decisions for your business operations.
+              </li>
+              <li className="pb-3">
+                <strong>Reliable Service –</strong> Our team has experience in
+                all aspects of digital marketing, web design and development,
+                and more. We constantly review our clients’ websites and update
+                them with a site analysis to quickly fix any issues that may
+                affect your site’s keyword rankings, speed, crawlability, and
+                more.
+              </li>
+            </ul>
+          </div>
+          <GatsbyImage
+            image={seoImages?.nodes[2]?.childImageSharp?.gatsbyImageData}
+            alt="SEO Team at SMR Agency in Chicago"
+            className="mx-auto lg:w-[400px] lg:h-[240px] border-2 border-themeBlue-600"
+          />
+        </div>
+      </section>
+      <section className="bg-themeOrange-400 text-white text-center py-16">
+        <div className="font-Lato text-xl lg:text-3xl pb-5">
+          Ready to see how our Chicago-based SEO company helps grow your leads
+          and sales?
+        </div>
+        <p className="font-Lato text-xl pb-5">Get a FREE proposal!</p>
+        <Link
+          to="/search-marketing-website-design-proposal-form"
+          className="bg-themeBlue-600 font-Montserrat text-white uppercase text-xs lg:text-base rounded px-6 py-3"
+        >
+          Request Your Free Proposal Now!
+        </Link>
+      </section>
+      <div className="w-11/12 mx-auto py-10">
+        <h2
+          className="font-Lato text-3xl underline pb-5 text-center"
+          style={{ textDecorationColor: "#ffa800" }}
+        >
+          Chicago SEO &amp; Digital Marketing Services
+        </h2>
+        <p className="w-8/12 mx-auto font-Lato text-lg text-center pb-5">
+          At Search Marketing Resource, we stand behind our work with 100%
+          integrity, cutting-edge industry techniques, and results. Our team of
+          in-house SEO experts help make your goals a reality.
+        </p>
+      </div>
+      <Testimonials />
+      <section className="bg-themeOrange-400 text-white text-center py-16">
+        <div
+          className="font-Lato text-xl lg:text-3xl pb-5 underline"
+          style={{ textDecorationColor: "#00497a" }}
+        >
+          Get Started to Achieve Higher Keyword Rankings, More Traffic and Leads
+        </div>
+        <p className="w-7/12 mx-auto font-Lato text-sm lg:text-lg pb-5">
+          Contact us today for a FREE SEO Proposal to get started today. We will
+          perform a Site Audit and schedule a call to guide you in the right
+          direction to grow your business.
+        </p>
+        <Link
+          to="/search-marketing-website-design-proposal-form"
+          className="bg-themeBlue-600 font-Montserrat text-white uppercase text-xs lg:text-base rounded px-6 py-3"
+        >
+          Request Your Free SEO Proposal Today!
+        </Link>
       </section>
       <FreeQuoteForm />
       <ContactForm />

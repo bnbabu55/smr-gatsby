@@ -76,12 +76,12 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
         <div className="py-10">
           <ul className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-x-3 justify-evenly items-center text-base font-Lato">
             {clients?.nodes.map((client, index) => {
-              let regEx = /services/g
+              let regEx = /\/services\//g
               let serviceList = client.portfolioDetails.services
                 .filter(y => y.uri.match(regEx))
                 .map(x => x.name)
                 .join(", ")
-              let regEx1 = /industry/g
+              let regEx1 = /\/industry\//g
               let industryList = client.portfolioDetails.industry
                 .filter(y => y.uri.match(regEx1))
                 .map(x => x.name)

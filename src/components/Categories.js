@@ -14,8 +14,13 @@ const Categories = () => {
     }
   `)
 
-  let catCount = categories.nodes.length
-  let catRowSize = 6
+  let regEx = /\/services\//
+  let regEx1 = /\/industry\//
+  let filteredCat = categories.nodes
+    .filter(y => !y.uri.match(regEx))
+    .filter(y => !y.uri.match(regEx1))
+  let catCount = filteredCat.length
+  let catRowSize = 4
   let catColumnSize = 2
   let rowOverage = 0
 
@@ -27,7 +32,7 @@ const Categories = () => {
   let catComponent = renderCategory()
 
   function renderCategory() {
-    let catGroups = groupBy(catRowSize, categories.nodes)
+    let catGroups = groupBy(catRowSize, filteredCat)
     return (
       <ul className="w-100 flex gap-x-6 font-Lato text-sm text-themeOrange-400">
         {catGroups.map(renderRow)}
