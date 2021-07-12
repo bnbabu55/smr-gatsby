@@ -17,26 +17,6 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
 
   const image = convertToBgImage(pluginImage)
 
-  const onChangeHandler = e => {
-    const chosenPlan = e.target.value
-
-    if (chosenPlan !== "webdesign") {
-      const hideBox =
-        e.target.parentElement.parentElement.previousSibling.firstChild
-      hideBox.classList.remove("invisible")
-      const resetElems = document.querySelectorAll(
-        `input[name="services14N"]:not(:checked)`
-      )
-      for (let i = 0; i < resetElems.length; i++) {
-        resetElems[
-          i
-        ].parentElement.parentElement.previousSibling.firstChild.classList.add(
-          "invisible"
-        )
-      }
-    }
-  }
-
   return (
     <Layout className="overflow-x-hidden break-all">
       <Seo seoData={page?.seo} />
