@@ -7,11 +7,18 @@ import ContactForm from "../../components/ContactForm"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import SwiperCore, { Autoplay, Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+
+SwiperCore.use([Autoplay, Pagination])
 
 const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
 
   const image = convertToBgImage(pluginImage)
+  const pagination = {
+    clickable: true,
+  }
 
   return (
     <Layout>
@@ -74,7 +81,16 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
           </ul>
         </div>
         <div className="py-10">
-          <ul className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-x-3 justify-evenly items-center text-base font-Lato">
+          {/* <ul className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-x-3 justify-evenly items-center text-base font-Lato"> */}
+          <Swiper
+            spaceBetween={5}
+            slidesPerView={2}
+            slidesPerGroup={2}
+            pagination={pagination}
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={swiper => console.log(swiper)}
+            className="w-11/12 mx-auto"
+          >
             {clients?.nodes.map((client, index) => {
               let regEx = /\/services\//g
               let serviceList = client.portfolioDetails.services
@@ -88,7 +104,7 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
                 .join(", ")
 
               return (
-                <li
+                <SwiperSlide
                   key={client.id}
                   className="flex flex-col lg:flex-row lg:gap-x-3 items-center lg:items-end py-5"
                 >
@@ -139,10 +155,10 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
                       {client?.portfolioDetails?.location}
                     </li>
                   </ul>
-                </li>
+                </SwiperSlide>
               )
             })}
-          </ul>
+          </Swiper>
         </div>
       </section>
       <FreeQuoteForm />
