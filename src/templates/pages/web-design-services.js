@@ -317,7 +317,7 @@ const WebDesignPage = ({
           />
         </div>
       </section>
-      <section>
+      <section id="recent-projects">
         <div className="w-full mx-auto bg-themeBlue-600 text-white my-5 py-10">
           <h3 className="w-11/12 mx-auto text-center flex justify-center items-center gap-x-5 pb-5">
             <Link

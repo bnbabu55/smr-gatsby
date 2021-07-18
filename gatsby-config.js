@@ -14,7 +14,12 @@ module.exports = {
       "Website SEO, Design and Development Company | Search Marketing Resource LLC",
     description:
       "Search Marketing Resource provides digital marketing services in the form of Search Engine Optimization (SEO), graphic design and website development solutions. Our Search Marketing programs are affordable and turnkey, with award-winning design and results-oriented SEO services.",
+    // gatsby develop run uses this
     siteUrl: process.env.GATSBY_PROJ_URL || `http://localhost:8000/`,
+    // gatsby build run uses this
+    // siteUrl:
+    //   process.env.GATSBY_PROJ_URL ||
+    //   `https://gatsbysite.devsmr-development.com/`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true },
   /**
@@ -38,17 +43,17 @@ module.exports = {
         url: process.env.WPGRAPHQL_URL || `https://smr-sandbox.com/graphql`,
         type: {
           Post: {
-            limit: 20,
+            limit: 200,
           },
           Portfolio: {
-            limit: 5,
+            limit: 100,
           },
         },
         schema: {
-          perPage: 20, // currently set to 100
-          requestConcurrency: 5, // currently set to 15
-          previewRequestConcurrency: 2, // currently set to 5
-          timeout: 60000,
+          perPage: 200, // currently set to 100
+          requestConcurrency: 15, // currently set to 15
+          previewRequestConcurrency: 5, // currently set to 5
+          timeout: 600000,
         },
       },
     },

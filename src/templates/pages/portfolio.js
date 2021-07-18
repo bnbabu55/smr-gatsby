@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
@@ -7,17 +7,41 @@ import ContactForm from "../../components/ContactForm"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import SwiperCore, { Autoplay, Pagination } from "swiper"
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import "../../styles/swiper-pagination.css"
 
-SwiperCore.use([Autoplay, Pagination])
+SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
-
   const image = convertToBgImage(pluginImage)
   const pagination = {
     clickable: true,
+    type: "bullets",
+    el: ".swiper-pagination",
+    // bulletClass: "swiper-pagination-bullet",
+    // renderBullet: function (index, className) {
+    //   return `<span class=${className}>${index + 1}</span>`
+    // },
+  }
+
+  const [clientList, setClientList] = useState(clients?.nodes)
+
+  function handleClick(e) {
+    let currentIndustry = e.target.dataset.id
+    let filteredClients = []
+    if (currentIndustry.toLowerCase() === "all") {
+      filteredClients = clients?.nodes
+    } else {
+      filteredClients = clients?.nodes.filter(y =>
+        y.portfolioDetails.industry.some(
+          x => x.name.toLowerCase() === currentIndustry.toLowerCase()
+        )
+      )
+    }
+    setClientList(filteredClients)
+    console.log(currentIndustry + " # of clients " + filteredClients.length)
   }
 
   return (
@@ -63,20 +87,50 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
       <section className="py-8">
         <div className="lg:h-12 bg-themeBlue-600">
           <ul className="w-10/12 mx-auto flex flex-col lg:flex-row uppercase justify-evenly items-center">
-            <li className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center">
-              All
+            <li>
+              <button
+                className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center"
+                data-id="all"
+                onClick={handleClick}
+              >
+                All
+              </button>
             </li>
-            <li className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center">
-              Financial
+            <li>
+              <button
+                className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center"
+                data-id="financial"
+                onClick={handleClick}
+              >
+                Financial
+              </button>
             </li>
-            <li className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center">
-              Industrial
+            <li>
+              <button
+                className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center"
+                data-id="industrial"
+                onClick={handleClick}
+              >
+                Industrial
+              </button>
             </li>
-            <li className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center">
-              Business
+            <li>
+              <button
+                className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center"
+                data-id="business"
+                onClick={handleClick}
+              >
+                Business
+              </button>
             </li>
-            <li className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center">
-              Consumer
+            <li>
+              <button
+                className="w-[164px] bg-themeOrange-400 p-4 my-2 lg:mb-0 lg:-mt-2 border-2 border-themeGray-50 text-white text-center"
+                data-id="consumer"
+                onClick={handleClick}
+              >
+                Consumer
+              </button>
             </li>
           </ul>
         </div>
@@ -84,14 +138,35 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
           {/* <ul className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-x-3 justify-evenly items-center text-base font-Lato"> */}
           <Swiper
             spaceBetween={5}
-            slidesPerView={2}
-            slidesPerGroup={2}
-            pagination={pagination}
+            slidesPerView={1}
+            navigation
+            pagination
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+                slidesPerColumn: 1,
+                slidesPerColumnFill: "column",
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+                slidesPerColumn: 1,
+                slidesPerColumnFill: "column",
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 5,
+                slidesPerColumn: 5,
+                slidesPerColumnFill: "row",
+                pagination,
+              },
+            }}
             // onSlideChange={() => console.log("slide change")}
             // onSwiper={swiper => console.log(swiper)}
             className="w-11/12 mx-auto"
           >
-            {clients?.nodes.map((client, index) => {
+            {clientList.map((client, index) => {
               let regEx = /\/services\//g
               let serviceList = client.portfolioDetails.services
                 .filter(y => y.uri.match(regEx))
