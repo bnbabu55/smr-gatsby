@@ -7,6 +7,11 @@
  */
 const path = require(`path`)
 const tailwindConfig = require("./tailwind.config.js")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log("PROJ_URL: " + process.env.GATSBY_PROJ_URL)
 
 module.exports = {
   siteMetadata: {
