@@ -191,6 +191,8 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
                             .gatsbyImageData
                         : defaultImage.childImageSharp?.gatsbyImageData
                     }
+                    width="280"
+                    height="265"
                     alt={
                       client.featuredImage.node.altTxt
                         ? client.featuredImage.node.altTxt
