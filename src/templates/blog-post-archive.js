@@ -16,6 +16,7 @@ const BlogIndex = ({
     currentPageBase,
     totalPages,
     currentPage,
+    paginationArray,
   },
 }) => {
   const posts = data.allWpPost.nodes
@@ -174,7 +175,39 @@ const BlogIndex = ({
               </Link>{" "}
             </li>
           )}
-          {Array.from({ length: totalPages }, (_, i) => (
+          {paginationArray.map((x, i) => {
+            return (
+              <li
+                key={`pagination-number${x}+${i}`}
+                style={{
+                  margin: 0,
+                }}
+              >
+                {x === "..." ? (
+                  x
+                ) : (
+                  <Link
+                    to={`${x === 1 ? currentPageBase : currentPageBase + x}`}
+                    className={`${
+                      x === currentPage
+                        ? "text-white bg-themeBlue-200 hover:bg-themeBlue-600"
+                        : "text-themeBlue-200 hover:text-themeBlue-600"
+                    }
+                `}
+                    style={{
+                      marginTop: "0.1rem",
+                      marginBottom: "0.1rem",
+                      padding: "0.5rem",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {x}
+                  </Link>
+                )}
+              </li>
+            )
+          })}
+          {/* {Array.from({ length: totalPages }, (_, i) => (
             <li
               key={`pagination-number${i + 1}`}
               style={{
@@ -199,7 +232,7 @@ const BlogIndex = ({
                 {i + 1}
               </Link>
             </li>
-          ))}
+          ))} */}
           {!isLast && (
             <li>
               <Link
