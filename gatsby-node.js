@@ -59,7 +59,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
       gatsbyUtilities.actions.createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
-        path: `/news${post.uri}`,
+        path: `${post.uri}`,
 
         // use the blog post template as the page component
         component: path.resolve(`./src/templates/blog-post.js`),
@@ -145,7 +145,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           // we want the first page to be "/news/" and any additional pages
           // to be numbered.
           // "/news/2" for example
-          return page //=== 1 ? `/news` : `/news/${page}`
+          return page === 1 ? `/news` : `/news/${page}`
         }
 
         return null
@@ -171,7 +171,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           postsPerPage,
           totalPages,
           currentPage: pageNumber,
-          currentPageBase: `/news/`,
+          currentPageBase: `/news`,
 
           nextPagePath: getPagePath(pageNumber + 1),
           previousPagePath: getPagePath(pageNumber - 1),
