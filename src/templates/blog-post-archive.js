@@ -187,9 +187,7 @@ const BlogIndex = ({
                   x
                 ) : (
                   <Link
-                    to={`${
-                      x === 1 ? currentPageBase : currentPageBase + "/" + x
-                    }`}
+                    to={`${x === 1 ? currentPageBase : currentPageBase + x}`}
                     className={`${
                       x === currentPage
                         ? "text-white bg-themeBlue-200 hover:bg-themeBlue-600"

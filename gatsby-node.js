@@ -40,6 +40,8 @@ exports.createPages = async gatsbyUtilities => {
     .filter(y => !y.uri.match(regEx))
     .filter(y => !y.uri.match(regEx1))
 
+  console.log("gatsby-node filteredCat: " + JSON.stringify(filteredCat))
+
   // And a paginated archive for categoriezed posts
   await createCategoriesArchive({ filteredCat, posts, gatsbyUtilities })
 
@@ -177,7 +179,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           postsPerPage,
           totalPages,
           currentPage: pageNumber,
-          currentPageBase: `/news`,
+          currentPageBase: `/news/`,
 
           nextPagePath: getPagePath(pageNumber + 1),
           previousPagePath: getPagePath(pageNumber - 1),
@@ -191,7 +193,11 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 /**
  * This function creates archive pages for each categories of blogs in this site
  */
-async function createCategoriesArchive({ categories, posts, gatsbyUtilities }) {
+async function createCategoriesArchive({
+  filteredCat,
+  posts,
+  gatsbyUtilities,
+}) {
   const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
     {
       wp {
@@ -204,7 +210,7 @@ async function createCategoriesArchive({ categories, posts, gatsbyUtilities }) {
 
   const { postsPerPage } = graphqlResult.data.wp.readingSettings
 
-  categories.map((cat, i) => {
+  filteredCat.map((cat, i) => {
     let filteredPosts = posts.filter(post =>
       post.post.categories.nodes.some(category => category.id === cat.id)
     )
@@ -215,6 +221,7 @@ async function createCategoriesArchive({ categories, posts, gatsbyUtilities }) {
     return Promise.all(
       postsChunkedIntoArchivePages.map(async (_posts, index) => {
         const pageNumber = index + 1
+        const paginationArray = pagination(pageNumber, totalPages)
 
         const getPagePath = page => {
           if (page > 0 && page <= totalPages) {
@@ -252,6 +259,7 @@ async function createCategoriesArchive({ categories, posts, gatsbyUtilities }) {
 
             nextPagePath: getPagePath(pageNumber + 1),
             previousPagePath: getPagePath(pageNumber - 1),
+            paginationArray: paginationArray,
           },
         })
       })
