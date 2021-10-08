@@ -273,7 +273,9 @@ export const pageQuery = graphql`
       }
       seo {
         fullHead
-        schemaDetails
+        schema {
+          raw
+        }
       }
     }
 

@@ -76,7 +76,7 @@ const Seo = seoData => {
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
       />
       <script type="application/ld+json" class="yoast-schema-graph">
-        {seoData?.seoData?.schemaDetails}
+        {seoData?.seoData?.schema.raw}
       </script>
       <meta
         name="google-site-verification"

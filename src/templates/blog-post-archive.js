@@ -297,7 +297,9 @@ export const pageQuery = graphql`
     archiveSeo: wpPage(slug: { eq: "news" }) {
       seo {
         fullHead
-        schemaDetails
+        schema {
+          raw
+        }
       }
     }
   }

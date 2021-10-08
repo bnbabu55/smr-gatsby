@@ -195,7 +195,9 @@ export const pageQuery = graphql`
       slug
       seo {
         fullHead
-        schemaDetails
+        schema {
+          raw
+        }
       }
     }
     checkMark: file(

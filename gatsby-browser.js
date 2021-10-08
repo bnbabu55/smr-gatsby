@@ -1,3 +1,2 @@
 import "./src/styles/global.css"
-import "swiper/swiper-bundle.css"
-
+import "swiper/css/bundle"
