@@ -61,7 +61,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       <li className="justify-self-start">
                         {previous && (
                           <Link
-                            to={`/news${previous.uri}`}
+                            to={`${previous.uri}`}
                             rel="prev"
                             className="bg-themeBlue-600 hover:bg-themeBlue-200 text-white px-2 py-1 rounded-lg"
                           >
@@ -72,7 +72,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       <li className="justify-self-end">
                         {next && (
                           <Link
-                            to={`/news${next.uri}`}
+                            to={`${next.uri}`}
                             rel="next"
                             className="bg-themeBlue-600 hover:bg-themeBlue-200 text-white px-2 py-1 rounded-lg"
                           >
@@ -99,7 +99,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                       return (
                         <li key={cat.id + index} className="pb-3">
                           <Link
-                            to={`/news${cat.uri}`}
+                            to={`${cat.uri}`}
                             className="font-Lato text-lg text-themeOrange-400"
                           >
                             {`${
