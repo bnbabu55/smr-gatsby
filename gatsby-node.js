@@ -216,7 +216,7 @@ async function createCategoriesArchive({ categories, posts, gatsbyUtilities }) {
             // we want the first page to be "/news/" and any additional pages
             // to be numbered.
             // "/news/2" for example
-            return page === 1 ? `/news${cat.uri}` : `/news${cat.uri}${page}`
+            return page === 1 ? `${cat.uri}` : `${cat.uri}${page}`
           }
 
           return null
