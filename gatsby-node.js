@@ -34,8 +34,14 @@ exports.createPages = async gatsbyUtilities => {
     return
   }
 
+  let regEx = /\/services\//
+  let regEx1 = /\/industry\//
+  let filteredCat = categories
+    .filter(y => !y.uri.match(regEx))
+    .filter(y => !y.uri.match(regEx1))
+
   // And a paginated archive for categoriezed posts
-  await createCategoriesArchive({ categories, posts, gatsbyUtilities })
+  await createCategoriesArchive({ filteredCat, posts, gatsbyUtilities })
 
   const pages = await getPages(gatsbyUtilities)
 
