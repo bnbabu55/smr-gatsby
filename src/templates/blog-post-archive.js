@@ -83,7 +83,7 @@ const BlogIndex = ({
                         >
                           <header>
                             <h2 className="-mt-2">
-                              <Link to={`/news${post.uri}`} itemProp="url">
+                              <Link to={`${post.uri}`} itemProp="url">
                                 <span
                                   itemProp="headline"
                                   className="font-MontserratBold tracking-wider text-base uppercase text-themeOrange-400 leading-none"

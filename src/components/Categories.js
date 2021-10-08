@@ -54,7 +54,7 @@ const Categories = () => {
     return (
       <li key={cat.id + index} className="pb-3">
         <Link
-          to={`/news${cat.uri}`}
+          to={`${cat.uri}`}
           className="font-Lato font-semibold text-sm text-themeOrange-400"
         >
           {cat.name}
