@@ -30,7 +30,7 @@ const HeroBanner = () => {
                   quality: 90
                   width: 1400
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

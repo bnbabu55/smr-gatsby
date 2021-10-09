@@ -855,9 +855,9 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           width: 1400
-          placeholder: TRACED_SVG
+          placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -869,9 +869,9 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           width: 260
-          placeholder: TRACED_SVG
+          placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -888,7 +888,7 @@ export const pageQuery = graphql`
             layout: FIXED
             placeholder: BLURRED
             quality: 90
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

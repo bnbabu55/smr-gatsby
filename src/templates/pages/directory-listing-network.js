@@ -1283,7 +1283,7 @@ export const pageQuery = graphql`
           width: 600
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -1301,7 +1301,7 @@ export const pageQuery = graphql`
             width: 100
             placeholder: BLURRED
             quality: 90
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }

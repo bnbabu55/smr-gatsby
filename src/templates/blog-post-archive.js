@@ -286,7 +286,7 @@ export const pageQuery = graphql`
                   width: 330
                   height: 190
                   placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

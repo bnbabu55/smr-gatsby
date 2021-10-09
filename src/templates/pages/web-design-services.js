@@ -427,9 +427,9 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           width: 1400
-          placeholder: TRACED_SVG
+          placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -445,7 +445,7 @@ export const pageQuery = graphql`
           layout: FIXED
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -457,9 +457,9 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           width: 1400
-          placeholder: TRACED_SVG
+          placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -474,9 +474,9 @@ export const pageQuery = graphql`
         childImageSharp {
           gatsbyImageData(
             width: 170
-            placeholder: TRACED_SVG
+            placeholder: BLURRED
             quality: 90
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -499,7 +499,7 @@ export const pageQuery = graphql`
                 quality: 90
                 width: 415
                 placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
+                formats: [AUTO, WEBP]
               )
             }
           }

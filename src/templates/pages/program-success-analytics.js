@@ -354,7 +354,7 @@ export const pageQuery = graphql`
           layout: FIXED
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -368,7 +368,7 @@ export const pageQuery = graphql`
           width: 500
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }

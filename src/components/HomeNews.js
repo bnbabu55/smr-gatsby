@@ -26,7 +26,7 @@ const HomeNews = () => {
                     width: 190
                     height: 120
                     placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
+                    formats: [AUTO, WEBP]
                   )
                 }
               }
@@ -48,7 +48,7 @@ const HomeNews = () => {
               width: 1400
               placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }

@@ -24,7 +24,7 @@ const RecentPosts = () => {
                     width: 62
                     height: 50
                     placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
+                    formats: [AUTO, WEBP]
                   )
                 }
               }

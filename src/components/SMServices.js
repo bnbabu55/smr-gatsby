@@ -19,7 +19,7 @@ const SMServices = () => {
               width: 152
               placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
@@ -38,7 +38,7 @@ const SMServices = () => {
               height: 380
               placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }

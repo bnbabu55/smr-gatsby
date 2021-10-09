@@ -26,13 +26,28 @@ module.exports = {
     //   process.env.GATSBY_PROJ_URL ||
     //   `https://gatsbysite.devsmr-development.com/`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    GATSBY_EXPERIMENTAL_QUERY_CONCURRENCY: 8,
+    GATSBY_CPU_COUNT: 4,
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */ plugins: [
+    {
+      resolve: `gatsby-plugin-schema-snapshot`,
+      options: {
+        path: `schema.gql`,
+        exclude: {
+          plugins: [`gatsby-source-npm-package-search`],
+        },
+        update: false,
+      },
+    },
+
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby
@@ -119,6 +134,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-offline`,
     /**

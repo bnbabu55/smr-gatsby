@@ -21,7 +21,7 @@ const HomePortfolio = () => {
               width: 275
               placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
@@ -40,7 +40,7 @@ const HomePortfolio = () => {
               width: 1920
               placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }

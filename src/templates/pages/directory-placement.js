@@ -470,7 +470,7 @@ export const pageQuery = graphql`
             layout: FIXED
             placeholder: BLURRED
             quality: 90
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -485,7 +485,7 @@ export const pageQuery = graphql`
           width: 590
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -503,7 +503,7 @@ export const pageQuery = graphql`
             width: 100
             placeholder: BLURRED
             quality: 90
-            formats: [AUTO, WEBP, AVIF]
+            formats: [AUTO, WEBP]
           )
         }
       }
@@ -519,7 +519,7 @@ export const pageQuery = graphql`
           height: 55
           placeholder: BLURRED
           quality: 90
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
           layout: FIXED
         )
       }

@@ -31,7 +31,7 @@ const Testimonials = () => {
                   width: 200
                   placeholder: BLURRED
                   quality: 90
-                  formats: [AUTO, WEBP, AVIF]
+                  formats: [AUTO, WEBP]
                 )
               }
             }

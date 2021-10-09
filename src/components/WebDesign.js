@@ -19,9 +19,9 @@ const WebDesign = () => {
               width: 20
               height: 20
               layout: FIXED
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
@@ -38,9 +38,9 @@ const WebDesign = () => {
           childImageSharp {
             gatsbyImageData(
               width: 540
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
               quality: 90
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
