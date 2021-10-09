@@ -28,8 +28,6 @@ module.exports = {
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
-    GATSBY_EXPERIMENTAL_QUERY_CONCURRENCY: 8,
-    GATSBY_CPU_COUNT: 4,
   },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
