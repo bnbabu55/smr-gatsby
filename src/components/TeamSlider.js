@@ -21,7 +21,7 @@ const TeamSlider = () => {
   `)
 
   return (
-    <section
+    <div
       id="TeamSlider"
       className="bg-white text-themeGray-300 py-10 w-11/12 mx-auto"
     >
@@ -99,7 +99,7 @@ const TeamSlider = () => {
         </div>
         <div className="swiper-button-next"></div>
       </Swiper>
-    </section>
+    </div>
   )
 }
 

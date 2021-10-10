@@ -37,7 +37,7 @@ const SolutionSlider = () => {
   `)
 
   return (
-    <section
+    <div
       id="SolutionSlider"
       className="bg-white text-themeGray-300 py-10 w-full mx-auto"
     >
@@ -98,7 +98,7 @@ const SolutionSlider = () => {
           )
         })}
       </Swiper>
-    </section>
+    </div>
   )
 }
 

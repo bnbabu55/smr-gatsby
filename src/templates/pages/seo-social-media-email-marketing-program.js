@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -10,7 +10,7 @@ const SEOPage = ({ data: { page, webImage } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-11/12 mx-auto py-10">
+      <div className="w-11/12 mx-auto py-10">
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
@@ -312,9 +312,9 @@ const SEOPage = ({ data: { page, webImage } }) => {
             </a>
           </p>
         </div>
-      </section>
+      </div>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

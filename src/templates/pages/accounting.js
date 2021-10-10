@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -9,7 +9,7 @@ const AccountingPage = ({ data: { page } }) => {
   return (
     <Layout className="overflow-x-hidden break-all">
       <Seo seoData={page?.seo} />
-      <section>
+      <div>
         <h1 className="w-11/12 mx-auto font-BebasNeue font-bold text-5xl text-themeOrange-400 text-center py-5">
           SEARCH MARKETING RESOURCE ACCOUNTING
         </h1>
@@ -401,9 +401,9 @@ const AccountingPage = ({ data: { page } }) => {
             </div>
           </form>
         </div>
-      </section>
+      </div>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

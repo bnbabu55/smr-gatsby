@@ -41,7 +41,7 @@ const HeroBanner = () => {
   `)
 
   return (
-    <section
+    <div
       id="hero-banner"
       className="bg-white border-b-4 border-themeGray-50 shadow-themeShadow"
     >
@@ -78,7 +78,7 @@ const HeroBanner = () => {
           )
         })}
       </Swiper>
-    </section>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import FaqSection from "../../components/FaqSection"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 
 const FaqPage = ({ data: { page } }) => {
   return (
@@ -18,7 +18,7 @@ const FaqPage = ({ data: { page } }) => {
       </div>
       <FreeAuditForm />
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

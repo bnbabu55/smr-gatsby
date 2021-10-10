@@ -33,13 +33,13 @@ export const FaqSection = () => {
 
   return (
     <>
-      <section id="page-title" className="bg-white py-10">
+      <div id="page-title" className="bg-white py-10">
         <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center uppercase">
           SEO FREQUENTLY ASKED QUESTIONS
         </h1>
-      </section>
+      </div>
 
-      <section className="w-11/12 mx-auto py-10" id="faq-questions">
+      <div className="w-11/12 mx-auto py-10" id="faq-questions">
         <Disclosure>
           {({ open }) => (
             <>
@@ -1199,7 +1199,7 @@ export const FaqSection = () => {
             </>
           )}
         </Disclosure>
-      </section>
+      </div>
     </>
   )
 }

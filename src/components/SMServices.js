@@ -67,7 +67,7 @@ const SMServices = () => {
   }
 
   return (
-    <section id="sm-services" className="py-10 border-b border-gray-300">
+    <div id="sm-services" className="py-10 border-b border-gray-300">
       <div className="wrapper grid gap-3 grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto">
         <div className="text-center col-start-1 col-end-2 lg:col-end-4 row-start-1 row-end-2">
           <Link
@@ -229,7 +229,7 @@ const SMServices = () => {
           />
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

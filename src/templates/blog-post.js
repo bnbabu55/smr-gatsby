@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
-import ContactForm from "../components/ContactForm"
+import ContactSection from "../components/ContactSection"
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
   const featuredImage = {
@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
     <Layout>
       <Seo seoData={post?.seo} />
 
-      <section className="text-gray-600 mt-12 mb-5">
+      <div className="text-gray-600 mt-12 mb-5">
         <div>
           <h2 className="font-BebasNeue font-bold tracking-wide text-5xl text-themeBlue-600 text-center">
             SEARCH MARKETING NEWS
@@ -132,12 +132,12 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  <section
+                  <div
                     itemProp="description"
                     className="font-Lato prose md:prose-lg max-w-none text-justify"
                   >
                     {parse(post.content)}
-                  </section>
+                  </div>
                 </article>
                 <ul className="flex mt-5">
                   <li className="bg-facebookBlue text-white rounded-lg flex justify-evenly items-center px-2 py-1">
@@ -222,8 +222,8 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
             <Categories />
           </div>
         </div>
-      </section>
-      <ContactForm />
+      </div>
+      <ContactSection />
     </Layout>
   )
 }

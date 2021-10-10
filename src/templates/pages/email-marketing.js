@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -10,7 +10,7 @@ const EmailMktPage = ({ data: { page, emIcons } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-11/12 mx-auto py-10">
+      <div className="w-11/12 mx-auto py-10">
         <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center pt-10">
           Email Marketing Services
         </h1>
@@ -217,9 +217,9 @@ const EmailMktPage = ({ data: { page, emIcons } }) => {
           </div>
           <div className="clear-both"></div>
         </div>
-      </section>
+      </div>
       <FreeAuditForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

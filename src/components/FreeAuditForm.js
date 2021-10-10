@@ -2,7 +2,7 @@ import React from "react"
 
 const FreeAuditForm = ({ home }) => {
   return (
-    <section
+    <div
       id="freeauditform"
       className={`pt-5 my-10 border-b pb-5 ${
         home ? "bg-themeOrange-700" : "bg-themeBlue-600"
@@ -79,7 +79,7 @@ const FreeAuditForm = ({ home }) => {
           to increase our keyword search rankings.
         </p>
       </div>
-    </section>
+    </div>
   )
 }
 

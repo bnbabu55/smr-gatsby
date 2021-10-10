@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -41,7 +41,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
           </Link>
         </div>
       </BackgroundImage>
-      <section className="w-11/12 mx-auto flex flex-col lg:flex-row gap-y-5 lg:gap-x-5 py-8">
+      <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-y-5 lg:gap-x-5 py-8">
         <div className="flex-1">
           <p className="pb-3 text-themeGray-200 text-lg font-Lato mx-auto">
             Search Marketing Resource is a Chicago-based SEO agency that
@@ -69,8 +69,8 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
           alt="Chicago Bean in City SEO Agency"
           className="mx-auto lg:w-[400px] border-2 border-themeOrange-200"
         />
-      </section>
-      <section className="bg-themeOrange-400">
+      </div>
+      <div className="bg-themeOrange-400">
         <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-y-5 lg:gap-x-8 py-12">
           <GatsbyImage
             image={seoImages?.nodes[1]?.childImageSharp?.gatsbyImageData}
@@ -140,8 +140,8 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
             </Link>
           </div>
         </div>
-      </section>
-      <section className="w-11/12 mx-auto py-12">
+      </div>
+      <div className="w-11/12 mx-auto py-12">
         <p className="pb-3 text-themeGray-200 text-lg font-Lato mx-auto">
           Many businesses no longer rely on traditional methods of
           advertisement, and they have come to realize that there is a strong
@@ -239,8 +239,8 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
             className="mx-auto lg:w-[400px] lg:h-[240px] border-2 border-themeBlue-600"
           />
         </div>
-      </section>
-      <section className="bg-themeOrange-400 text-white text-center py-16">
+      </div>
+      <div className="bg-themeOrange-400 text-white text-center py-16">
         <div className="font-Lato text-xl lg:text-3xl pb-5">
           Ready to see how our Chicago-based SEO company helps grow your leads
           and sales?
@@ -252,7 +252,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
         >
           Request Your Free Proposal Now!
         </Link>
-      </section>
+      </div>
       <div className="w-11/12 mx-auto py-10">
         <h2
           className="font-Lato text-3xl underline pb-5 text-center"
@@ -267,7 +267,7 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
         </p>
       </div>
       <Testimonials />
-      <section className="bg-themeOrange-400 text-white text-center py-16">
+      <div className="bg-themeOrange-400 text-white text-center py-16">
         <div
           className="font-Lato text-xl lg:text-3xl pb-5 underline"
           style={{ textDecorationColor: "#00497a" }}
@@ -285,9 +285,9 @@ const LocationsPage = ({ data: { page, bgImage, seoImages, checkMark } }) => {
         >
           Request Your Free SEO Proposal Today!
         </Link>
-      </section>
+      </div>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

@@ -4,7 +4,7 @@ import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -41,7 +41,7 @@ const WebDesignPage = ({
           Your Website Project
         </div>
       </BackgroundImage>
-      <section className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
           WEBSITE GRAPHIC DESIGN & DEVELOPMENT
         </h1>
@@ -225,13 +225,13 @@ const WebDesignPage = ({
             scope and launching your new website on time.
           </p>
         </div>
-      </section>
+      </div>
       <GatsbyImage
         image={sbClient.childImageSharp.gatsbyImageData}
         alt="Website design for small business client banner"
         className="my-5"
       />
-      <section className="w-11/12 mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="w-11/12 mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="border-2 border-themeBlue-600 px-3 py-8 flex flex-col lg:flex-row lg:gap-x-5">
           <div className="w-full lg:w-2/3">
             <Link
@@ -316,8 +316,8 @@ const WebDesignPage = ({
             className="my-5 w-full lg:w-1/3"
           />
         </div>
-      </section>
-      <section id="recent-projects">
+      </div>
+      <div id="recent-projects">
         <div className="w-full mx-auto bg-themeBlue-600 text-white my-5 py-10">
           <h3 className="w-11/12 mx-auto text-center flex justify-center items-center gap-x-5 pb-5">
             <Link
@@ -381,7 +381,7 @@ const WebDesignPage = ({
             )
           })}
         </Swiper>
-      </section>
+      </div>
 
       <div className="flex">
         <hr className="border-4 border-themeBlue-600 w-1/2" />
@@ -394,7 +394,7 @@ const WebDesignPage = ({
         website design and development.
       </p>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

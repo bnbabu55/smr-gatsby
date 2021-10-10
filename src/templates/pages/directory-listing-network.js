@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -12,7 +12,7 @@ const DirectoryListingPage = ({ data: { page, dSubmission, listings } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-full mx-auto text-center py-10">
+      <div className="w-full mx-auto text-center py-10">
         <div className="w-11/12 mx-auto">
           <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center pt-10">
             BUSINESS LISTING NETWORK
@@ -1246,9 +1246,9 @@ const DirectoryListingPage = ({ data: { page, dSubmission, listings } }) => {
             </div>{" "}
           </div>
         </div>
-      </section>
+      </div>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

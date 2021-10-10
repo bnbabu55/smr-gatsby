@@ -1,5 +1,5 @@
 {
-  "name": "SMR-gatsby-site",
+  "name": "smrgatsbysite",
   "private": true,
   "description": "SMR Gatsby site",
   "version": "1.0.0",
@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@mdx-js/mdx": "^1.6.22",
@@ -33,6 +34,7 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "gbimage-bridge": "^0.1.4",
     "html-react-parser": "^1.4.0",
+    "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",

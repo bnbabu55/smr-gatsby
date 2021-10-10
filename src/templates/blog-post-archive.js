@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
-import ContactForm from "../components/ContactForm"
+import ContactSection from "../components/ContactSection"
 
 const BlogIndex = ({
   data,
@@ -40,7 +40,7 @@ const BlogIndex = ({
     <Layout>
       <Seo seoData={seoData} />
 
-      <section className="text-gray-600 my-16">
+      <div className="text-gray-600 my-16">
         <div>
           <h2 className="font-BebasNeue font-bold tracking-wide text-5xl text-themeBlue-600 text-center">
             SEARCH MARKETING NEWS
@@ -97,7 +97,7 @@ const BlogIndex = ({
                               <span>{`${post.author.node.firstName} ${post.author.node.lastName}`}</span>
                             </p>
                           </header>
-                          <section
+                          <div
                             itemProp="description"
                             className="font-Lato text-sm text-themeGray-200"
                           >
@@ -106,7 +106,7 @@ const BlogIndex = ({
                                 attribs &&
                                 attribs.class === "read-more" && <></>,
                             })}
-                          </section>
+                          </div>
                         </article>
                       </li>
                     </ul>
@@ -147,7 +147,7 @@ const BlogIndex = ({
             <Categories />
           </div>
         </div>
-      </section>
+      </div>
       <div>
         <ul
           style={{
@@ -251,7 +251,7 @@ const BlogIndex = ({
           )}
         </ul>
       </div>
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

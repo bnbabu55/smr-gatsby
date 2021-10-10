@@ -2,7 +2,7 @@ import React from "react"
 
 const FreeQuoteForm = () => {
   return (
-    <section
+    <div
       id="freequoteform"
       className="py-10 mx-auto text-white font-Lato text-xl text-center"
     >
@@ -97,7 +97,7 @@ const FreeQuoteForm = () => {
           </fieldset>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

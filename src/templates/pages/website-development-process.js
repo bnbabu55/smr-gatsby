@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
@@ -14,7 +14,7 @@ const WebDevPage = ({ data: { page, checkMark, graphics, devSlides } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-full py-10 text-lg">
+      <div className="w-full py-10 text-lg">
         <div className="w-11/12 mx-auto">
           <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center py-12">
             Website Development Process
@@ -172,10 +172,10 @@ const WebDevPage = ({ data: { page, checkMark, graphics, devSlides } }) => {
             )
           })}
         </div>
-      </section>
+      </div>
       <FreeAuditForm />
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

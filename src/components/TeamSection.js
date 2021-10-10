@@ -40,7 +40,7 @@ export const TeamSection = () => {
 
   return (
     <>
-      <section
+      <div
         id="hero-banner"
         className="bg-white border-b-4 border-themeGray-50 shadow-themeShadow"
       >
@@ -60,9 +60,9 @@ export const TeamSection = () => {
             Website Developers & SEO Managers
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="w-11/12 mx-auto py-10">
+      <div className="w-11/12 mx-auto py-10">
         <div className="top_padding_page top_padding page_content_website faq-page top-space">
           <div className="wrapper">
             <div className="top_content">
@@ -136,7 +136,7 @@ export const TeamSection = () => {
             )
           })}
         </div>
-      </section>
+      </div>
     </>
   )
 }

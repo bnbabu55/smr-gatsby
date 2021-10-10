@@ -49,7 +49,7 @@ const WebDesign = () => {
   `)
 
   return (
-    <section
+    <div
       id="web-design"
       className="flex flex-col lg:flex-row justify-evenly pt-5 pb-10 border-b border-gray-300"
     >
@@ -185,7 +185,7 @@ const WebDesign = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

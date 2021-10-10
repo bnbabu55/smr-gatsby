@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
@@ -17,7 +17,7 @@ const TermsPage = ({ data: { page, plxImage } }) => {
   return (
     <Layout className="overflow-x-hidden break-all">
       <Seo seoData={page?.seo} />
-      <section className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h1 className="font-BebasNeue font-bold text-5xl text-themeOrange-400 text-center py-8">
           SEARCH MARKETING REOSURCE LLC - TERMS
         </h1>
@@ -246,7 +246,7 @@ const TermsPage = ({ data: { page, plxImage } }) => {
           services to the client via a cloud-based delivery portal and updates
           through email.
         </p>
-      </section>
+      </div>
       <FreeAuditForm />
       <BackgroundImage
         Tag="section"
@@ -278,7 +278,7 @@ const TermsPage = ({ data: { page, plxImage } }) => {
       </BackgroundImage>
 
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

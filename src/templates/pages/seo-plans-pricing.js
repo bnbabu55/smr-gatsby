@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -62,7 +62,7 @@ const SEOPlansPage = ({ data: { page, bgImage, googleImage, seoImages } }) => {
           Social Media Management Solutions
         </div>
       </BackgroundImage>
-      <section className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
           DIGITAL MARKETING SERVICE PLANS
         </h1>
@@ -819,10 +819,10 @@ const SEOPlansPage = ({ data: { page, bgImage, googleImage, seoImages } }) => {
             ala carte programs tailored to a client’s specific needs and budget.
           </p>
         </div>
-      </section>
+      </div>
 
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

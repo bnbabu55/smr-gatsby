@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
@@ -15,7 +15,7 @@ const ProgSuccessPage = ({ data: { page, checkMark, analytics } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-full mx-auto text-center py-10">
+      <div className="w-full mx-auto text-center py-10">
         <h1 className="w-11/12 mx-auto text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center pt-10">
           Digital Marketing SEO Program Results
         </h1>
@@ -314,10 +314,10 @@ const ProgSuccessPage = ({ data: { page, checkMark, analytics } }) => {
             </p>
           </div>
         </div>
-      </section>
+      </div>
       <FreeAuditForm />
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

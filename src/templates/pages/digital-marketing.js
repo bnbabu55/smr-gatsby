@@ -27,7 +27,7 @@ const DigMarkPage = ({ data: { page, seoImages } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
-      <section className="w-11/12 mx-auto pt-20 pb-10">
+      <div className="w-11/12 mx-auto pt-20 pb-10">
         <div className="wrapper">
           <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center">
             SEO PROGRAMS
@@ -869,7 +869,7 @@ const DigMarkPage = ({ data: { page, seoImages } }) => {
             </div>
           </form>
         </div>
-      </section>
+      </div>
     </Layout>
   )
 }

@@ -2,14 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import ContactForm from "../components/ContactForm"
+import ContactSection from "../components/ContactSection"
 
 const PageTemplate = ({ data: { page } }) => {
   return (
     <Layout>
       <Seo seoData={page?.seo} />
       {page.title}
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

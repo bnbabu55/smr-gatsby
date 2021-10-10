@@ -42,7 +42,7 @@ const Testimonials = () => {
   `)
 
   return (
-    <section id="Testimonials" className="bg-white py-10 mx-auto w-11/12">
+    <div id="Testimonials" className="bg-white py-10 mx-auto w-11/12">
       <div className="container">
         <h2 className="pb-8 text-center">
           <Link
@@ -130,7 +130,7 @@ const Testimonials = () => {
         </div>
         <div className="swiper-button-next"></div>
       </Swiper>
-    </section>
+    </div>
   )
 }
 

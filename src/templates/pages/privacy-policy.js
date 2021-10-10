@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
@@ -17,7 +17,7 @@ const PrivacyPage = ({ data: { page, plxImage } }) => {
   return (
     <Layout className="overflow-x-hidden break-all">
       <Seo seoData={page?.seo} />
-      <section className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h1 className="font-BebasNeue font-bold text-5xl text-themeOrange-400 text-center py-8">
           SEARCH MARKETING REOSURCE LLC - PRIVACY POLICY
         </h1>
@@ -207,7 +207,7 @@ const PrivacyPage = ({ data: { page, plxImage } }) => {
           we will notify you by email or by posting a prominent notice for 30
           days prior to the change taking effect.
         </p>
-      </section>
+      </div>
       <FreeAuditForm />
       <BackgroundImage
         Tag="section"
@@ -239,7 +239,7 @@ const PrivacyPage = ({ data: { page, plxImage } }) => {
       </BackgroundImage>
 
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

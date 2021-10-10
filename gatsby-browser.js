@@ -1,2 +1,1 @@
-import "./src/styles/global.css"
-import "swiper/css/bundle"
+export { wrapRootElement } from "./gatsby-ssr"

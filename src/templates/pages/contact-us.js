@@ -7,6 +7,7 @@ import Seo from "../../components/Seo"
 import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import ContactForm from "../../components/ContactForm"
 
 const ContactPage = ({ data: { page, bgImage, plxImage } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
@@ -37,7 +38,7 @@ const ContactPage = ({ data: { page, bgImage, plxImage } }) => {
           </div>
         </div>
       </BackgroundImage>
-      <section>
+      <div>
         <h1 className="w-11/12 mx-auto font-BebasNeue font-bold text-5xl text-themeOrange-400 text-center py-5">
           CONTACT SEARCH MARKETING RESOURCE LLC
         </h1>
@@ -184,54 +185,9 @@ const ContactPage = ({ data: { page, bgImage, plxImage } }) => {
           </div>
         </div>
         <div className="w-11/12 contact-wrapper mx-auto border border-gray-700 rounded-lg">
-          <form className="text-gray-700 contact-form flex flex-col justify-center align-center m-10 font-Lato text-base">
-            <div className="font-Montserrat text-xs text-red pb-2">
-              Required *
-            </div>
-            <div className="grid gap-3 grid-cols-2">
-              <input
-                className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-3 lg:col-start-1 lg:col-end-2"
-                type="tel"
-                placeholder="Company"
-                name="company"
-                id="company"
-              />
-              <input
-                className="w-full border border-gray-700 p-3  rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-3 lg:col-start-2 lg:col-end-3"
-                type="email"
-                placeholder="Email"
-                name="email"
-                id="email"
-              />
-              <input
-                className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-3 lg:col-start-1 lg:col-end-2"
-                type="text"
-                placeholder="First"
-                name="firstname"
-                id="firstname"
-              />
-              <input
-                className="w-full border border-gray-700 p-3  rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-3 lg:col-start-2 lg:col-end-3"
-                type="text"
-                placeholder="Last"
-                name="lastname"
-                id="lastname"
-              />
-              <textarea
-                className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-span-2"
-                type="textarea"
-                placeholder="Message"
-                rows="6"
-                name="message"
-                id="message"
-              />
-              <button className="w-full text-white uppercase bg-themeOrange-400 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5 col-span-2">
-                Submit
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
-      </section>
+      </div>
       <FreeAuditForm />
       <BackgroundImage
         Tag="section"

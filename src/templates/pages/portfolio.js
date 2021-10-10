@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import FreeQuoteForm from "../../components/FreeQuoteForm"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import ContactForm from "../../components/ContactForm"
+import ContactSection from "../../components/ContactSection"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
@@ -66,7 +66,7 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
           </div>
         </div>
       </BackgroundImage>
-      <section className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto">
         <h1 className="text-themeOrange-400 text-5xl font-BebasNeue font-bold tracking-wide text-center pb-5">
           RECENT WEBSITE DESIGN &amp; SEO PROGRAMS
         </h1>
@@ -83,8 +83,8 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
           graphic design capabilities and inbound marketing technologies our
           team completes every day.
         </p>
-      </section>
-      <section className="py-8">
+      </div>
+      <div className="py-8">
         <div className="lg:h-12 bg-themeBlue-600">
           <ul className="w-10/12 mx-auto flex flex-col lg:flex-row uppercase justify-evenly items-center">
             <li>
@@ -237,9 +237,9 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
             })}
           </Swiper>
         </div>
-      </section>
+      </div>
       <FreeQuoteForm />
-      <ContactForm />
+      <ContactSection />
     </Layout>
   )
 }

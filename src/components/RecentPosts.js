@@ -103,7 +103,7 @@ const RecentPosts = () => {
                       <span key={post.id + "-body-span"}>{post.date}</span>
                     </p>
                   </header>
-                  <section
+                  <div
                     key={post.id + "-body-section"}
                     itemProp="description"
                     className="font-Lato text-sm text-themeGray-200 line-clamp-2"
@@ -112,7 +112,7 @@ const RecentPosts = () => {
                       replace: ({ attribs }) =>
                         attribs && attribs.class === "read-more" && <></>,
                     })}
-                  </section>
+                  </div>
                 </article>
               </li>
             </ul>
