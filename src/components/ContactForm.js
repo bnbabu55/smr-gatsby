@@ -122,11 +122,17 @@ const ContactForm = () => {
         </div>
       </form>
       <div style={{ padding: "20px" }}>
-        {loading && <p>Sending....</p>}
+        {loading && <p className="font-Lato text-black">Sending....</p>}
         {error && (
-          <p>An unknown error has occured, please try again later...</p>
+          <p className="font-Lato text-red-600">
+            An unknown error has occured, please try again later...
+          </p>
         )}
-        {data && <p>Your form has been submitted successfully, thank you.</p>}
+        {data && (
+          <p className="font-Lato text-green-500">
+            Your form has been submitted successfully, thank you.
+          </p>
+        )}
         <p className="text-white">
           {data &&
             setTimeout(() => {

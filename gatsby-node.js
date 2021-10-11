@@ -40,8 +40,6 @@ exports.createPages = async gatsbyUtilities => {
     .filter(y => !y.uri.match(regEx))
     .filter(y => !y.uri.match(regEx1))
 
-  console.log("gatsby-node filteredCat: " + JSON.stringify(filteredCat))
-
   // And a paginated archive for categoriezed posts
   await createCategoriesArchive({ filteredCat, posts, gatsbyUtilities })
 
