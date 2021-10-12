@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import FreeAuditForm from "../../components/FreeAuditForm"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import TestimonialSection from "../../components/TestimonialSection"
@@ -17,7 +17,7 @@ const TestimonialsPage = ({ data: { page } }) => {
         <hr className="border-4 border-themeOrange-100 w-1/2" />
       </div>
       <FreeAuditForm />
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import FreeAuditForm from "../../components/FreeAuditForm"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import ContactSection from "../../components/ContactSection"
@@ -393,7 +393,7 @@ const WebDesignPage = ({
         requirements. We're glad to provide a proposal with the exact costs for
         website design and development.
       </p>
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

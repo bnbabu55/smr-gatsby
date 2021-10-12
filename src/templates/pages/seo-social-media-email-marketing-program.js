@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import ContactSection from "../../components/ContactSection"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -313,7 +313,7 @@ const SEOPage = ({ data: { page, webImage } }) => {
           </p>
         </div>
       </div>
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

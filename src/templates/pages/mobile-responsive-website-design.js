@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 
@@ -168,7 +168,7 @@ const MobilePage = ({ data: { page, mobile, checkMark } }) => {
         </div>
       </div>
       <FreeAuditForm />
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

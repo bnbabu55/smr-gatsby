@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import ContactSection from "../../components/ContactSection"
@@ -821,7 +821,7 @@ const SEOPlansPage = ({ data: { page, bgImage, googleImage, seoImages } }) => {
         </div>
       </div>
 
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

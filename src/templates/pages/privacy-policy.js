@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import { getImage } from "gatsby-plugin-image"
@@ -238,7 +238,7 @@ const PrivacyPage = ({ data: { page, plxImage } }) => {
         </div>
       </BackgroundImage>
 
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

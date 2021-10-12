@@ -1,9 +1,9 @@
 import React from "react"
 
-const FreeQuoteForm = () => {
+const FreeQuoteSection = () => {
   return (
     <div
-      id="freequoteform"
+      id="FreeQuoteSection"
       className="py-10 mx-auto text-white font-Lato text-xl text-center"
     >
       <div className="flex flex-col lg:flex-row" id="form">
@@ -101,4 +101,4 @@ const FreeQuoteForm = () => {
   )
 }
 
-export default FreeQuoteForm
+export default FreeQuoteSection

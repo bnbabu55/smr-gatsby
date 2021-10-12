@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 import ContactSection from "../../components/ContactSection"
@@ -238,7 +238,7 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
           </Swiper>
         </div>
       </div>
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

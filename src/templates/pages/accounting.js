@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import ContactSection from "../../components/ContactSection"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
 
@@ -402,7 +402,7 @@ const AccountingPage = ({ data: { page } }) => {
           </form>
         </div>
       </div>
-      <FreeQuoteForm />
+      <FreeQuoteSection />
       <ContactSection />
     </Layout>
   )

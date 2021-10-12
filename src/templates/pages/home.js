@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import ContactSection from "../../components/ContactSection"
 import FreeAuditForm from "../../components/FreeAuditForm"
-import FreeQuoteForm from "../../components/FreeQuoteForm"
+import FreeQuoteSection from "../../components/FreeQuoteSection"
 import HeroBanner from "../../components/HeroBanner"
 import HomeNews from "../../components/HomeNews"
 import HomePortfolio from "../../components/HomePortfolio"
@@ -24,7 +24,7 @@ const HomePage = ({ data: { page } }) => (
     <HomePortfolio />
     <FreeAuditForm home={true} />
     <Testimonials />
-    <FreeQuoteForm />
+    <FreeQuoteSection />
     <TeamSlider />
     <HomeNews />
     <ContactSection />
