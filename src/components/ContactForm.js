@@ -11,7 +11,7 @@ const CONTACT_MUTATION = gql`
     $lname: String!
     $message: String!
   ) {
-    createSubmission(
+    createContactSubmission(
       input: {
         clientMutationId: $clientMutationId
         company: $company
@@ -55,7 +55,7 @@ const ContactForm = () => {
           })
         }}
       >
-        <div className="font-Montserrat text-xs text-red-600 pb-4">
+        <div className="font-Montserrat font-semibold text-xs text-red-600 pb-4">
           Required *
         </div>
         <div className="grid gap-y-6 lg:gap-y-6 lg:gap-x-6 grid-cols-1 lg:grid-cols-2">
@@ -67,7 +67,7 @@ const ContactForm = () => {
               name="company"
               id="company"
               value={companyValue}
-              onBlur={event => {
+              onChange={event => {
                 setCompanyValue(event.target.value)
               }}
               required
@@ -88,7 +88,7 @@ const ContactForm = () => {
               name="email"
               id="email"
               value={emailValue}
-              onBlur={event => {
+              onChange={event => {
                 setEmailValue(event.target.value)
               }}
               required
@@ -109,7 +109,7 @@ const ContactForm = () => {
               name="firstname"
               id="firstname"
               value={fnameValue}
-              onBlur={event => {
+              onChange={event => {
                 setFNameValue(event.target.value)
               }}
               required
@@ -130,7 +130,7 @@ const ContactForm = () => {
               name="lastname"
               id="lastname"
               value={lnameValue}
-              onBlur={event => {
+              onChange={event => {
                 setLNameValue(event.target.value)
               }}
               required
@@ -152,7 +152,7 @@ const ContactForm = () => {
               name="message"
               id="message"
               value={messageValue}
-              onBlur={event => {
+              onChange={event => {
                 setMessageValue(event.target.value)
               }}
               required

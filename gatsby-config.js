@@ -61,10 +61,10 @@ module.exports = {
         url: process.env.WPGRAPHQL_URL || `https://smr-sandbox.com/graphql`,
         type: {
           Post: {
-            limit: 200,
+            limit: 10,
           },
           Portfolio: {
-            limit: 100,
+            limit: 10,
           },
         },
         schema: {

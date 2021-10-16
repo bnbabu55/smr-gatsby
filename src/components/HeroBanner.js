@@ -55,8 +55,8 @@ const HeroBanner = () => {
       >
         {bannerSlides?.nodes.map((bannerSlide, index) => {
           return (
-            <SwiperSlide className="relative" key={bannerSlide?.id}>
-              <figure className="overflow-hidden w-full">
+            <SwiperSlide className="relative min-w-full" key={bannerSlide?.id}>
+              <figure className="overflow-hidden min-w-full">
                 <GatsbyImage
                   image={
                     bannerSlide?.frontmatter?.featuredImage?.childImageSharp
