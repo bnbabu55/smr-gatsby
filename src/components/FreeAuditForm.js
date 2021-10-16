@@ -1,6 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
+import axios from "axios"
 
 const FreeAuditForm = ({ home }) => {
+  const [webUrlValue, setWebUrlValue] = useState("")
+  const [emailValue, setEmailValue] = useState("")
+  const [fnameValue, setFNameValue] = useState("")
+  const [lnameValue, setLNameValue] = useState("")
+  const [phoneValue, setPhoneValue] = useState("")
+  const [formResp, setFormResp] = useState("")
+
   return (
     <div
       id="freeauditform"
@@ -17,7 +25,34 @@ const FreeAuditForm = ({ home }) => {
             home ? "bg-themeOrange-400" : "bg-themeBlue-200"
           } mx-auto`}
         >
-          <form className="contact-form m-10 font-Lato text-base">
+          <form
+            className="audit-form m-10 font-Lato text-base"
+            onSubmit={async event => {
+              event.preventDefault()
+
+              const myForm = event.target
+              const formData = new FormData(myForm)
+              setFormResp("loading")
+              axios
+                .post(
+                  "https://smr-sandbox.com/wp-json/contact-form-7/v1/contact-forms/10521/feedback",
+                  formData
+                )
+                .then(function (response) {
+                  if (response.data.status === "mail_sent") {
+                    setFormResp("success")
+                    console.log(response)
+                  } else {
+                    setFormResp("error")
+                    console.log(response)
+                  }
+                })
+                .catch(function (error) {
+                  setFormResp("error")
+                  console.log(error)
+                })
+            }}
+          >
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
               <div className="order-1 font-MontserratBold text-2xl uppercase text-white md:col-span-2 lg:col-span-1">
                 Free Site Audit!
@@ -26,47 +61,69 @@ const FreeAuditForm = ({ home }) => {
                 className="order-1 w-full border border-black p-3 rounded"
                 type="text"
                 placeholder="First Name"
-                name="freeaudit-fname"
-                id="freeaudit-fname"
+                name="first-name"
+                id="first-name"
+                value={fnameValue}
+                onChange={event => {
+                  setFNameValue(event.target.value)
+                }}
               />
               <input
                 className="w-full order-1 border border-black p-3 rounded"
                 type="text"
                 placeholder="Last Name"
-                name="freeaudit-lname"
-                id="freeaudit-lname"
+                name="last-name"
+                id="last-name"
+                value={lnameValue}
+                onChange={event => {
+                  setLNameValue(event.target.value)
+                }}
               />
               <input
                 className="w-full order-1 border border-black p-3 rounded"
                 type="text"
-                placeholder="Website URL"
-                name="freeaudit-weburl"
-                id="freeaudit-weburl"
+                placeholder="e.g http(s)://example.com"
+                name="your-website"
+                id="your-website"
+                value={webUrlValue}
+                onChange={event => {
+                  setWebUrlValue(event.target.value)
+                }}
               />
               <div className="order-2 lg:order-1 text-white">Recaptcha</div>
               <input
                 className="w-full order-1 border border-black p-3 rounded"
                 type="email"
                 placeholder="Email"
-                name="freeaudit-email"
-                id="freeaudit-email"
+                name="your-email"
+                id="your-email"
+                value={emailValue}
+                onChange={event => {
+                  setEmailValue(event.target.value)
+                }}
               />
               <input
                 className="w-full order-1 border border-black p-3 rounded"
                 type="tel"
                 placeholder="Phone"
-                name="freeaudit-phone"
-                id="freeaudit-phone"
+                name="your-phone"
+                id="your-phone"
+                value={phoneValue}
+                onChange={event => {
+                  setPhoneValue(event.target.value)
+                }}
               />
               <button
                 id="freeaudit-submit"
+                type="submit"
                 className={`w-full order-3 text-white uppercase 
                 ${
                   home ? "bg-themeBlue-200" : "bg-themeOrange-400"
                 }                 
                 font-MontserratSemiBold px-16 py-3 tracking-wider text-base shadow-2xl rounded`}
+                disabled={formResp === "success" ? true : false}
               >
-                Submit
+                {formResp === "success" ? "Submitted" : "Submit"}
               </button>
             </div>
           </form>
