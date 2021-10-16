@@ -1,6 +1,31 @@
 import React, { useState } from "react"
+import { gql, useMutation } from "@apollo/client"
 import { navigate } from "gatsby"
-import axios from "axios"
+
+const CONTACT_MUTATION = gql`
+  mutation CreateSubmissionMutation(
+    $clientMutationId: String!
+    $company: String!
+    $email: String!
+    $fname: String!
+    $lname: String!
+    $message: String!
+  ) {
+    createContactSubmission(
+      input: {
+        clientMutationId: $clientMutationId
+        company: $company
+        email: $email
+        fname: $fname
+        lname: $lname
+        message: $message
+      }
+    ) {
+      success
+      data
+    }
+  }
+`
 
 const ContactForm = () => {
   const [companyValue, setCompanyValue] = useState("")
@@ -8,7 +33,8 @@ const ContactForm = () => {
   const [fnameValue, setFNameValue] = useState("")
   const [lnameValue, setLNameValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
-  const [formResp, setFormResp] = useState("")
+
+  const [submitForm, { data, loading, error }] = useMutation(CONTACT_MUTATION)
 
   return (
     <div className="w-full contact-wrapper mx-auto border border-gray-700 rounded">
@@ -17,27 +43,16 @@ const ContactForm = () => {
         onSubmit={async event => {
           event.preventDefault()
 
-          const myForm = event.target
-          const formData = new FormData(myForm)
-          setFormResp("loading")
-          axios
-            .post(
-              "https://smr-sandbox.com/wp-json/contact-form-7/v1/contact-forms/2536/feedback",
-              formData
-            )
-            .then(function (response) {
-              if (response.data.status === "mail_sent") {
-                setFormResp("success")
-                console.log(response)
-              } else {
-                setFormResp("error")
-                console.log(response.data.message)
-              }
-            })
-            .catch(function (error) {
-              setFormResp("error")
-              console.log(error)
-            })
+          submitForm({
+            variables: {
+              clientMutationId: "SMRContactForm",
+              company: companyValue,
+              email: emailValue,
+              fname: fnameValue,
+              lname: lnameValue,
+              message: messageValue,
+            },
+          })
         }}
       >
         <div className="font-Montserrat font-semibold text-xs text-red-600 pb-4">
@@ -70,8 +85,8 @@ const ContactForm = () => {
               className="peer h-10 w-full text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded"
               type="email"
               placeholder="Email"
-              name="your-email"
-              id="your-email"
+              name="email"
+              id="email"
               value={emailValue}
               onChange={event => {
                 setEmailValue(event.target.value)
@@ -134,8 +149,8 @@ const ContactForm = () => {
               type="textarea"
               placeholder="Message"
               rows="6"
-              name="your-message"
-              id="your-message"
+              name="message"
+              id="message"
               value={messageValue}
               onChange={event => {
                 setMessageValue(event.target.value)
@@ -158,22 +173,20 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
-      <div id="response-message" style={{ padding: "20px" }}>
-        {formResp === "loading" && (
-          <p className="font-Lato text-black">Sending....</p>
-        )}
-        {formResp === "error" && (
+      <div style={{ padding: "20px" }}>
+        {loading && <p className="font-Lato text-black">Sending....</p>}
+        {error && (
           <p className="font-Lato text-red-600">
             An unknown error has occured, please try again later...
           </p>
         )}
-        {formResp === "success" && (
+        {data && (
           <p className="font-Lato text-green-500">
             Your form has been submitted successfully, thank you.
           </p>
         )}
         <p className="text-white">
-          {formResp === "success" &&
+          {data &&
             setTimeout(() => {
               navigate("/")
             }, 3000)}
