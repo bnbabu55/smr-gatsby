@@ -7,6 +7,7 @@ import Seo from "../components/Seo"
 import Categories from "../components/Categories"
 import RecentPosts from "../components/RecentPosts"
 import ContactSection from "../components/ContactSection"
+import SubscriptionForm from "../components/SubscriptionForm"
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
   const featuredImage = {
@@ -191,33 +192,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
             </ul>
           </div>
           <div className="sidebar">
-            <div className="subscription">
-              <div>
-                <label
-                  htmlFor="subemail"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email *
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="email"
-                    id="subemail"
-                    name="subemail"
-                    placeholder="Your Email Address:"
-                    required
-                    className="w-full text-sm border-gray-300 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-themeBlue-200 hover:bg-themeBlue-600 rounded py-2 mt-3 shadow-md"
-                  aria-label="submit"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
+            <SubscriptionForm />
             <RecentPosts />
             <Categories />
           </div>
