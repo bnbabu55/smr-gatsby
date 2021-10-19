@@ -347,7 +347,7 @@ const PaymentForm = () => {
                   </label>
                 </div>
 
-                <div className="relative mt-6">
+                <div className="relative lg:mt-6">
                   <input
                     id="amount2"
                     name="amount2"
