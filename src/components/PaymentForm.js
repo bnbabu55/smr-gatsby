@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
 import axios from "axios"
+import validate from "../helpers/validate"
 
 const PaymentForm = () => {
   const states = [
@@ -59,47 +60,81 @@ const PaymentForm = () => {
 
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({
-    amount: "",
-    invoice: "",
-    payType: "onetime",
-    frequency: "",
-    comments: "",
-    ccnumber: "",
-    doe: "",
-    firstname: "",
-    lastname: "",
-    addr1: "",
-    addr2: "",
-    city: "",
-    state: "",
-    zip: "",
+    stepOne: {
+      amount: { value: "", required: true },
+      invoice: { value: "", required: true },
+      payType: { value: "onetime", required: true },
+      frequency: { value: "", required: false },
+      comments: { value: "", required: false },
+    },
+    stepTwo: {
+      ccnumber: { value: "", required: true },
+      expiry: { value: "", required: true },
+      firstname: { value: "", required: true },
+      lastname: { value: "", required: true },
+      addr1: { value: "", required: true },
+      addr2: { value: "", required: false },
+      city: { value: "", required: true },
+      state: { value: "", required: true },
+      zip: { value: "", required: true },
+    },
   })
   const [errors, setErrors] = useState({})
   const [formResp, setFormResp] = useState("")
 
-  const updateForm = e => {
+  const updateForm = (stepKey, e) => {
+    e.persist()
     const value = e.target.value === "radio" ? e.target.checked : e.target.value
-    setFormData({ ...formData, [e.target.name]: value })
+
+    setFormData(prev => ({
+      ...prev,
+      [stepKey]: {
+        ...prev[stepKey],
+        [e.target.name]: {
+          ...prev[stepKey][e.target.name],
+          value: value,
+        },
+      },
+    }))
   }
 
-  const submitHandler = e => {
+  const stepChangeHandler = (values, e) => {
+    e.preventDefault()
+    const newErrors = validate(values)
+    setErrors(newErrors)
+    if (Object.keys(newErrors).length === 0) {
+      setStep(step + 1)
+    } else {
+      console.log("errors found: " + JSON.stringify(newErrors, null))
+    }
+    console.log("step: " + step)
+  }
+
+  const submitHandler = (values, e) => {
     e.preventDefault()
 
+    const newErrors = validate(values)
+    setErrors(newErrors)
+    if (Object.keys(newErrors).length > 0) {
+      console.log("errors found: " + JSON.stringify(newErrors, null))
+      return
+    }
+
     const submitForm = new FormData()
-    submitForm.append("amount", formData.amount)
-    submitForm.append("invoice", formData.invoice)
-    submitForm.append("payType", formData.payType)
-    submitForm.append("frequency", formData.frequency)
-    submitForm.append("comments", formData.comments)
-    submitForm.append("ccnumber", formData.ccnumber)
-    submitForm.append("doe", formData.doe)
-    submitForm.append("firstname", formData.firstname)
-    submitForm.append("lastname", formData.lastname)
-    submitForm.append("addr1", formData.addr1)
-    submitForm.append("addr2", formData.addr2)
-    submitForm.append("city", formData.city)
-    submitForm.append("state", formData.state)
-    submitForm.append("zip", formData.zip)
+    submitForm.append("amount", formData.stepOne.amount.value)
+    submitForm.append("invoice", formData.stepOne.invoice.value)
+    submitForm.append("payType", formData.stepOne.payType.value)
+    submitForm.append("frequency", formData.stepOne.frequency.value)
+    submitForm.append("comments", formData.stepOne.comments.value)
+    submitForm.append("ccnumber", formData.stepTwo.ccnumber.value)
+    submitForm.append("expiry", formData.stepTwo.expiry.value)
+    submitForm.append("firstname", formData.stepTwo.firstname.value)
+    submitForm.append("lastname", formData.stepTwo.lastname.value)
+    submitForm.append("addr1", formData.stepTwo.addr1.value)
+    submitForm.append("addr2", formData.stepTwo.addr2.value)
+    submitForm.append("city", formData.stepTwo.city.value)
+    submitForm.append("state", formData.stepTwo.state.value)
+    submitForm.append("zip", formData.stepTwo.zip.value)
 
     setFormResp("loading")
     axios
@@ -126,7 +161,7 @@ const PaymentForm = () => {
     <div className="w-full contact-wrapper mx-auto border border-gray-700 rounded">
       <form
         className="text-gray-700 contact-form flex flex-col justify-center align-center m-10 font-Lato text-base"
-        onSubmit={submitHandler}
+        onSubmit={e => submitHandler(formData.stepTwo, e)}
       >
         {step === 1 && (
           <>
@@ -141,8 +176,8 @@ const PaymentForm = () => {
                   type="text"
                   className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                   placeholder="Amount"
-                  onChange={updateForm}
-                  value={formData.amount}
+                  onChange={e => updateForm("stepOne", e)}
+                  value={formData.stepOne.amount.value}
                   autoComplete="off"
                 />
                 <label
@@ -151,6 +186,13 @@ const PaymentForm = () => {
                 >
                   Amount
                 </label>
+                <div
+                  className={`text-red-600 h-6 ${
+                    errors["amount"] ? "visible" : "invisible"
+                  }`}
+                >
+                  {errors["amount"]}
+                </div>
               </div>
 
               <div className="relative col-start-1 col-end-2 row-start-2 row-end-3 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2">
@@ -160,8 +202,8 @@ const PaymentForm = () => {
                   type="text"
                   className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                   placeholder="Invoice number"
-                  onChange={updateForm}
-                  value={formData.invoice}
+                  onChange={e => updateForm("stepOne", e)}
+                  value={formData.stepOne.invoice.value}
                   autoComplete="off"
                 />
                 <label
@@ -170,6 +212,13 @@ const PaymentForm = () => {
                 >
                   Invoice
                 </label>
+                <div
+                  className={`text-red-600 h-6 ${
+                    errors["invoice"] ? "visible" : "invisible"
+                  }`}
+                >
+                  {errors["invoice"]}
+                </div>
               </div>
 
               <div className="relative col-start-1 col-end-2 row-start-3 row-end-4 lg:col-start-3 lg:col-end-5 lg:row-start-1 lg:row-end-3">
@@ -180,8 +229,8 @@ const PaymentForm = () => {
                   rows="6"
                   className="peer w-full border border-gray-700 text-gray-600 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                   placeholder="Your comments here"
-                  onChange={updateForm}
-                  value={formData.comments}
+                  onChange={e => updateForm("stepOne", e)}
+                  value={formData.stepOne.comments.value}
                   autoComplete="off"
                 />
                 <label
@@ -190,6 +239,13 @@ const PaymentForm = () => {
                 >
                   Comments
                 </label>
+                <div
+                  className={`text-red-600 h-6 ${
+                    errors["comments"] ? "visible" : "invisible"
+                  }`}
+                >
+                  {errors["comments"]}
+                </div>
               </div>
               <fieldset className="border border-solid border-gray-700 rounded p-3 col-start-1 col-end-2 row-start-4 row-end-5 lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3">
                 <legend className="text-base text-gray-600">
@@ -206,9 +262,13 @@ const PaymentForm = () => {
                     name="payType"
                     type="radio"
                     className="peer border border-gray-700 text-blue-600 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded-lg shadow-sm"
-                    onChange={updateForm}
+                    onChange={e => updateForm("stepOne", e)}
                     value={"onetime"}
-                    checked={formData.payType === "onetime" ? true : false}
+                    checked={
+                      formData.stepOne.payType.value === "onetime"
+                        ? true
+                        : false
+                    }
                   />
                 </div>
                 <div className="flex justify-start items-center mt-3">
@@ -222,15 +282,21 @@ const PaymentForm = () => {
                     name="payType"
                     type="radio"
                     className="peer border border-gray-700 text-blue-600 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded-lg shadow-sm"
-                    onChange={updateForm}
+                    onChange={e => updateForm("stepOne", e)}
                     value={"recurring"}
-                    checked={formData.payType === "recurring" ? true : false}
+                    checked={
+                      formData.stepOne.payType.value === "recurring"
+                        ? true
+                        : false
+                    }
                   />
                 </div>
               </fieldset>
               <div
                 className={`flex flex-col ${
-                  formData.payType === "recurring" ? "visible" : "hidden"
+                  formData.stepOne.payType.value === "recurring"
+                    ? "visible"
+                    : "hidden"
                 } col-start-1 col-end-2 row-start-5 row-end-6 lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3`}
               >
                 <label htmlFor="frequency" className="text-gray-600 text-base">
@@ -240,8 +306,8 @@ const PaymentForm = () => {
                   id="frequency"
                   name="frequency"
                   className="w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                  onChange={updateForm}
-                  value={formData.frequency}
+                  onChange={e => updateForm("stepOne", e)}
+                  value={formData.stepOne.frequency.value}
                 >
                   <option value="1">Monthly</option>
                   <option value="2">Yearly</option>
@@ -251,9 +317,7 @@ const PaymentForm = () => {
                 type="button"
                 value="NEXT"
                 className="mt-10 px-4 py-2 rounded bg-blue-500 hover:bg-blue-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500 focus:ring-opacity-80 cursor-pointer  col-start-1 col-end-2 row-start-6 row-end-7 lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4"
-                onClick={() => {
-                  setStep(2)
-                }}
+                onClick={e => stepChangeHandler(formData.stepOne, e)}
               />
             </div>
           </>
@@ -272,7 +336,7 @@ const PaymentForm = () => {
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Invoice number"
-                    value={formData.invoice}
+                    value={formData.stepOne.invoice.value}
                     readOnly={"readonly"}
                   />
                   <label
@@ -283,14 +347,14 @@ const PaymentForm = () => {
                   </label>
                 </div>
 
-                <div className="relative">
+                <div className="relative mt-6">
                   <input
                     id="amount2"
                     name="amount2"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Amount"
-                    value={formData.amount}
+                    value={formData.stepOne.amount.value}
                     readOnly={"readonly"}
                   />
                   <label
@@ -300,15 +364,15 @@ const PaymentForm = () => {
                     Amount
                   </label>
                 </div>
-                <div className="relative lg:mb-6">
+                <div className="relative lg:mb-6 lg:mt-6">
                   <input
                     id="ccnumber"
                     name="ccnumber"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Credit Card Number"
-                    onChange={updateForm}
-                    value={formData.ccnumber}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.ccnumber.value}
                     autoComplete="off"
                   />
                   <label
@@ -317,6 +381,13 @@ const PaymentForm = () => {
                   >
                     Credit Card Number
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["ccnumber"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["ccnumber"]}
+                  </div>
                 </div>
                 <div className="relative">
                   <input
@@ -325,8 +396,8 @@ const PaymentForm = () => {
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="YYYY-MM"
-                    onChange={updateForm}
-                    value={formData.doe}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.expiry.value}
                     autoComplete="off"
                   />
                   <label
@@ -335,42 +406,63 @@ const PaymentForm = () => {
                   >
                     Expiration Date (YYYY-MM)
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["expiry"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["expiry"]}
+                  </div>
                 </div>
                 <div className="relative">
                   <input
-                    id="fname"
-                    name="fname"
+                    id="firstname"
+                    name="firstname"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="First Name"
-                    onChange={updateForm}
-                    value={formData.firstname}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.firstname.value}
                     autoComplete="off"
                   />
                   <label
-                    htmlFor="fname"
+                    htmlFor="firstname"
                     className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
                     First Name
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["firstname"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["firstname"]}
+                  </div>
                 </div>
                 <div className="relative">
                   <input
-                    id="lname"
-                    name="lname"
+                    id="lastname"
+                    name="lastname"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Last Name"
-                    onChange={updateForm}
-                    value={formData.lastname}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.lastname.value}
                     autoComplete="off"
                   />
                   <label
-                    htmlFor="lname"
+                    htmlFor="lastname"
                     className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
                     Last Name
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["lastname"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["lastname"]}
+                  </div>
                 </div>
               </div>
 
@@ -382,8 +474,8 @@ const PaymentForm = () => {
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Address Line 1"
-                    onChange={updateForm}
-                    value={formData.addr1}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.addr1.value}
                     autoComplete="off"
                   />
                   <label
@@ -392,6 +484,13 @@ const PaymentForm = () => {
                   >
                     Address Line 1
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["addr1"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["addr1"]}
+                  </div>
                 </div>
 
                 <div className="relative">
@@ -401,8 +500,8 @@ const PaymentForm = () => {
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Address Line 2"
-                    onChange={updateForm}
-                    value={formData.addr2}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.addr2.value}
                     autoComplete="off"
                   />
                   <label
@@ -411,6 +510,13 @@ const PaymentForm = () => {
                   >
                     Address Line 2
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["addr2"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["addr2"]}
+                  </div>
                 </div>
                 <div className="relative">
                   <input
@@ -418,8 +524,8 @@ const PaymentForm = () => {
                     name="city"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                    onChange={updateForm}
-                    value={formData.city}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.city.value}
                     placeholder="City"
                     autoComplete="off"
                   />
@@ -429,6 +535,13 @@ const PaymentForm = () => {
                   >
                     City
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["city"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["city"]}
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="state" className="text-gray-600 text-base">
@@ -438,8 +551,8 @@ const PaymentForm = () => {
                     id="state"
                     name="state"
                     className="w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                    onChange={updateForm}
-                    value={formData.state}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.state.value}
                   >
                     <option value="">Please Select</option>
                     {states.map(item => {
@@ -450,6 +563,13 @@ const PaymentForm = () => {
                       )
                     })}
                   </select>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["state"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["state"]}
+                  </div>
                 </div>
                 <div className="relative">
                   <input
@@ -458,8 +578,8 @@ const PaymentForm = () => {
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Zip Code"
-                    onChange={updateForm}
-                    value={formData.zip}
+                    onChange={e => updateForm("stepTwo", e)}
+                    value={formData.stepTwo.zip.value}
                     autoComplete="off"
                   />
                   <label
@@ -468,6 +588,13 @@ const PaymentForm = () => {
                   >
                     Zip Code
                   </label>
+                  <div
+                    className={`text-red-600 h-6 ${
+                      errors["zip"] ? "visible" : "invisible"
+                    }`}
+                  >
+                    {errors["zip"]}
+                  </div>
                 </div>
               </div>
 
