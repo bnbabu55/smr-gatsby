@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import axios from "axios"
 import validate from "../helpers/validate"
+import MaskedInput from "react-text-mask"
 
 const PaymentForm = () => {
   const states = [
@@ -70,6 +71,7 @@ const PaymentForm = () => {
     stepTwo: {
       ccnumber: { value: "", required: true },
       expiry: { value: "", required: true },
+      cvv: { value: "", required: false },
       firstname: { value: "", required: true },
       lastname: { value: "", required: true },
       addr1: { value: "", required: true },
@@ -128,6 +130,7 @@ const PaymentForm = () => {
     submitForm.append("comments", formData.stepOne.comments.value)
     submitForm.append("ccnumber", formData.stepTwo.ccnumber.value)
     submitForm.append("expiry", formData.stepTwo.expiry.value)
+    submitForm.append("cvv", formData.stepTwo.cvv.value)
     submitForm.append("firstname", formData.stepTwo.firstname.value)
     submitForm.append("lastname", formData.stepTwo.lastname.value)
     submitForm.append("addr1", formData.stepTwo.addr1.value)
@@ -327,45 +330,47 @@ const PaymentForm = () => {
             <div className="font-Montserrat text-lg font-bold pb-5">
               Step 2 of 2
             </div>
-            <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
-              <div className="flex flex-col gap-y-6">
-                <div className="relative">
-                  <input
-                    id="invoice2"
-                    name="invoice2"
-                    type="text"
-                    className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                    placeholder="Invoice number"
-                    value={formData.stepOne.invoice.value}
-                    readOnly={"readonly"}
-                  />
-                  <label
-                    htmlFor="invoice2"
-                    className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
-                  >
-                    Invoice
-                  </label>
-                </div>
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-x-5">
+              <div className="w-full flex flex-col gap-y-6">
+                <div className="flex gap-x-5">
+                  <div className="w-full relative">
+                    <input
+                      id="invoice2"
+                      name="invoice2"
+                      type="text"
+                      className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                      placeholder="Invoice number"
+                      value={formData.stepOne.invoice.value}
+                      readOnly={"readonly"}
+                    />
+                    <label
+                      htmlFor="invoice2"
+                      className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    >
+                      Invoice
+                    </label>
+                  </div>
 
-                <div className="relative lg:mt-6">
-                  <input
-                    id="amount2"
-                    name="amount2"
-                    type="text"
-                    className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                    placeholder="Amount"
-                    value={formData.stepOne.amount.value}
-                    readOnly={"readonly"}
-                  />
-                  <label
-                    htmlFor="amount2"
-                    className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
-                  >
-                    Amount
-                  </label>
+                  <div className="w-full relative">
+                    <input
+                      id="amount2"
+                      name="amount2"
+                      type="text"
+                      className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                      placeholder="Amount"
+                      value={formData.stepOne.amount.value}
+                      readOnly={"readonly"}
+                    />
+                    <label
+                      htmlFor="amount2"
+                      className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    >
+                      Amount
+                    </label>
+                  </div>
                 </div>
-                <div className="relative lg:mb-6 lg:mt-6">
-                  <input
+                <div className="relative lg:mt-6">
+                  <MaskedInput
                     id="ccnumber"
                     name="ccnumber"
                     type="text"
@@ -374,6 +379,27 @@ const PaymentForm = () => {
                     onChange={e => updateForm("stepTwo", e)}
                     value={formData.stepTwo.ccnumber.value}
                     autoComplete="off"
+                    mask={[
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      " ",
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      " ",
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      " ",
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                    ]}
                   />
                   <label
                     htmlFor="ccnumber"
@@ -389,29 +415,58 @@ const PaymentForm = () => {
                     {errors["ccnumber"]}
                   </div>
                 </div>
-                <div className="relative">
-                  <input
-                    id="expiry"
-                    name="expiry"
-                    type="text"
-                    className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                    placeholder="YYYY-MM"
-                    onChange={e => updateForm("stepTwo", e)}
-                    value={formData.stepTwo.expiry.value}
-                    autoComplete="off"
-                  />
-                  <label
-                    htmlFor="expiry"
-                    className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
-                  >
-                    Expiration Date (YYYY-MM)
-                  </label>
-                  <div
-                    className={`text-red-600 h-6 ${
-                      errors["expiry"] ? "visible" : "invisible"
-                    }`}
-                  >
-                    {errors["expiry"]}
+                <div className="flex gap-x-5">
+                  <div className="w-full relative">
+                    <MaskedInput
+                      id="expiry"
+                      name="expiry"
+                      type="text"
+                      className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                      placeholder="YY/MM"
+                      onChange={e => updateForm("stepTwo", e)}
+                      value={formData.stepTwo.expiry.value}
+                      autoComplete="off"
+                      mask={[/\d/, /\d/, "/", /\d/, /\d/]}
+                    />
+                    <label
+                      htmlFor="expiry"
+                      className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    >
+                      Date of Expiry (YY/MM)
+                    </label>
+                    <div
+                      className={`text-red-600 h-6 ${
+                        errors["expiry"] ? "visible" : "invisible"
+                      }`}
+                    >
+                      {errors["expiry"]}
+                    </div>
+                  </div>
+                  <div className="w-full relative">
+                    <MaskedInput
+                      id="cvv"
+                      name="cvv"
+                      type="text"
+                      placeholder="CVV"
+                      className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                      onChange={e => updateForm("stepTwo", e)}
+                      value={formData.stepTwo.cvv.value}
+                      autoComplete="off"
+                      mask={[/\d/, /\d/, /\d/, /\d?/]}
+                    />
+                    <label
+                      htmlFor="cvv"
+                      className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    >
+                      CVV
+                    </label>
+                    <div
+                      className={`text-red-600 h-6 ${
+                        errors["cvv"] ? "visible" : "invisible"
+                      }`}
+                    >
+                      {errors["cvv"]}
+                    </div>
                   </div>
                 </div>
                 <div className="relative">
@@ -466,7 +521,7 @@ const PaymentForm = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-y-6">
+              <div className="w-full flex flex-col gap-y-6 mt-5 lg:mt-0">
                 <div className="relative">
                   <input
                     id="addr1"
@@ -543,14 +598,11 @@ const PaymentForm = () => {
                     {errors["city"]}
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <label htmlFor="state" className="text-gray-600 text-base">
-                    State
-                  </label>
+                <div className="relative flex flex-col">
                   <select
                     id="state"
                     name="state"
-                    className="w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                    className="peer h-10 w-full text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded"
                     onChange={e => updateForm("stepTwo", e)}
                     value={formData.stepTwo.state.value}
                   >
@@ -563,6 +615,12 @@ const PaymentForm = () => {
                       )
                     })}
                   </select>
+                  <label
+                    htmlFor="state"
+                    className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
+                  >
+                    State
+                  </label>
                   <div
                     className={`text-red-600 h-6 ${
                       errors["state"] ? "visible" : "invisible"
@@ -572,15 +630,27 @@ const PaymentForm = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <input
+                  <MaskedInput
                     id="zip"
                     name="zip"
                     type="text"
-                    className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
+                    className="peer h-10 w-full text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded"
                     placeholder="Zip Code"
                     onChange={e => updateForm("stepTwo", e)}
                     value={formData.stepTwo.zip.value}
                     autoComplete="off"
+                    mask={[
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      "-",
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                    ]}
                   />
                   <label
                     htmlFor="zip"
@@ -597,7 +667,8 @@ const PaymentForm = () => {
                   </div>
                 </div>
               </div>
-
+            </div>
+            <div className="flex gap-x-5">
               <input
                 type="button"
                 value="Go Back"
