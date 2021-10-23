@@ -69,11 +69,11 @@ const PaymentForm = () => {
       comments: { value: "", required: false },
     },
     stepTwo: {
-      ccnumber: { value: "", required: true },
+      ccNumber: { value: "", required: true },
       expiry: { value: "", required: true },
       cvv: { value: "", required: false },
-      firstname: { value: "", required: true },
-      lastname: { value: "", required: true },
+      firstName: { value: "", required: true },
+      lastName: { value: "", required: true },
       addr1: { value: "", required: true },
       addr2: { value: "", required: false },
       city: { value: "", required: true },
@@ -82,11 +82,22 @@ const PaymentForm = () => {
     },
   })
   const [errors, setErrors] = useState({})
-  const [formResp, setFormResp] = useState("")
+  const [formResp, setFormResp] = useState({
+    status: "",
+    response: "",
+    body_response: "",
+  })
 
   const updateForm = (stepKey, e) => {
     e.persist()
-    const value = e.target.value === "radio" ? e.target.checked : e.target.value
+
+    let value = e.target.value === "radio" ? e.target.checked : e.target.value
+
+    if (e.target.name === "zip") {
+      value = value.replace(/-$/, "")
+    } else if (e.target.name === "ccNumber") {
+      value = value.replaceAll(/\s/g, "")
+    }
 
     setFormData(prev => ({
       ...prev,
@@ -106,10 +117,7 @@ const PaymentForm = () => {
     setErrors(newErrors)
     if (Object.keys(newErrors).length === 0) {
       setStep(step + 1)
-    } else {
-      console.log("errors found: " + JSON.stringify(newErrors, null))
     }
-    console.log("step: " + step)
   }
 
   const submitHandler = (values, e) => {
@@ -122,41 +130,61 @@ const PaymentForm = () => {
       return
     }
 
-    const submitForm = new FormData()
-    submitForm.append("amount", formData.stepOne.amount.value)
-    submitForm.append("invoice", formData.stepOne.invoice.value)
-    submitForm.append("payType", formData.stepOne.payType.value)
-    submitForm.append("frequency", formData.stepOne.frequency.value)
-    submitForm.append("comments", formData.stepOne.comments.value)
-    submitForm.append("ccnumber", formData.stepTwo.ccnumber.value)
-    submitForm.append("expiry", formData.stepTwo.expiry.value)
-    submitForm.append("cvv", formData.stepTwo.cvv.value)
-    submitForm.append("firstname", formData.stepTwo.firstname.value)
-    submitForm.append("lastname", formData.stepTwo.lastname.value)
-    submitForm.append("addr1", formData.stepTwo.addr1.value)
-    submitForm.append("addr2", formData.stepTwo.addr2.value)
-    submitForm.append("city", formData.stepTwo.city.value)
-    submitForm.append("state", formData.stepTwo.state.value)
-    submitForm.append("zip", formData.stepTwo.zip.value)
+    setFormResp({ ...formResp, status: "loading" })
 
-    setFormResp("loading")
+    const submitForm = {
+      amount: formData.stepOne.amount.value,
+      invoice: formData.stepOne.invoice.value,
+      payType: formData.stepOne.payType.value,
+      frequency: formData.stepOne.frequency.value,
+      comments: formData.stepOne.comments.value,
+      ccNumber: formData.stepTwo.ccNumber.value,
+      expiry: formData.stepTwo.expiry.value,
+      cvv: formData.stepTwo.cvv.value,
+      firstName: formData.stepTwo.firstName.value,
+      lastName: formData.stepTwo.lastName.value,
+      addr1: formData.stepTwo.addr1.value,
+      addr2: formData.stepTwo.addr2.value,
+      city: formData.stepTwo.city.value,
+      state: formData.stepTwo.state.value,
+      zip: formData.stepTwo.zip.value,
+    }
+
+    console.log("Form data before api call: " + JSON.stringify(submitForm))
+
     axios
       .post(
-        "https://smr-sandbox.com/wp-json/contact-form-7/v1/contact-forms/2536/feedback",
+        "https://smr-sandbox.com/wp-json/smr-authnet/v1/post_payments",
+        // "http://msform.test:8080/wp-json/smr-authnet/v1/post_payments",
         submitForm
       )
       .then(function (response) {
-        if (response.data.status === "mail_sent") {
-          setFormResp("success")
-          console.log(response)
+        if (response.data.status === "1" || response.data.status === "Ok") {
+          setFormResp({
+            ...formResp,
+            status: "success",
+            response: response.data.response,
+            body_response: response.data.body_response,
+          })
+          console.log("Success response: " + JSON.stringify(response, null))
         } else {
-          setFormResp("error")
-          console.log(response.data.message)
+          setFormResp({
+            ...formResp,
+            status: "error",
+            response: response.data.response,
+            body_response: response.data.body_response,
+          })
+          console.log("Error response: " + JSON.stringify(response, null))
         }
       })
       .catch(function (error) {
-        setFormResp("error")
         console.log(error)
+        setFormResp({
+          ...formResp,
+          status: "error",
+          response: "",
+          body_response: "Unknown error, please try again later.",
+        })
       })
   }
 
@@ -317,6 +345,7 @@ const PaymentForm = () => {
                 </select>
               </div>
               <input
+                name="makepayment"
                 type="button"
                 value="NEXT"
                 className="mt-10 px-4 py-2 rounded bg-blue-500 hover:bg-blue-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500 focus:ring-opacity-80 cursor-pointer  col-start-1 col-end-2 row-start-6 row-end-7 lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4"
@@ -371,14 +400,15 @@ const PaymentForm = () => {
                 </div>
                 <div className="relative lg:mt-6">
                   <MaskedInput
-                    id="ccnumber"
-                    name="ccnumber"
+                    id="ccNumber"
+                    name="ccNumber"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Credit Card Number"
                     onChange={e => updateForm("stepTwo", e)}
-                    value={formData.stepTwo.ccnumber.value}
+                    value={formData.stepTwo.ccNumber.value}
                     autoComplete="off"
+                    guide={false}
                     mask={[
                       /\d/,
                       /\d/,
@@ -402,17 +432,17 @@ const PaymentForm = () => {
                     ]}
                   />
                   <label
-                    htmlFor="ccnumber"
+                    htmlFor="ccNumber"
                     className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
                     Credit Card Number
                   </label>
                   <div
                     className={`text-red-600 h-6 ${
-                      errors["ccnumber"] ? "visible" : "invisible"
+                      errors["ccNumber"] ? "visible" : "invisible"
                     }`}
                   >
-                    {errors["ccnumber"]}
+                    {errors["ccNumber"]}
                   </div>
                 </div>
                 <div className="flex gap-x-5">
@@ -422,17 +452,18 @@ const PaymentForm = () => {
                       name="expiry"
                       type="text"
                       className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
-                      placeholder="YY/MM"
+                      placeholder="YYYY-MM"
                       onChange={e => updateForm("stepTwo", e)}
                       value={formData.stepTwo.expiry.value}
                       autoComplete="off"
-                      mask={[/\d/, /\d/, "/", /\d/, /\d/]}
+                      guide={false}
+                      mask={[/\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/]}
                     />
                     <label
                       htmlFor="expiry"
                       className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                     >
-                      Date of Expiry (YY/MM)
+                      Expiration Date (YYYY-MM)
                     </label>
                     <div
                       className={`text-red-600 h-6 ${
@@ -452,6 +483,7 @@ const PaymentForm = () => {
                       onChange={e => updateForm("stepTwo", e)}
                       value={formData.stepTwo.cvv.value}
                       autoComplete="off"
+                      guide={false}
                       mask={[/\d/, /\d/, /\d/, /\d?/]}
                     />
                     <label
@@ -471,52 +503,52 @@ const PaymentForm = () => {
                 </div>
                 <div className="relative">
                   <input
-                    id="firstname"
-                    name="firstname"
+                    id="firstName"
+                    name="firstName"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="First Name"
                     onChange={e => updateForm("stepTwo", e)}
-                    value={formData.stepTwo.firstname.value}
+                    value={formData.stepTwo.firstName.value}
                     autoComplete="off"
                   />
                   <label
-                    htmlFor="firstname"
+                    htmlFor="firstName"
                     className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
                     First Name
                   </label>
                   <div
                     className={`text-red-600 h-6 ${
-                      errors["firstname"] ? "visible" : "invisible"
+                      errors["firstName"] ? "visible" : "invisible"
                     }`}
                   >
-                    {errors["firstname"]}
+                    {errors["firstName"]}
                   </div>
                 </div>
                 <div className="relative">
                   <input
-                    id="lastname"
-                    name="lastname"
+                    id="lastName"
+                    name="lastName"
                     type="text"
                     className="peer h-10 w-full border border-gray-700 text-gray-900 placeholder-transparent focus:outline-none focus:border-themeBlue-200 rounded shadow-sm"
                     placeholder="Last Name"
                     onChange={e => updateForm("stepTwo", e)}
-                    value={formData.stepTwo.lastname.value}
+                    value={formData.stepTwo.lastName.value}
                     autoComplete="off"
                   />
                   <label
-                    htmlFor="lastname"
+                    htmlFor="lastName"
                     className="absolute left-2 -top-5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm"
                   >
                     Last Name
                   </label>
                   <div
                     className={`text-red-600 h-6 ${
-                      errors["lastname"] ? "visible" : "invisible"
+                      errors["lastName"] ? "visible" : "invisible"
                     }`}
                   >
-                    {errors["lastname"]}
+                    {errors["lastName"]}
                   </div>
                 </div>
               </div>
@@ -639,6 +671,7 @@ const PaymentForm = () => {
                     onChange={e => updateForm("stepTwo", e)}
                     value={formData.stepTwo.zip.value}
                     autoComplete="off"
+                    guide={false}
                     mask={[
                       /\d/,
                       /\d/,
@@ -678,6 +711,7 @@ const PaymentForm = () => {
                 }}
               />
               <input
+                name="makepayment"
                 type="submit"
                 value="Submit"
                 className="mt-10 px-4 py-2 rounded bg-blue-500 hover:bg-blue-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500 focus:ring-opacity-80 cursor-pointer"
@@ -688,24 +722,20 @@ const PaymentForm = () => {
       </form>
 
       <div id="response-message" style={{ padding: "20px" }}>
-        {formResp === "loading" && (
-          <p className="font-Lato text-black">Sending....</p>
+        {formResp.status === "loading" && (
+          <p className="font-Lato text-black">Processing....</p>
         )}
-        {formResp === "error" && (
-          <p className="font-Lato text-red-600">
-            An unknown error has occured, please try again later...
-          </p>
+        {formResp.status === "error" && (
+          <p className="font-Lato text-red-600">{formResp.body_response}</p>
         )}
-        {formResp === "success" && (
-          <p className="font-Lato text-green-500">
-            Your form has been submitted successfully, thank you.
-          </p>
+        {formResp.status === "success" && (
+          <p className="font-Lato text-green-500">{formResp.body_response}</p>
         )}
         <p className="text-white">
-          {/* {formResp === "success" &&
+          {formResp === "success" &&
             setTimeout(() => {
               navigate("/")
-            }, 3000)} */}
+            }, 3000)}
         </p>
       </div>
     </div>

@@ -45,31 +45,11 @@ const AccountingPage = ({ data: { page } }) => {
             <p className="pb-3 text-themeGray-200 text-lg font-Lato text-left">
               Thank you.
             </p>
-          </div>
-          <PaymentForm />
-          <div className="p-3">
-            <h3 className="pb-3 text-themeGray-200 text-xl font-LatoBold text-left">
-              Payment Successful
-            </h3>
-            <p className="pb-3 text-themeGray-200 text-sm lg:text-lg font-Lato text-left">
-              We offer online payment for your convenience. For continued
-              monthly billings, you may opt in and click the 'Recurring' icon.
-              If have any questions, please contact{" "}
-              <a
-                href="accounting@searchmarketingresource.com"
-                className="text-sm lg:text-lg"
-              >
-                <u>accounting@searchmarketingresource.com</u>
-              </a>
-              .
-            </p>
-            <p className="pb-3 text-themeGray-200 text-sm lg:text-lg font-Lato text-left">
-              Thank you.
-            </p>
             <h3 className="pb-3 text-themeGray-200 text-sm lg:text-lg font-LatoBold text-left">
               Search Marketing Resource LLC
             </h3>
           </div>
+          <PaymentForm />
         </div>
       </div>
       <FreeQuoteSection />
