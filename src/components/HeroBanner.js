@@ -28,7 +28,7 @@ const HeroBanner = () => {
               childImageSharp {
                 gatsbyImageData(
                   quality: 90
-                  width: 1400
+                  width: 1920
                   placeholder: BLURRED
                   formats: [AUTO, WEBP]
                 )

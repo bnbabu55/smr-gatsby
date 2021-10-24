@@ -174,62 +174,94 @@ const BusinessDirectoryPage = ({
                 aggregators, data enhancers and directories.
               </p>
             </div>
-            <form className="flex-1 text-gray-700 contact-form flex flex-col justify-center align-center m-10 font-Lato text-base">
-              <div className="font-Montserrat text-base text-red uppercase bg-themeBlue-600 text-white py-2 mb-3 rounded-lg">
+            <form
+              className="flex-1 text-gray-700 contact-form flex flex-col justify-center align-center m-10 font-Lato text-base"
+              id="scan-form"
+              action="https://www.optimizelocation.com/partner/semresourcellc/listing-report.html"
+              method="post"
+              target="_blank"
+              data-parsley-validate=""
+            >
+              <h3 className="font-Montserrat font-bold tracking-wider text-base text-red uppercase bg-themeBlue-600 text-white py-2 mb-3 rounded">
                 SCAN YOUR LISTINGS
-              </div>
+              </h3>
               <div className="grid gap-3 grid-cols-3">
+                <input type="hidden" name="country" value="US" />
+                <input type="hidden" name="utm_source" value="" />
+                <input type="hidden" name="utm_medium" value="" />
+                <input type="hidden" name="utm_campaign" value="" />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4"
                   type="text"
                   placeholder="Business Name"
-                  name="company"
-                  id="company"
+                  id="scan-name"
+                  name="name"
+                  data-parsley-error-message="Please enter Business Name"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4"
                   type="text"
                   placeholder="Business Address"
-                  name="addr1"
-                  id="addr1"
+                  id="scan-address"
+                  name="address"
+                  data-parsley-error-message="Please enter Business Address"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-1 lg:col-end-2"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-1 lg:col-end-2"
                   type="text"
                   placeholder="City"
                   name="city"
-                  id="city"
+                  id="scan-city"
+                  data-parsley-error-message="Please enter City Name"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-2 lg:col-end-3"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-2 lg:col-end-3"
                   type="text"
                   placeholder="State"
                   name="state"
-                  id="state"
+                  id="scan-state"
+                  data-parsley-error-message="Please enter State Name"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-3 lg:col-end-4"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-3 lg:col-end-4"
                   type="text"
                   placeholder="Zip Code"
                   name="zip"
-                  id="zip"
+                  id="scan-zip"
+                  data-parsley-type="digits"
+                  data-parsley-error-message="Please enter Zip Code"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3 rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-1 lg:col-end-2"
+                  className="w-full border border-gray-700 p-3 rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-1 lg:col-end-2"
                   type="tel"
-                  placeholder="Phone"
+                  placeholder="Phone Number (No Dashes)"
                   name="phone"
-                  id="phone"
+                  id="scan-phone-fullLine"
+                  data-parsley-type="digits"
+                  data-parsley-error-message="Please enter Phone Number"
+                  required=""
                 />
                 <input
-                  className="w-full border border-gray-700 p-3  rounded-lg shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-2 lg:col-end-4"
+                  className="w-full border border-gray-700 p-3  rounded shadow-sm focus:border-themeBlue-200 focus:ring-themeBlue-200 col-start-1 col-end-4 lg:col-start-2 lg:col-end-4"
                   type="email"
                   placeholder="Email"
                   name="email"
-                  id="email"
+                  id="scan-email-fullLine"
+                  data-parsley-type="text"
+                  data-parsley-error-message="Please enter Email Address"
+                  required=""
                 />
-                <button className="w-full text-white uppercase bg-themeOrange-400 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5 col-span-3">
-                  Submit
+                <button
+                  type="submit"
+                  className="w-full text-white uppercase bg-themeOrange-400 rounded font-MontserratSemiBold px-8 py-2 tracking-wider text-base shadow-2xl mt-5 col-span-3"
+                  id="accept_shoot_confirm"
+                >
+                  Run Now
                 </button>
               </div>
             </form>

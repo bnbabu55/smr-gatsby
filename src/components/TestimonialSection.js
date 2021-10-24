@@ -18,7 +18,7 @@ export const TestimonialSection = () => {
             name
             childImageSharp {
               gatsbyImageData(
-                width: 1400
+                width: 1920
                 placeholder: BLURRED
                 quality: 90
                 formats: [AUTO, WEBP]
