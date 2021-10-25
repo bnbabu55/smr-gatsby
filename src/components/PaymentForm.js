@@ -3,8 +3,12 @@ import { navigate } from "gatsby"
 import axios from "axios"
 import validate from "../helpers/validate"
 import MaskedInput from "react-text-mask"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 const PaymentForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha()
+  const [token, setToken] = useState("")
+
   const states = [
     { value: "AL", label: "Alabama" },
     { value: "AK", label: "Alaska" },
@@ -120,7 +124,7 @@ const PaymentForm = () => {
     }
   }
 
-  const submitHandler = (values, e) => {
+  const submitHandler = async (values, e) => {
     e.preventDefault()
 
     const newErrors = validate(values)
@@ -131,6 +135,20 @@ const PaymentForm = () => {
     }
 
     setFormResp({ ...formResp, status: "loading" })
+
+    // ReCaptcha verification
+    if (!executeRecaptcha) {
+      return
+    }
+    // This is the same as grecaptcha.execute on traditional html script tags
+    const result = await executeRecaptcha("smr_payment_form")
+    setToken(result)
+    console.log("received token: " + result)
+
+    if (token.length > 0) {
+      console.log("recaptcha failed, form not submitted")
+      return
+    }
 
     const submitForm = {
       amount: formData.stepOne.amount.value,
@@ -148,6 +166,7 @@ const PaymentForm = () => {
       city: formData.stepTwo.city.value,
       state: formData.stepTwo.state.value,
       zip: formData.stepTwo.zip.value,
+      recaptchaToken: result,
     }
 
     console.log("Form data before api call: " + JSON.stringify(submitForm))

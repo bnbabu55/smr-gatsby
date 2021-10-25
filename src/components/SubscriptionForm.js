@@ -1,17 +1,35 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 const SubscriptionForm = () => {
   const [emailValue, setEmailValue] = useState("")
   const [formResp, setFormResp] = useState("")
+  const { executeRecaptcha } = useGoogleReCaptcha()
+  const [token, setToken] = useState("")
 
   return (
     <form
       onSubmit={async event => {
         event.preventDefault()
 
+        // ReCaptcha verification
+        if (!executeRecaptcha) {
+          return
+        }
+        // This is the same as grecaptcha.execute on traditional html script tags
+        const result = await executeRecaptcha("smr_subscribe_form")
+        setToken(result)
+        console.log("received token: " + result)
+
+        if (token.length > 0) {
+          console.log("recaptcha failed, form not submitted")
+          return
+        }
+
         const myForm = event.target
         const formData = new FormData(myForm)
+        formData.append("recaptcha-token", token)
         setFormResp("loading")
         axios
           .post(

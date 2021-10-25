@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useBetween } from "use-between"
 import { navigate } from "gatsby"
 import axios from "axios"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
   const {
@@ -19,6 +20,8 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
   const [lnameValue, setLNameValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
   const [formResp, setFormResp] = useState("")
+  const { executeRecaptcha } = useGoogleReCaptcha()
+  const [token, setToken] = useState("")
 
   return (
     <div className="pt-10">
@@ -28,8 +31,23 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
         onSubmit={async event => {
           event.preventDefault()
 
+          // ReCaptcha verification
+          if (!executeRecaptcha) {
+            return
+          }
+          // This is the same as grecaptcha.execute on traditional html script tags
+          const result = await executeRecaptcha("smr_quote_form")
+          setToken(result)
+          console.log("received token: " + result)
+
+          if (token.length > 0) {
+            console.log("recaptcha failed, form not submitted")
+            return
+          }
+
           const myForm = event.target
           const formData = new FormData(myForm)
+          formData.append("recaptcha-token", token)
           setFormResp("loading")
           axios
             .post(
