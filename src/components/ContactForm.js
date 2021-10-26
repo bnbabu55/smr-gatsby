@@ -8,7 +8,11 @@ const ContactForm = () => {
   const [fnameValue, setFNameValue] = useState("")
   const [lnameValue, setLNameValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
-  const [formResp, setFormResp] = useState("")
+  const [formResp, setFormResp] = useState({
+    status: "",
+    response: "",
+    body_response: "",
+  })
   const { executeRecaptcha } = useGoogleReCaptcha()
   const [token, setToken] = useState("")
 
@@ -28,16 +32,16 @@ const ContactForm = () => {
           setToken(result)
           console.log("received token: " + result)
 
-          if (token.length > 0) {
+          if (result.length <= 0) {
             console.log("recaptcha failed, form not submitted")
             return
           }
 
           const myForm = event.target
           const formData = new FormData(myForm)
-          formData.append("recaptcha-token", token)
+          formData.append("_wpcf7_recaptcha_response", result)
 
-          setFormResp("loading")
+          setFormResp({ ...formResp, status: "loading" })
 
           axios
             .post(
@@ -46,15 +50,30 @@ const ContactForm = () => {
             )
             .then(function (response) {
               if (response.data.status === "mail_sent") {
-                setFormResp("success")
+                setFormResp({
+                  ...formResp,
+                  status: "success",
+                  response: response.data.response,
+                  body_response: response.data.body_response,
+                })
                 console.log(response)
               } else {
-                setFormResp("error")
+                setFormResp({
+                  ...formResp,
+                  status: "error",
+                  response: response.data.response,
+                  body_response: response.data.body_response,
+                })
                 console.log(response)
               }
             })
             .catch(function (error) {
-              setFormResp("error")
+              setFormResp({
+                ...formResp,
+                status: "error",
+                response: "",
+                body_response: "Unknown error, please try again later.",
+              })
               console.log(error)
             })
         }}
@@ -178,21 +197,19 @@ const ContactForm = () => {
         </div>
       </form>
       <div id="response-message" style={{ padding: "20px" }}>
-        {formResp === "loading" && (
+        {formResp.status === "loading" && (
           <p className="font-Lato text-black">Sending....</p>
         )}
-        {formResp === "error" && (
-          <p className="font-Lato text-red-600">
-            An unknown error has occured, please try again later...
-          </p>
+        {formResp.status === "error" && (
+          <p className="font-Lato text-red-600">{formResp.body_response}</p>
         )}
-        {formResp === "success" && (
+        {formResp.status === "success" && (
           <p className="font-Lato text-green-500">
             Your form has been submitted successfully, thank you.
           </p>
         )}
         <p className="text-white">
-          {formResp === "success" &&
+          {formResp.status === "success" &&
             setTimeout(() => {
               setFormResp("")
               setCompanyValue("")

@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useBetween } from "use-between"
-import { navigate } from "gatsby"
 import axios from "axios"
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
@@ -19,7 +18,11 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
   const [fnameValue, setFNameValue] = useState("")
   const [lnameValue, setLNameValue] = useState("")
   const [messageValue, setMessageValue] = useState("")
-  const [formResp, setFormResp] = useState("")
+  const [formResp, setFormResp] = useState({
+    status: "",
+    response: "",
+    body_response: "",
+  })
   const { executeRecaptcha } = useGoogleReCaptcha()
   const [token, setToken] = useState("")
 
@@ -40,15 +43,17 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
           setToken(result)
           console.log("received token: " + result)
 
-          if (token.length > 0) {
+          if (result.length <= 0) {
             console.log("recaptcha failed, form not submitted")
             return
           }
 
           const myForm = event.target
           const formData = new FormData(myForm)
-          formData.append("recaptcha-token", token)
-          setFormResp("loading")
+          formData.append("_wpcf7_recaptcha_response", result)
+
+          setFormResp({ ...formResp, status: "loading" })
+
           axios
             .post(
               "https://smr-sandbox.com/wp-json/contact-form-7/v1/contact-forms/11706/feedback",
@@ -56,15 +61,30 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
             )
             .then(function (response) {
               if (response.data.status === "mail_sent") {
-                setFormResp("success")
+                setFormResp({
+                  ...formResp,
+                  status: "success",
+                  response: response.data.response,
+                  body_response: response.data.body_response,
+                })
                 console.log(response)
               } else {
-                setFormResp("error")
-                console.log(response.data.message)
+                setFormResp({
+                  ...formResp,
+                  status: "error",
+                  response: response.data.response,
+                  body_response: response.data.body_response,
+                })
+                console.log(response)
               }
             })
             .catch(function (error) {
-              setFormResp("error")
+              setFormResp({
+                ...formResp,
+                status: "error",
+                response: "",
+                body_response: "Unknown error, please try again later.",
+              })
               console.log(error)
             })
         }}
@@ -276,23 +296,30 @@ const FreeQuoteForm = ({ useShareableState, OnlySEO }) => {
         </div>
       </form>
       <div id="response-message" style={{ padding: "20px" }}>
-        {formResp === "loading" && (
+        {formResp.status === "loading" && (
           <p className="font-Lato text-black">Sending....</p>
         )}
-        {formResp === "error" && (
-          <p className="font-Lato text-red-600">
-            An unknown error has occured, please try again later...
-          </p>
+        {formResp.status === "error" && (
+          <p className="font-Lato text-red-600">{formResp.body_response}</p>
         )}
-        {formResp === "success" && (
+        {formResp.status === "success" && (
           <p className="font-Lato text-green-500">
             Your form has been submitted successfully, thank you.
           </p>
         )}
         <p className="text-white">
-          {formResp === "success" &&
+          {formResp.status === "success" &&
             setTimeout(() => {
-              navigate("/")
+              setFormResp("")
+              setCompanyValue("")
+              setEmailValue("")
+              setFNameValue("")
+              setLNameValue("")
+              setMessageValue("")
+              setWebDesign("")
+              setFormWeb("")
+              setSelectedProgram("silver")
+              setFormProgram("silver")
             }, 3000)}
         </p>
       </div>
