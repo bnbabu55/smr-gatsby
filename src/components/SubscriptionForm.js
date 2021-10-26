@@ -102,22 +102,24 @@ const SubscriptionForm = () => {
         />
         <button
           type="submit"
-          className="w-full text-white text-xs uppercase font-RalewayBold tracking-widest bg-themeBlue-200 hover:bg-themeBlue-600 rounded py-2 mt-3 shadow-md"
+          className="w-full text-white text-sm uppercase font-RalewayBold tracking-wider bg-themeBlue-200 hover:bg-themeBlue-600 rounded py-2 mt-3 shadow-md"
           aria-label="submit"
           disabled={formResp === "success" ? true : false}
         >
           {formResp === "success" ? "Subscribed" : "Subscribe"}
         </button>
       </form>
-      <div id="response-message" style={{ padding: "20px" }}>
+      <div id="response-message" className="p-5">
         {formResp.status === "loading" && (
-          <p className="font-Lato text-black">Sending....</p>
+          <p className="font-Lato text-black text-sm">Sending....</p>
         )}
         {formResp.status === "error" && (
-          <p className="font-Lato text-red-600">{formResp.body_response}</p>
+          <p className="font-Lato text-red-600 text-sm">
+            {formResp.body_response}
+          </p>
         )}
         {formResp.status === "success" && (
-          <p className="font-Lato text-green-500">
+          <p className="font-Lato text-green-600 text-sm">
             Your form has been submitted successfully, thank you.
           </p>
         )}

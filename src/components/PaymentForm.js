@@ -748,7 +748,7 @@ const PaymentForm = () => {
           <p className="font-Lato text-red-600">{formResp.body_response}</p>
         )}
         {formResp.status === "success" && (
-          <p className="font-Lato text-green-500">{formResp.body_response}</p>
+          <p className="font-Lato text-green-600">{formResp.body_response}</p>
         )}
         <p className="text-white">
           {formResp === "success" &&

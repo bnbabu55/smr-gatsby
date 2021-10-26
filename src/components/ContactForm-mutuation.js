@@ -181,7 +181,7 @@ const ContactForm = () => {
           </p>
         )}
         {data && (
-          <p className="font-Lato text-green-500">
+          <p className="font-Lato text-green-600">
             Your form has been submitted successfully, thank you.
           </p>
         )}

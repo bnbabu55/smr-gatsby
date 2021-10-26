@@ -174,7 +174,7 @@ const FreeAuditForm = ({ home }) => {
               <p className="font-Lato text-red-600">{formResp.body_response}</p>
             )}
             {formResp.status === "success" && (
-              <p className="font-Lato text-green-500">
+              <p className="font-Lato text-green-600">
                 Your form has been submitted successfully, thank you.
               </p>
             )}
