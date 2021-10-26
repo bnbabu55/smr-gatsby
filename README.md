@@ -5,16 +5,12 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby WordPress blog starter
+  SMR site with Gatsby frontend and WordPress backend.
 </h1>
 
-Kick off your wordpress gatsby project with this blog boilerplate. This starter ships with the main Gatsby Wordpress configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This is a digital marketing agency site developed with Gatsby frontend and WordPress backend. Pages, Menus, Custom Posts and Blogs come from WordPress directly. This is built as as a static site as most of the content is static. 
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
-
-## 🚀 Quick start
-
-To get your project started or to just try it out, you can **follow the [Gatsby Wordpress Quickstart](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/getting-started.md#quick-start)** instructions
+As this site is deployed in a regular shared hosting, building the site every time a new blog is posted is  our only challenge. Versus, deploying it in a service like Netlify/Gatsby Cloud/vercel, where the build is automated and deployed.
 
 ## 🧐 What's inside?
 
