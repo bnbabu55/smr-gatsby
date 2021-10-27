@@ -27,7 +27,10 @@ module.exports = {
     //   `https://gatsbysite.devsmr-development.com/`,
   },
   flags: {
-    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    LMDB_STORE: true,
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
   },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
