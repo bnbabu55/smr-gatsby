@@ -1,6 +1,12 @@
 const path = require(`path`)
 const fs = require("fs")
-const chunk = require(`lodash/chunk`)
+// const chunk = require(`lodash/chunk`)
+const chunk = (arr, chunkSize = 1, cache = []) => {
+  const tmp = [...arr]
+  if (chunkSize <= 0) return cache
+  while (tmp.length) cache.push(tmp.splice(0, chunkSize))
+  return cache
+}
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process

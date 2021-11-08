@@ -1,4 +1,4 @@
-### Type definitions saved at 2021-10-09T05:01:48.976Z ###
+### Type definitions saved at 2021-11-08T07:39:59.003Z ###
 
 type File implements Node @dontInfer {
   sourceInstanceName: String!
@@ -69,8 +69,6 @@ type Directory implements Node @dontInfer {
   ctime: Date! @dateformat
   birthtime: Date @deprecated(reason: "Use `birthTime` instead")
   birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
-  blksize: Int
-  blocks: Int
 }
 
 type Site implements Node @derivedTypes @dontInfer {
@@ -79,6 +77,7 @@ type Site implements Node @derivedTypes @dontInfer {
   flags: SiteFlags
   polyfill: Boolean
   pathPrefix: String
+  jsxRuntime: String
 }
 
 type SiteSiteMetadata {
@@ -88,9 +87,9 @@ type SiteSiteMetadata {
 }
 
 type SiteFlags {
-  PRESERVE_WEBPACK_CACHE: Boolean
-  GATSBY_EXPERIMENTAL_QUERY_CONCURRENCY: Int
-  GATSBY_CPU_COUNT: Int
+  PRESERVE_FILE_DOWNLOAD_CACHE: Boolean
+  FAST_DEV: Boolean
+  PARALLEL_SOURCING: Boolean
 }
 
 type SiteFunction implements Node @dontInfer {
@@ -109,9 +108,11 @@ type SitePage implements Node @dontInfer {
   internalComponentName: String!
   componentChunkName: String!
   matchPath: String
+  pageContext: JSON @proxy(from: "context", fromNode: false)
+  pluginCreator: SitePlugin @link(by: "id", from: "pluginCreatorId")
 }
 
-type SitePlugin implements Node @derivedTypes @dontInfer {
+type SitePlugin implements Node @dontInfer {
   resolve: String
   name: String
   version: String
@@ -119,113 +120,34 @@ type SitePlugin implements Node @derivedTypes @dontInfer {
   browserAPIs: [String]
   ssrAPIs: [String]
   pluginFilepath: String
-  pluginOptions: SitePluginPluginOptions
-  packageJson: SitePluginPackageJson
-}
-
-type SitePluginPluginOptions @derivedTypes {
-  path: String
-  exclude: SitePluginPluginOptionsExclude
-  update: Boolean
-  url: String
-  type: SitePluginPluginOptionsType
-  schema: SitePluginPluginOptionsSchema
-  verbose: Boolean
-  name: String
-  base64Width: Int
-  stripMetadata: Boolean
-  defaultQuality: Int
-  failOnError: Boolean
-  extensions: [String]
-  lessBabel: Boolean
-  mediaTypes: [String]
-  root: String
-  short_name: String
-  start_url: String
-  background_color: String
-  theme_color: String
-  display: String
-  icon: String
-  icon_options: SitePluginPluginOptionsIcon_options
-  legacy: Boolean
-  theme_color_in_head: Boolean
-  cache_busting_mode: String
-  crossOrigin: String
-  include_favicon: Boolean
-  cacheDigest: String
-  postCssPlugins: [SitePluginPluginOptionsPostCssPlugins]
-  pathCheck: Boolean
-  allExtensions: Boolean
-  isTSX: Boolean
-  jsxPragma: String
-}
-
-type SitePluginPluginOptionsExclude {
-  plugins: [String]
-}
-
-type SitePluginPluginOptionsType @derivedTypes {
-  Post: SitePluginPluginOptionsTypePost
-  Portfolio: SitePluginPluginOptionsTypePortfolio
-  RootQuery: String
-}
-
-type SitePluginPluginOptionsTypePost {
-  limit: Int
-}
-
-type SitePluginPluginOptionsTypePortfolio {
-  limit: Int
-}
-
-type SitePluginPluginOptionsSchema {
-  perPage: Int
-  requestConcurrency: Int
-  previewRequestConcurrency: Int
-  timeout: Int
-  queryDepth: Int
-  circularQueryLimit: Int
-  typePrefix: String
-}
-
-type SitePluginPluginOptionsIcon_options {
-  purpose: String
-}
-
-type SitePluginPluginOptionsPostCssPlugins {
-  postcssPlugin: String
-}
-
-type SitePluginPackageJson @derivedTypes {
-  name: String
-  description: String
-  version: String
-  main: String
-  author: String
-  license: String
-  dependencies: [SitePluginPackageJsonDependencies]
-  devDependencies: [SitePluginPackageJsonDevDependencies]
-  peerDependencies: [SitePluginPackageJsonPeerDependencies]
-  keywords: [String]
-}
-
-type SitePluginPackageJsonDependencies {
-  name: String
-  version: String
-}
-
-type SitePluginPackageJsonDevDependencies {
-  name: String
-  version: String
-}
-
-type SitePluginPackageJsonPeerDependencies {
-  name: String
-  version: String
+  pluginOptions: JSON
+  packageJson: JSON
 }
 
 type SiteBuildMetadata implements Node @dontInfer {
   buildTime: Date @dateformat
+}
+
+enum GatsbyImageFormat {
+  NO_CHANGE
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum GatsbyImageLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum GatsbyImagePlaceholder {
+  DOMINANT_COLOR
+  TRACED_SVG
+  BLURRED
+  NONE
 }
 
 interface WpNode {
@@ -2119,17 +2041,29 @@ type WpUserRole implements Node & WpNode @dontInfer {
 }
 
 type WpSEOUser {
+  breadcrumbTitle: String
+  canonical: String
   fullHead: String
+  language: String
   metaDesc: String
   metaRobotsNofollow: String
   metaRobotsNoindex: String
+  opengraphDescription: String
+  opengraphImage: WpMediaItem
+  opengraphTitle: String
+  region: String
   schema: WpSEOUserSchema
   social: WpSEOUserSocial
   title: String
+  twitterDescription: String
+  twitterImage: WpMediaItem
+  twitterTitle: String
 }
 
 """The Schema types for User"""
 type WpSEOUserSchema {
+  articleType: [String]
+  pageType: [String]
   raw: String
 }
 
@@ -2325,6 +2259,116 @@ type WpCoblocksLayoutSelectorControlsEnabledSettings {
 type WpCoblocksTypographyControlsEnabledSettings {
   """Setting use to disable or enable typography controls across the site."""
   coblocksTypographyControlsEnabled: Boolean
+}
+
+"""The ContactFormSubmission type"""
+type WpContactFormSubmission implements Node & WpNode & WpContentNode & WpUniformResourceIdentifiable & WpDatabaseIdentifier & WpNodeWithTemplate & WpNodeWithTitle & WpNodeWithContentEditor & WpNodeWithFeaturedImage & WpMenuItemLinkable @dontInfer {
+  """The content of the post."""
+  content: String
+
+  """Connection between the ContentNode type and the ContentType type"""
+  contentType: WpContentNodeToContentTypeConnectionEdge
+
+  """The unique resource identifier path"""
+  databaseId: Int!
+
+  """Post publishing date."""
+  date: Date @dateformat
+
+  """The publishing date set in GMT."""
+  dateGmt: Date @dateformat
+
+  """The desired slug of the post"""
+  desiredSlug: String
+
+  """The RSS enclosure for the object"""
+  enclosure: String
+
+  """
+  Connection between the NodeWithFeaturedImage type and the MediaItem type
+  """
+  featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdge
+
+  """
+  The database identifier for the featured image node assigned to the content node
+  """
+  featuredImageDatabaseId: Int
+
+  """Globally unique ID of the featured image assigned to the node"""
+  featuredImageId: ID
+
+  """
+  The global unique identifier for this post. This currently matches the value
+  stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot;
+  database table.
+  """
+  guid: String
+
+  """Whether the node is a Content Node"""
+  isContentNode: Boolean!
+
+  """Whether the node is a Term"""
+  isTermNode: Boolean!
+
+  """The user that most recently edited the node"""
+  lastEditedBy: WpContentNodeToEditLastConnectionEdge
+
+  """The permalink of the post"""
+  link: String
+
+  """
+  The local modified time for a post. If a post was recently updated the
+  modified field will change to match the corresponding time.
+  """
+  modified: Date @dateformat
+
+  """
+  The GMT modified time for a post. If a post was recently updated the modified
+  field will change to match the corresponding time in GMT.
+  """
+  modifiedGmt: Date @dateformat
+
+  """The Yoast SEO data of the ContactFormSubmission"""
+  seo: WpPostTypeSEO
+
+  """
+  The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name
+  field and the post_name column in the database for the
+  &quot;post_objects&quot; table.
+  """
+  slug: String
+
+  """The current status of the object"""
+  status: String
+
+  """
+  Added to the GraphQL Schema because the ACF Field Group &quot;Submitted Contact Forms&quot; was set to Show in GraphQL.
+  """
+  submittedContactForms: WpContactFormSubmission_Submittedcontactforms
+
+  """The template assigned to a node of content"""
+  template: WpContentTemplate
+
+  """
+  The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
+  """
+  title: String
+
+  """The unique resource identifier path"""
+  uri: String
+  nodeType: String
+}
+
+"""Field Group"""
+type WpContactFormSubmission_Submittedcontactforms implements WpAcfFieldGroup {
+  company: String
+  email: String
+
+  """The name of the ACF Field Group"""
+  fieldGroupName: String
+  firstName: String
+  lastName: String
+  message: String
 }
 
 """The discussion setting type"""
@@ -2850,6 +2894,7 @@ type WpSEOBreadcrumbs {
 """The Yoast SEO search appearance content types"""
 type WpSEOContentTypes {
   actionMonitorAction: WpSEOContentType
+  contactFormSubmission: WpSEOContentType
   mediaItem: WpSEOContentType
   page: WpSEOContentType
   portfolio: WpSEOContentType
@@ -2978,6 +3023,9 @@ type WpSEOWebmaster {
 type WpWPGatsby {
   """Returns wether or not pretty permalinks are enabled."""
   arePrettyPermalinksEnabled: Boolean
+
+  """Wether or not the Preview frontend URL is online."""
+  isPreviewFrontendOnline: Boolean
 }
 
 """The writing setting type"""
@@ -3132,28 +3180,6 @@ type Wp implements Node @dontInfer {
   """Fields of the &#039;WritingSettings&#039; settings group"""
   writingSettings: WpWritingSettings
   nodeType: String
-}
-
-enum GatsbyImageFormat {
-  NO_CHANGE
-  AUTO
-  JPG
-  PNG
-  WEBP
-  AVIF
-}
-
-enum GatsbyImageLayout {
-  FIXED
-  FULL_WIDTH
-  CONSTRAINED
-}
-
-enum GatsbyImagePlaceholder {
-  DOMINANT_COLOR
-  TRACED_SVG
-  BLURRED
-  NONE
 }
 
 enum ImageFormat {
@@ -3461,6 +3487,11 @@ type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
 
 type MdxFrontmatter {
   title: String!
+  memberRole: String
+  companyName: String
+  websiteUrl: String
+  featuredImage: File @fileByRelativePath
+  altTxt: String
   title1: String
   title2: String
   titleStyles: String
@@ -3468,12 +3499,7 @@ type MdxFrontmatter {
   subTitle2: String
   subTitle3: String
   subTitleStyles: String
-  featuredImage: File @fileByRelativePath
-  altTxt: String
   linkedPage: String
-  memberRole: String
-  companyName: String
-  websiteUrl: String
 }
 
 type MdxHeadingMdx {

@@ -7,24 +7,15 @@ import ContactSection from "../../components/ContactSection"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper"
+import SwiperCore, { Pagination, Navigation, Grid } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "../../styles/swiper-pagination.css"
 
-SwiperCore.use([Autoplay, Pagination, Navigation])
+SwiperCore.use([Pagination, Navigation, Grid])
 
 const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
   const pluginImage = getImage(bgImage.childImageSharp.gatsbyImageData)
   const image = convertToBgImage(pluginImage)
-  const pagination = {
-    clickable: true,
-    type: "bullets",
-    el: ".swiper-pagination",
-    // bulletClass: "swiper-pagination-bullet",
-    // renderBullet: function (index, className) {
-    //   return `<span class=${className}>${index + 1}</span>`
-    // },
-  }
 
   const [clientList, setClientList] = useState(clients?.nodes)
 
@@ -137,36 +128,29 @@ const PortfolioPage = ({ data: { page, bgImage, defaultImage, clients } }) => {
         <div className="py-10">
           {/* <ul className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 lg:gap-x-3 justify-evenly items-center text-base font-Lato"> */}
           <Swiper
-            spaceBetween={5}
-            slidesPerView={1}
             navigation
-            pagination
+            pagination={{ clickable: true }}
             breakpoints={{
               640: {
                 slidesPerView: 1,
                 spaceBetween: 5,
-                slidesPerColumn: 1,
-                slidesPerColumnFill: "column",
               },
               768: {
                 slidesPerView: 1,
                 spaceBetween: 5,
-                slidesPerColumn: 1,
-                slidesPerColumnFill: "column",
               },
               1024: {
                 slidesPerView: 2,
                 spaceBetween: 5,
-                slidesPerColumn: 5,
-                slidesPerColumnFill: "row",
-                pagination,
+                grid: {
+                  fill: "row",
+                  rows: 5,
+                },
               },
             }}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={swiper => console.log(swiper)}
             className="w-11/12 mx-auto"
           >
-            {clientList.map((client, index) => {
+            {clientList.map(client => {
               let regEx = /\/services\//g
               let serviceList = client.portfolioDetails.services
                 .filter(y => y.uri.match(regEx))

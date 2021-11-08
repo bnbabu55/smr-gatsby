@@ -28,7 +28,6 @@ module.exports = {
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    LMDB_STORE: true,
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
   },
@@ -64,10 +63,10 @@ module.exports = {
         url: process.env.WPGRAPHQL_URL || `https://smr-sandbox.com/graphql`,
         type: {
           Post: {
-            limit: 10,
+            limit: 1000,
           },
           Portfolio: {
-            limit: 10,
+            limit: 1000,
           },
         },
         schema: {
