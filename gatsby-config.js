@@ -134,6 +134,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-offline`,
