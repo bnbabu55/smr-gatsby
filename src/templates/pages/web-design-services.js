@@ -374,7 +374,7 @@ const WebDesignPage = ({
                       clientSlide?.frontmatter?.featuredImage?.childImageSharp
                         ?.gatsbyImageData
                     }
-                    alt={clientSlide?.frontmatter?.altTxt}
+                    alt={clientSlide?.frontmatter?.altTxt || ""}
                   />
                 </div>
               </SwiperSlide>

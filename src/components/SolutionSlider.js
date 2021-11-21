@@ -71,7 +71,7 @@ const SolutionSlider = () => {
                 className="w-full lg:w-2/5"
               >
                 <GatsbyImage
-                  alt={solutionSlide.frontmatter.altTxt}
+                  alt={solutionSlide.frontmatter.altTxt || ""}
                   image={
                     solutionSlide.frontmatter.featuredImage.childImageSharp
                       .gatsbyImageData

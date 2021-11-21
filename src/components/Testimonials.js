@@ -106,7 +106,7 @@ const Testimonials = () => {
                   className="mb-12 shadow-themeShadow"
                 >
                   <GatsbyImage
-                    alt={testimonialSlide?.frontmatter?.altTxt}
+                    alt={testimonialSlide?.frontmatter?.altTxt || ""}
                     image={
                       testimonialSlide?.frontmatter?.featuredImage
                         ?.childImageSharp?.gatsbyImageData

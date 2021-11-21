@@ -126,7 +126,7 @@ const Testimonials = () => {
                 >
                   <a href={portfolio?.Portfolio_Details?.website}>
                     <GatsbyImage
-                      alt={portfolio?.Portfolio_Details?.companyLogo?.altText}
+                      alt={portfolio?.Portfolio_Details?.companyLogo?.altText || ""}
                       image={
                         portfolio?.Portfolio_Details?.companyLogo?.localFile
                           ?.childImageSharp.gatsbyImageData

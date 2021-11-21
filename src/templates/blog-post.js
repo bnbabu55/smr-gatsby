@@ -118,7 +118,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
               <li key={post.uri + "-image"} className="w-full">
                 <GatsbyImage
                   image={featuredImage.fluid}
-                  alt={featuredImage.alt}
+                  alt={featuredImage.alt || ""}
                 />
               </li>
               <li

@@ -157,7 +157,7 @@ const WebDevPage = ({ data: { page, checkMark, graphics, devSlides } }) => {
                     </MDXRenderer>
                   </div>
                   <GatsbyImage
-                    alt={devSlide?.frontmatter?.altTxt}
+                    alt={devSlide?.frontmatter?.altTxt || ""}
                     image={
                       devSlide?.frontmatter?.featuredImage?.childImageSharp
                         .gatsbyImageData

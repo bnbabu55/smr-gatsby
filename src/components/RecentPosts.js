@@ -66,7 +66,7 @@ const RecentPosts = () => {
                     post.featuredImage.node.localFile.childImageSharp
                       .gatsbyImageData
                   }
-                  alt={post.featuredImage.node.altText}
+                  alt={post.featuredImage.node.altText || ""}
                 />
               </li>
               <li
